@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({
   selector: 'app-root',
-  template: `<div>Hello {{value}}</div>`,
+  templateUrl: './app.component.html',
+  standalone: true,
+  imports: [MatTabsModule]
 })
 export class AppComponent {
   value = 'Schruefophon';

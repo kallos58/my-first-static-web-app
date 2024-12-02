@@ -158,6 +158,22 @@
       text-decoration: underline;
       cursor: pointer;
     }
+
+    .stable {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.std, .sth {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.str:nth-child(even) {
+  background-color: #dddddd;
+}
   
     @media screen and (max-width: 650px) {
       .content {
@@ -176,9 +192,19 @@
   
   <main class="main" >
     <mat-tab-group>
-      <mat-tab label="First"> Content 1 </mat-tab>
-      <mat-tab label="Second"> Content 2 </mat-tab>
-      <mat-tab label="Third"> Content 3 </mat-tab>
+      <mat-tab label="Übersicht"> 
+        <table class="stable">
+          <div *ngFor='let item of dataSource'>
+            <tr class="str">
+              <th class="sth">{{item.categoryName}}</th>
+              <th class="sth">{{item.description}}</th>
+              </tr>
+            </div>
+         </table>
+      </mat-tab>
+      <mat-tab label="Einstellungen">  
+        <div>Einstellungen</div>
+      </mat-tab>
     </mat-tab-group>
   </main>
   
@@ -190,5 +216,5 @@
   <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
   
-  
+  <router-outlet></router-outlet>
   

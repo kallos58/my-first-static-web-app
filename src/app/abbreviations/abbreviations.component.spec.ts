@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OverviewComponent } from './overview.component';
+import { AbbreviationsComponent } from './abbreviations.component';
 
-describe('OverviewComponent', () => {
-  let component: OverviewComponent;
-  let fixture: ComponentFixture<OverviewComponent>;
+describe('AbbreviationsComponent', () => {
+  let component: AbbreviationsComponent;
+  let fixture: ComponentFixture<AbbreviationsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OverviewComponent]
+      imports: [AbbreviationsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OverviewComponent);
+    fixture = TestBed.createComponent(AbbreviationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

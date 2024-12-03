@@ -189,32 +189,72 @@
       }
     }
   </style>
-  
+  <div id="dasnies" style="background: red; padding-top: 0.5em; height: 2em; width: 100%;"></div>
   <main class="main" >
-    <mat-tab-group>
-      <mat-tab label="Übersicht"> 
-        <table class="stable">
-          <div *ngFor='let item of dataSource'>
-            <tr class="str">
-              <th class="sth">{{item.categoryName}}</th>
-              <th class="sth">{{item.description}}</th>
-              </tr>
-            </div>
-         </table>
+    
+    <mat-tab-group (selectedTabChange)="changeTab($event)">
+      <mat-tab label="Home"> 
+          <app-home></app-home>
       </mat-tab>
-      <mat-tab label="Einstellungenzz">  
+      <mat-tab label="Abbreviations"> 
+        <div class="tableDiv">
+          <table>
+            <tbody>
+
+              <tr>
+                <th>Abbreviation
+                  <span class="pointer fs24" [style]="setColor(1)" (click)="sortAbbreviations(1)">  &#x25b4;</span>
+                  <span class="pointer fs24" [style]="setColor(2)" (click)="sortAbbreviations(2)">  &#x25be;</span>
+                </th>
+                <th>Content
+                  <span class="pointer fs24" [style]="setColor(3)" (click)="sortAbbreviations(3)">  &#x25b4;</span>
+                  <span class="pointer fs24" [style]="setColor(4)" (click)="sortAbbreviations(4)">  &#x25be;</span>
+                </th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr *ngFor='let item of abbreviations'>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td><img 
+                    (click)="editAbbreviation(item)"
+                    title="Eintrag bearbeiten" 
+                    class="iconDel" 
+                    src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/></td>
+                <td><img title="Eintrag löschen"  class="iconDel" src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Settings">  
         <div>Einstellungen</div>
       </mat-tab>
     </mat-tab-group>
   </main>
-  
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-  
-  <router-outlet></router-outlet>
+
+  <dialog #abbreviationDialog class="dialog">
+    <h4>{{dialogTitle}}</h4>
+    <form >
+      <label for="abbreviation">Abbreviation:</label><br>
+      <input 
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]='name' 
+        class="formControl" 
+        type="text" 
+        id="abbreviation" 
+        name="abbreviation"/><br><br>
+        <label for="content">Content:</label><br>
+        <input 
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]='description' 
+          class="formControl" 
+          type="text" 
+          id="content" 
+          name="content"/><br><br>
+      <br><br>
+      <button class="formButton" (click)="saveAbbreviation()">Speichern</button>
+      <button class="formButton" (click)="abbreviationDialog.close()">Abbrechen</button>
+    </form>
+  </dialog>
   

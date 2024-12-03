@@ -33,7 +33,7 @@ export class AppComponent implements OnInit{
         const container = db.container("SampleContainer");
         await container.items
         .query({
-            query: "SELECT * from c"
+            query: "SELECT * from c  where c.categoryName='abbreviation'"
         })
         .fetchAll()
         .then((response: any) => {

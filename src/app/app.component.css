@@ -28,15 +28,17 @@ table {
   }
   
   .iconDel {
-    height: 18px;
-    width: 18px;
+    margin-left: 8px;
+    margin-top: 8px;
+    height: 16px;
+    width: 16px;
     cursor: pointer;
     padding-right: 0.5em;
   }
 
   .tableDiv {
-    width: 90em; 
-    height: 40em; 
+    width: 85em; 
+    height: 36em; 
     margin-left: 2em;
   }
 
@@ -58,4 +60,18 @@ table {
     box-shadow: 0 0 20px 8px #d0d0d0;
     height: 32em;
     width: 32em;
+ }
+
+ .filterBar {
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    padding-left: 1em;
+    background-color: rgb(232,232,232);
+    color: black;
+    border-color: gray;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+    padding-top: 0.5em; 
+    height: 2em; width: 100%;
  }

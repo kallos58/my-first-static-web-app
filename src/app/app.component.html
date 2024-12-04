@@ -1,195 +1,23 @@
-<style>
-    :host {
-      --bright-blue: oklch(51.01% 0.274 263.83);
-      --electric-violet: oklch(53.18% 0.28 296.97);
-      --french-violet: oklch(47.66% 0.246 305.88);
-      --vivid-pink: oklch(69.02% 0.277 332.77);
-      --hot-red: oklch(61.42% 0.238 15.34);
-      --orange-red: oklch(63.32% 0.24 31.68);
-  
-      --gray-900: oklch(19.37% 0.006 300.98);
-      --gray-700: oklch(36.98% 0.014 302.71);
-      --gray-400: oklch(70.9% 0.015 304.04);
-  
-      --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-        180deg,
-        var(--orange-red) 0%,
-        var(--vivid-pink) 50%,
-        var(--electric-violet) 100%
-      );
-  
-      --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-        90deg,
-        var(--orange-red) 0%,
-        var(--vivid-pink) 50%,
-        var(--electric-violet) 100%
-      );
-  
-      --pill-accent: var(--bright-blue);
-  
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol";
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  
-    h1 {
-      font-size: 3.125rem;
-      color: var(--gray-900);
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: -0.125rem;
-      margin: 0;
-      font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol";
-    }
-  
-    p {
-      margin: 0;
-      color: var(--gray-700);
-    }
-  
-    main {
-      width: 100%;
-      min-height: 100%;
-      display: flex;
-      justify-content: left;
-      align-items: left;
-      padding: 1rem;
-      box-sizing: inherit;
-      position: relative;
-    }
-  
-    .angular-logo {
-      max-width: 9.2rem;
-    }
-  
-    .content {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      max-width: 700px;
-      margin-bottom: 3rem;
-    }
-  
-    .content h1 {
-      margin-top: 1.75rem;
-    }
-  
-    .content p {
-      margin-top: 1.5rem;
-    }
-  
-    .divider {
-      width: 1px;
-      background: var(--red-to-pink-to-purple-vertical-gradient);
-      margin-inline: 0.5rem;
-    }
-  
-    .pill-group {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-    }
-  
-    .pill {
-      display: flex;
-      align-items: center;
-      --pill-accent: var(--bright-blue);
-      background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-      color: var(--pill-accent);
-      padding-inline: 0.75rem;
-      padding-block: 0.375rem;
-      border-radius: 2.75rem;
-      border: 0;
-      transition: background 0.3s ease;
-      font-family: var(--inter-font);
-      font-size: 0.875rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.4rem;
-      letter-spacing: -0.00875rem;
-      text-decoration: none;
-    }
-  
-    .pill:hover {
-      background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-    }
-  
-    .pill-group .pill:nth-child(6n + 1) {
-      --pill-accent: var(--bright-blue);
-    }
-    .pill-group .pill:nth-child(6n + 2) {
-      --pill-accent: var(--french-violet);
-    }
-    .pill-group .pill:nth-child(6n + 3),
-    .pill-group .pill:nth-child(6n + 4),
-    .pill-group .pill:nth-child(6n + 5) {
-      --pill-accent: var(--hot-red);
-    }
-  
-    .pill-group svg {
-      margin-inline-start: 0.25rem;
-    }
-  
-    .social-links {
-      display: flex;
-      align-items: center;
-      gap: 0.73rem;
-      margin-top: 1.5rem;
-    }
-  
-    .social-links path {
-      transition: fill 0.3s ease;
-      fill: var(--gray-400);
-    }
-  
-    .social-links a:hover svg path {
-      fill: var(--gray-900);
-    }
-  
-    a:hover {
-      color: blue;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .stable {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.std, .sth {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-.str:nth-child(even) {
-  background-color: #dddddd;
-}
-  
-    @media screen and (max-width: 650px) {
-      .content {
-        flex-direction: column;
-        width: max-content;
-      }
-  
-      .divider {
-        height: 1px;
-        width: 100%;
-        background: var(--red-to-pink-to-purple-horizontal-gradient);
-        margin-block: 1.5rem;
-      }
-    }
-  </style>
-  <div id="dasnies" style="background: red; padding-top: 0.5em; height: 2em; width: 100%;"></div>
+  <div class="filterBar">
+    <label style="margin-left: 1em;">{{entriesStr}}</label>
+    <label style="margin-left: 10em;">{{filterStr}}</label>
+    <input *ngIf="index!=0" type="text" value="{{filterString}}" [(ngModel)]="filterString" (keyup.enter)="filterData()" name="filter"/>
+    <img 
+      *ngIf="index!=0" 
+      class="iconDel" 
+      (click)="filterData()"
+      src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" />
+    <img 
+      *ngIf="index!=0" 
+      class="iconDel" 
+      (click)="clearFilter()"
+      src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-8/24/018_311_insignia_cross_emblem-64.png" />
+    <img 
+      *ngIf="index!=0" 
+      (click)="newEntry()"
+      class="iconDel" 
+      src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_add-64.png" />
+  </div>
   <main class="main" >
     
     <mat-tab-group (selectedTabChange)="changeTab($event)">
@@ -197,7 +25,7 @@
           <app-home></app-home>
       </mat-tab>
       <mat-tab label="Abbreviations"> 
-        <div class="tableDiv" style="display: none;">
+        <div class="tableDiv">
           <table>
             <tbody>
 
@@ -216,13 +44,70 @@
               <tr *ngFor='let item of abbreviations'>
                 <td>{{item.name}}</td>
                 <td>{{item.description}}</td>
-                <td><img 
+                <td>
+                  <img 
                     (click)="editAbbreviation(item)"
                     title="Eintrag bearbeiten" 
                     class="iconDel" 
-                    src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/></td>
-                <td><img title="Eintrag löschen"  class="iconDel" src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
+                    src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>
+                </td>
+                <td>
+                  <img 
+                    (click)="deleteAbbreviation(item)"
+                    title="Eintrag löschen"  
+                    class="iconDel" 
+                    src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
               </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="CMO Master"> 
+        <div class="tableDiv">
+          <table>
+            <tbody>
+
+              <tr>
+                <th>API Manufacturer
+                  <span class="pointer fs24" [style]="setColor(1)" (click)="sortCMOMaster(1)">  &#x25b4;</span>
+                  <span class="pointer fs24" [style]="setColor(2)" (click)="sortCMOMaster(2)">  &#x25be;</span>
+                </th>
+                <th>Manufacturer
+                  <span class="pointer fs24" [style]="setColor(3)" (click)="sortCMOMaster(3)">  &#x25b4;</span>
+                  <span class="pointer fs24" [style]="setColor(4)" (click)="sortCMOMaster(4)">  &#x25be;</span>
+                </th>
+                <th>Release site
+                  <span class="pointer fs24" [style]="setColor(5)" (click)="sortCMOMaster(5)">  &#x25b4;</span>
+                  <span class="pointer fs24" [style]="setColor(6)" (click)="sortCMOMaster(6)">  &#x25be;</span>
+                </th>
+                <th>Category
+                  <span class="pointer fs24" [style]="setColor(7)" (click)="sortCMOMaster(7)">  &#x25b4;</span>
+                  <span class="pointer fs24" [style]="setColor(8)" (click)="sortCMOMaster(8)">  &#x25be;</span>
+                </th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr *ngFor='let item of cmomasters'>
+                <td>{{item.categoryId}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.sku}}</td>
+                <td>
+                  <img 
+                    (click)="editAbbreviation(item)"
+                    title="Eintrag bearbeiten" 
+                    class="iconDel" 
+                    src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>
+                </td>
+                <td>
+                  <img 
+                    (click)="deleteAbbreviation(item)"
+                    title="Eintrag löschen"  
+                    class="iconDel" 
+                    src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
+              </tr>
+
             </tbody>
           </table>
         </div>
@@ -255,6 +140,47 @@
       <br><br>
       <button class="formButton" (click)="saveAbbreviation()">Speichern</button>
       <button class="formButton" (click)="abbreviationDialog.close()">Abbrechen</button>
+    </form>
+  </dialog>
+
+  <dialog #cmoMasterDialog class="dialog">
+    <h4>{{dialogTitle}}</h4>
+    <form >
+      <label for="apimanufacturer">API Manufacturer:</label><br>
+      <input 
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]='categoryId' 
+        class="formControl" 
+        type="text" 
+        id="apimanufacturer" 
+        name="apimanufacturer"/><br>
+        <label for="manufacturer">Manufacturer:</label><br>
+        <input 
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]='name' 
+          class="formControl" 
+          type="text" 
+          id="manufacturer" 
+          name="manufacturer"/>
+          <label for="releasesite">Release site:</label><br>
+          <input 
+            [ngModelOptions]="{standalone: true}" 
+            [(ngModel)]='description' 
+            class="formControl" 
+            type="text" 
+            id="releasesite" 
+            name="releasesite"/>
+            <label for="category">Category:</label><br>
+            <input 
+              [ngModelOptions]="{standalone: true}" 
+              [(ngModel)]='sku' 
+              class="formControl" 
+              type="text" 
+              id="category" 
+              name="category"/><br><br>
+      <br><br>
+      <button class="formButton" (click)="saveAbbreviation()">Speichern</button>
+      <button class="formButton" (click)="cmoMasterDialog.close()">Abbrechen</button>
     </form>
   </dialog>
   

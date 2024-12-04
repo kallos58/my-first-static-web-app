@@ -48,7 +48,13 @@ export class AppComponent {
   filterString = "";
 
   constructor() {
-    
+    this.endpoint = "https://schruefer.documents.azure.com:443/";
+    this.key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
+    this.client = new Cosmos.CosmosClient({endpoint: this.endpoint, key: this.key});
+    this.database = "Heumann";
+    this.collection = "Items";
+    this.db = this.client.database(this.database);
+    this.container = this.db.container("Abbreviations");
   }
  
   public async getAbbreviations() {  

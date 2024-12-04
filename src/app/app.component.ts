@@ -48,13 +48,7 @@ export class AppComponent {
   filterString = "";
 
   constructor() {
-    this.endpoint = "";
-    this.key = "";
-    this.client = new Cosmos.CosmosClient({endpoint: this.endpoint, key: this.key});
-    this.database = "Heumann";
-    this.collection = "Items";
-    this.db = this.client.database(this.database);
-    this.container = this.db.container("Abbreviations");
+    
   }
  
   public async getAbbreviations() {  

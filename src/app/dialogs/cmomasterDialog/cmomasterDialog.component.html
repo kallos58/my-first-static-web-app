@@ -1,0 +1,42 @@
+<h4>{{dialogTitle}}</h4>
+    <form >
+      <label for="Apimanufacturer">API Manufacturer:</label><br>
+      <input 
+        style="width: 20em;"
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]="currentItem['API_Manufacturer']" 
+        class="formControl" 
+        type="text" 
+        id="Apimanufacturer" 
+        name="Apimanufacturer"/><br><br>
+      <label for="Manufacturer">Manufacturer:</label><br>
+      <input 
+        style="width: 20em;"
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]="currentItem['Manufacturer']"
+        class="formControl" 
+        type="text" 
+        id="Manufacturer" 
+        name="Manufacturer"/><br><br>
+        <label for="Category">Category:</label><br>
+        <input  
+          style="width: 20em;"
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="currentItem['Category']" 
+          class="formControl" 
+          type="text" 
+          id="Category" 
+          name="Category"/><br><br>
+        <label for="Release_site">Release site:</label><br>
+        <input 
+          style="width: 20em;"
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="currentItem['Release_site']"
+          class="formControl" 
+          type="text" 
+          id="Release_site" 
+          name="Release_site"/><br><br>
+      <br><br>
+      <button class="formButton" (click)="save()">Speichern</button>
+      <button class="formButton" (click)="close()">Abbrechen</button>
+    </form>

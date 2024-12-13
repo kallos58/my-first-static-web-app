@@ -1,0 +1,793 @@
+{
+	"Workbook": {
+		"ExcelWorkbook": {
+			"ActiveSheet": {
+				"__prefix": "x",
+				"__text": "0"
+			},
+			"Calculation": {
+				"__prefix": "x",
+				"__text": "ManualCalculation"
+			},
+			"__prefix": "x"
+		},
+		"DocumentProperties": {
+			"Author": {
+				"__prefix": "o",
+				"__text": "Kuhaupt, Stephanie"
+			},
+			"Created": {
+				"__prefix": "o",
+				"__text": "2010-05-26T13:24:09Z"
+			},
+			"LastSaved": {
+				"__prefix": "o",
+				"__text": "2024-11-21T09:02:42Z"
+			},
+			"Company": {
+				"__prefix": "o",
+				"__text": "Heumann Pharma GmbH & Co. Generica KG"
+			},
+			"__prefix": "o"
+		},
+		"Names": {
+			"NamedRange": [
+				{
+					"_ss:Name": "API",
+					"_ss:RefersTo": "=#REF!",
+					"__prefix": "ss"
+				},
+				{
+					"_ss:Name": "APIHersteller",
+					"_ss:RefersTo": "='D:\\TPM\\QC\\OGS\\Current Status\\[CurrentStatusOGS.xlsx]Drop down Auswahl'!R2C4:R241C4",
+					"__prefix": "ss"
+				},
+				{
+					"_ss:Name": "category",
+					"_ss:RefersTo": "=#REF!",
+					"__prefix": "ss"
+				},
+				{
+					"_ss:Name": "manufacturer",
+					"_ss:RefersTo": "=#REF!",
+					"__prefix": "ss"
+				},
+				{
+					"_ss:Name": "Release_Site",
+					"_ss:RefersTo": "='D:\\TPM\\QA\\Freigaben\\Doku\\[current status batch documentation.xlsx]Release Site'!R2C1:R39C1",
+					"__prefix": "ss"
+				}
+			],
+			"__prefix": "ss"
+		},
+		"Styles": {
+			"Style": [
+				{
+					"Alignment": {
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:Color": "#000000",
+						"_ss:FontName": "Calibri",
+						"_ss:Size": "11",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "Default",
+					"_ss:Name": "Normal"
+				},
+				{
+					"Alignment": {
+						"_ss:Horizontal": "Left",
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"Border": [
+							{
+								"_ss:Position": "Left",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Top",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Right",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Bottom",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							}
+						],
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:Color": "#000000",
+						"_ss:FontName": "Calibri",
+						"_ss:Size": "11",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S568"
+				},
+				{
+					"Alignment": {
+						"_ss:Horizontal": "Center",
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"Border": [
+							{
+								"_ss:Position": "Left",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Top",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Right",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Bottom",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							}
+						],
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:Bold": "1",
+						"_ss:Color": "#000000",
+						"_ss:FontName": "Calibri",
+						"_ss:Size": "11",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S569"
+				}
+			]
+		},
+		"Worksheet": {
+			"Names": {
+				"__prefix": "ss"
+			},
+			"Table": {
+				"Column": [
+					{
+						"_ss:Index": "1",
+						"_ss:AutoFitWidth": "0",
+						"_ss:Width": "81"
+					},
+					{
+						"_ss:Index": "2",
+						"_ss:AutoFitWidth": "0",
+						"_ss:Width": "116.25"
+					}
+				],
+				"Row": [
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Abbreviation"
+								},
+								"_ss:StyleID": "S569"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Content"
+								},
+								"_ss:StyleID": "S569"
+							}
+						],
+						"_ss:Index": "1"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "F"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Freigabe"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "2"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "S"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Sperrung"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "3"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "U"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Umpacker"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "4"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "AH"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Alexandra Harenberg"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "5"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "ARo"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Alexandre Rocha"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "6"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "AZ"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Anne Zetsch"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "7"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "CMi"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Claudia Miranda"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "8"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "DLo"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Daniela Monteiro Lopes"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "9"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "OA"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Onetsine Arizibalaga"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "10"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "KMu"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Kerstin Müller"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "11"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "FC"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Filipe Capaz"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "12"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "IA"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Igor Akrap"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "13"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "KH"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Heffner"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "14"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "KHe"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Katharina"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "15"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "MaSc"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Manuela Schradi"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "16"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "KV"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Klara Vechtova"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "17"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "MGa"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Mamta Gandhi"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "18"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Mki"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Mikis Kiourtzidis"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "19"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "MT"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Melanie Then"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "20"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "RC"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Rita Centeio"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "21"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "RP"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Rute Pinelo"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "22"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "SU"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Sanem Ucar"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "23"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "VL"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Vanessa Lopes"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "24"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "CF"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Corinna Fischer"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "25"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "PF"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Pedro Felix"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "26"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "BU"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Bernhard Unterlinner"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "27"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "UB"
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "Ulrich Baumeister"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "28"
+					},
+					{
+						"Cell": [
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "ext."
+								},
+								"_ss:StyleID": "S568"
+							},
+							{
+								"Data": {
+									"_ss:Type": "String",
+									"__text": "externer QP"
+								},
+								"_ss:StyleID": "S568"
+							}
+						],
+						"_ss:Index": "29"
+					}
+				],
+				"_ss:DefaultRowHeight": "15",
+				"_ss:DefaultColumnWidth": "60",
+				"_ss:ExpandedRowCount": "29",
+				"_ss:ExpandedColumnCount": "2",
+				"__prefix": "ss"
+			},
+			"WorksheetOptions": {
+				"PageSetup": {
+					"Header": {
+						"_x:Margin": "0.3"
+					},
+					"Footer": {
+						"_x:Margin": "0.3"
+					},
+					"PageMargins": {
+						"_x:Top": "0.787401575",
+						"_x:Bottom": "0.787401575",
+						"_x:Left": "0.7",
+						"_x:Right": "0.7"
+					}
+				},
+				"Print": {
+					"ValidPrinterInfo": "",
+					"PaperSizeIndex": "9",
+					"HorizontalResolution": "600",
+					"VerticalResolution": "600"
+				},
+				"Panes": {
+					"Pane": {
+						"Number": "3",
+						"ActiveRow": "28",
+						"ActiveCol": "2",
+						"RangeSelection": "R29C3"
+					}
+				},
+				"_xmlns": "urn:schemas-microsoft-com:office:excel"
+			},
+			"_ss:Name": "Abbreviations"
+		},
+		"_xmlns:o": "urn:schemas-microsoft-com:office:office",
+		"_xmlns:x": "urn:schemas-microsoft-com:office:excel",
+		"_xmlns:ss": "urn:schemas-microsoft-com:office:spreadsheet",
+		"_xmlns": "urn:schemas-microsoft-com:office:spreadsheet",
+		"_xmlns:x2": "urn:schemas-microsoft-com:office:excel2",
+		"_xmlns:html": "http://www.w3.org/TR/REC-html40",
+		"_xmlns:dt": "uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+	}
+}

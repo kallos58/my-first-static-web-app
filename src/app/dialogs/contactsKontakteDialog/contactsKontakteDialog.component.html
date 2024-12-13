@@ -1,0 +1,60 @@
+<h4>{{dialogTitle}}</h4>
+<form >
+  <label for="Lieferant">Lieferant:</label><br>
+  <input 
+    style="width: 24em;"
+    [ngModelOptions]="{standalone: true}" 
+    [(ngModel)]="currentItem['Lieferant']" 
+    class="formControl" 
+    type="text" 
+    id="Lieferant" 
+    name="Lieferant"/><br><br>
+  <label for="Position1">Position 1:</label><br>
+  <input 
+    style="width: 24em;"a
+    [ngModelOptions]="{standalone: true}" 
+    [(ngModel)]="currentItem['Position_1']"
+    class="formControl" 
+    type="text" 
+    id="Position1" 
+    name="Position1"/><br><br>
+    <label for="Position2">Position 2:</label><br>
+  <input 
+    style="width: 24em;"
+    [ngModelOptions]="{standalone: true}" 
+    [(ngModel)]="currentItem['Position_2']"
+    class="formControl" 
+    type="text" 
+    id="Position2" 
+    name="Position2"/><br><br>
+    <label for="QA_Kontakt_Mail">QA Kontakt Mail:</label><br>
+    <input 
+      style="width: 24em;"
+      [ngModelOptions]="{standalone: true}" 
+      [(ngModel)]="currentItem['QA_Kontakt_Mail']"
+      class="formControl" 
+      type="text" 
+      id="QA_Kontakt_Mail" 
+      name="QA_Kontakt_Mail"/><br><br>
+    <label for="SCM_Kontakt">SCM Kontakt:</label><br>
+    <input 
+      style="width: 24em;"
+      [ngModelOptions]="{standalone: true}" 
+      [(ngModel)]="currentItem['SCM_Kontakt']"
+      class="formControl" 
+      type="text" 
+      id="SCM_Kontakt" 
+      name="SCM_Kontakt"/><br><br>
+    <label for="weitere_QA_Kontakte">weitere Kontakte:</label><br>
+    <input 
+      style="width: 24em;"
+      [ngModelOptions]="{standalone: true}" 
+      [(ngModel)]="currentItem['weitere_QA_Kontakte']"
+      class="formControl" 
+      type="text" 
+      id="weitere_QA_Kontakte" 
+      name="weitere_QA_Kontakte"/><br><br>
+  <br><br>
+  <button class="formButton" (click)="save()">Speichern</button>
+  <button class="formButton" (click)="close()">Abbrechen</button>
+</form>

@@ -1,0 +1,310 @@
+{
+	"data": {
+		"columns": {
+			"Vendor": {
+				"_index": "1",
+				"__text": "Vendor"
+			}
+		},
+		"records": {
+			"record": [
+				{
+					"Vendor": "Abanta Pharma",
+					"_index": "1"
+				},
+				{
+					"Vendor": "Abdi Ibrahim",
+					"_index": "2"
+				},
+				{
+					"Vendor": "Acino",
+					"_index": "3"
+				},
+				{
+					"Vendor": "Adamed",
+					"_index": "4"
+				},
+				{
+					"Vendor": "Alembic",
+					"_index": "5"
+				},
+				{
+					"Vendor": "Alkem",
+					"_index": "6"
+				},
+				{
+					"Vendor": "Alvogen",
+					"_index": "7"
+				},
+				{
+					"Vendor": "BALKANPHARMA DUPNITSA AD / Medis",
+					"_index": "8"
+				},
+				{
+					"Vendor": "Chanelle",
+					"_index": "9"
+				},
+				{
+					"Vendor": "Chanelle/Indswift",
+					"_index": "10"
+				},
+				{
+					"Vendor": "CHEMO/Liconsa",
+					"_index": "11"
+				},
+				{
+					"Vendor": "Cinfa",
+					"_index": "12"
+				},
+				{
+					"Vendor": "CPM",
+					"_index": "13"
+				},
+				{
+					"Vendor": "Desitin",
+					"_index": "14"
+				},
+				{
+					"Vendor": "Dragenopharm",
+					"_index": "15"
+				},
+				{
+					"Vendor": "DSM Centriont",
+					"_index": "16"
+				},
+				{
+					"Vendor": "DSM Sinochem / Biopharma",
+					"_index": "17"
+				},
+				{
+					"Vendor": "DSM Sinochem / Haupt Latina",
+					"_index": "18"
+				},
+				{
+					"Vendor": "DSM Sinochem / Pencef",
+					"_index": "19"
+				},
+				{
+					"Vendor": "EVA Pharma",
+					"_index": "20"
+				},
+				{
+					"Vendor": "Excella",
+					"_index": "21"
+				},
+				{
+					"Vendor": "Fairmed",
+					"_index": "22"
+				},
+				{
+					"Vendor": "Fresenius Kabi Austria",
+					"_index": "23"
+				},
+				{
+					"Vendor": "GE / Tiefenbacher / Meda",
+					"_index": "24"
+				},
+				{
+					"Vendor": "Gedeon Richter",
+					"_index": "25"
+				},
+				{
+					"Vendor": "GeneriNobel",
+					"_index": "26"
+				},
+				{
+					"Vendor": "Haupt MÃ¼nster",
+					"_index": "27"
+				},
+				{
+					"Vendor": "Haupt Pharma Berlin",
+					"_index": "28"
+				},
+				{
+					"Vendor": "Helm AG / Idipharm",
+					"_index": "29"
+				},
+				{
+					"Vendor": "Helm AG / Lohmann",
+					"_index": "30"
+				},
+				{
+					"Vendor": "Hermes",
+					"_index": "31"
+				},
+				{
+					"Vendor": "Hetero Labs Limited",
+					"_index": "32"
+				},
+				{
+					"Vendor": "Indoco",
+					"_index": "33"
+				},
+				{
+					"Vendor": "Indoco/Baddi",
+					"_index": "34"
+				},
+				{
+					"Vendor": "Intas",
+					"_index": "35"
+				},
+				{
+					"Vendor": "IPCA",
+					"_index": "36"
+				},
+				{
+					"Vendor": "Lacer, S.A",
+					"_index": "37"
+				},
+				{
+					"Vendor": "Lichtenheldt GmbH",
+					"_index": "38"
+				},
+				{
+					"Vendor": "Macleods",
+					"_index": "39"
+				},
+				{
+					"Vendor": "Medis",
+					"_index": "40"
+				},
+				{
+					"Vendor": "Medis / Actavis Malta",
+					"_index": "41"
+				},
+				{
+					"Vendor": "Medis / BALKANPHARMA DUPNITSA AD",
+					"_index": "42"
+				},
+				{
+					"Vendor": "Medis / Pliva Hrvatska",
+					"_index": "43"
+				},
+				{
+					"Vendor": "mibe",
+					"_index": "44"
+				},
+				{
+					"Vendor": "Midas / CPM",
+					"_index": "45"
+				},
+				{
+					"Vendor": "Midas / Osmopharm",
+					"_index": "46"
+				},
+				{
+					"Vendor": "Midas / Sofarimex",
+					"_index": "47"
+				},
+				{
+					"Vendor": "Nordmark",
+					"_index": "48"
+				},
+				{
+					"Vendor": "Oman Pharma",
+					"_index": "49"
+				},
+				{
+					"Vendor": "Pharmanel",
+					"_index": "50"
+				},
+				{
+					"Vendor": "Pharmathen",
+					"_index": "51"
+				},
+				{
+					"Vendor": "Pharmathen, Pallini",
+					"_index": "52"
+				},
+				{
+					"Vendor": "Pharmathen, Sapes",
+					"_index": "53"
+				},
+				{
+					"Vendor": "Pharmathen/Balkanpharma",
+					"_index": "54"
+				},
+				{
+					"Vendor": "Pharmathen/JGL",
+					"_index": "55"
+				},
+				{
+					"Vendor": "Polpharma",
+					"_index": "56"
+				},
+				{
+					"Vendor": "PS Pharma Service / Dewelco",
+					"_index": "57"
+				},
+				{
+					"Vendor": "repack",
+					"_index": "58"
+				},
+				{
+					"Vendor": "Rottendorf",
+					"_index": "59"
+				},
+				{
+					"Vendor": "SK Pharma Logistics GmbH",
+					"_index": "60"
+				},
+				{
+					"Vendor": "SMB",
+					"_index": "61"
+				},
+				{
+					"Vendor": "Steiner",
+					"_index": "62"
+				},
+				{
+					"Vendor": "Synthon",
+					"_index": "63"
+				},
+				{
+					"Vendor": "Terix Labs LTd.",
+					"_index": "64"
+				},
+				{
+					"Vendor": "Tiefenbacher / Cipla",
+					"_index": "65"
+				},
+				{
+					"Vendor": "Tiefenbacher / Rompharm",
+					"_index": "66"
+				},
+				{
+					"Vendor": "TPL Baddi",
+					"_index": "67"
+				},
+				{
+					"Vendor": "TPL Dahej",
+					"_index": "68"
+				},
+				{
+					"Vendor": "TPL Indrad",
+					"_index": "69"
+				},
+				{
+					"Vendor": "Welding / Abdi",
+					"_index": "70"
+				},
+				{
+					"Vendor": "Welding / Bluepharma",
+					"_index": "71"
+				},
+				{
+					"Vendor": "Welding / Klocke / SK Chemicals",
+					"_index": "72"
+				},
+				{
+					"Vendor": "Welding / Natco",
+					"_index": "73"
+				},
+				{
+					"Vendor": "Wiewelhove",
+					"_index": "74"
+				}
+			]
+		}
+	}
+}

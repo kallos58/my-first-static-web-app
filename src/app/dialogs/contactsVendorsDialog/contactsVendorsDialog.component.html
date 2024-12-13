@@ -1,0 +1,14 @@
+<h4>{{dialogTitle}}</h4>
+<form >
+  <label for="Vendor">Vendor:</label><br>
+  <input 
+    [ngModelOptions]="{standalone: true}" 
+    [(ngModel)]="currentItem['Vendor']" 
+    class="formControl" 
+    type="text" 
+    id="Vendor" 
+    name="Vendor"/><br><br>
+  <br><br>
+  <button class="formButton" (click)="save()">Speichern</button>
+  <button class="formButton" (click)="close()">Abbrechen</button>
+</form>

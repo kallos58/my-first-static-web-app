@@ -1,0 +1,22 @@
+<h4>{{dialogTitle}}</h4>
+<form >
+    <label for="abbreviation">Abbreviation:</label><br>
+    <input 
+    [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]="currentItem['abbreviation']"
+        class="formControl" 
+        type="text" 
+        id="abbreviation" 
+        name="abbreviation"/><br><br>
+    <label for="content">Content:</label><br>
+    <input 
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]="currentItem['content']"
+        class="formControl" 
+        type="text" 
+        id="content" 
+        name="content"/><br><br>
+    <br><br>
+    <button class="formButton" (click)="save()">Speichern</button>
+    <button class="formButton" (click)="close()">Abbrechen</button>
+</form>

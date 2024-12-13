@@ -6,181 +6,179 @@
       *ngIf="index!=0" 
       class="iconDel" 
       (click)="filterData()"
+      title="Daten filtern"
       src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" />
     <img 
       *ngIf="index!=0" 
       class="iconDel" 
       (click)="clearFilter()"
+      title="Filter löschen"
       src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-8/24/018_311_insignia_cross_emblem-64.png" />
     <img 
       *ngIf="index!=0" 
       (click)="newEntry()"
       class="iconDel" 
+      title="Neuer Eintrag"
       src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_add-64.png" />
   </div>
   <main class="main" >
     
     <mat-tab-group (selectedTabChange)="changeTab($event)">
       <mat-tab label="Home"> 
-          <app-home></app-home>
+        <h3 class="heumannapp">Heumann App</h3>
       </mat-tab>
       <mat-tab label="Abbreviations"> 
         <div class="tableDiv">
-          <table>
-            <tbody>
-
-              <tr>
-                <th>Abbreviation
-                  <span class="pointer fs24" [style]="setColor(1)" (click)="sortAbbreviations(1)">  &#x25b4;</span>
-                  <span class="pointer fs24" [style]="setColor(2)" (click)="sortAbbreviations(2)">  &#x25be;</span>
-                </th>
-                <th>Content
-                  <span class="pointer fs24" [style]="setColor(3)" (click)="sortAbbreviations(3)">  &#x25b4;</span>
-                  <span class="pointer fs24" [style]="setColor(4)" (click)="sortAbbreviations(4)">  &#x25be;</span>
-                </th>
-                <th></th>
-                <th></th>
-              </tr>
-              <tr *ngFor='let item of abbreviations'>
-                <td>{{item.name}}</td>
-                <td>{{item.description}}</td>
-                <td>
-                  <img 
-                    (click)="editAbbreviation(item)"
-                    title="Eintrag bearbeiten" 
-                    class="iconDel" 
-                    src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>
-                </td>
-                <td>
-                  <img 
-                    (click)="deleteAbbreviation(item)"
-                    title="Eintrag löschen"  
-                    class="iconDel" 
-                    src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
-              </tr>
-
-            </tbody>
-          </table>
+          <div class="tableDiv">
+            <app-data-table  
+              (childEdit)="emitEdit($event)" 
+              (childDelete)="emitDelete($event)" 
+              [tableData]="tableData" 
+              [headers]="headers" 
+              [cols]="cols">
+            </app-data-table>
+          </div>
         </div>
       </mat-tab>
       <mat-tab label="CMO Master"> 
         <div class="tableDiv">
-          <table>
-            <tbody>
-
-              <tr>
-                <th>API Manufacturer
-                  <span class="pointer fs24" [style]="setColor(1)" (click)="sortCMOMaster(1)">  &#x25b4;</span>
-                  <span class="pointer fs24" [style]="setColor(2)" (click)="sortCMOMaster(2)">  &#x25be;</span>
-                </th>
-                <th>Manufacturer
-                  <span class="pointer fs24" [style]="setColor(3)" (click)="sortCMOMaster(3)">  &#x25b4;</span>
-                  <span class="pointer fs24" [style]="setColor(4)" (click)="sortCMOMaster(4)">  &#x25be;</span>
-                </th>
-                <th>Release site
-                  <span class="pointer fs24" [style]="setColor(5)" (click)="sortCMOMaster(5)">  &#x25b4;</span>
-                  <span class="pointer fs24" [style]="setColor(6)" (click)="sortCMOMaster(6)">  &#x25be;</span>
-                </th>
-                <th>Category
-                  <span class="pointer fs24" [style]="setColor(7)" (click)="sortCMOMaster(7)">  &#x25b4;</span>
-                  <span class="pointer fs24" [style]="setColor(8)" (click)="sortCMOMaster(8)">  &#x25be;</span>
-                </th>
-                <th></th>
-                <th></th>
-              </tr>
-              <tr *ngFor='let item of cmomasters'>
-                <td>{{item.categoryId}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.sku}}</td>
-                <td>
-                  <img 
-                    (click)="editAbbreviation(item)"
-                    title="Eintrag bearbeiten" 
-                    class="iconDel" 
-                    src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>
-                </td>
-                <td>
-                  <img 
-                    (click)="deleteAbbreviation(item)"
-                    title="Eintrag löschen"  
-                    class="iconDel" 
-                    src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
-              </tr>
-
-            </tbody>
-          </table>
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
         </div>
       </mat-tab>
-      <mat-tab label="Settings">  
-        <div>Einstellungen</div>
+      <mat-tab label="SCM Priority Release Report">  
+        <div class="tableDiv">
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Contacts - Kontakte"> 
+        <div class="tableDiv">
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Contacts - Vendors"> 
+        <div class="tableDiv">
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Contacts - Skus"> 
+        <div class="tableDiv">
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="SAP FG Material"> 
+        <div class="tableDiv">
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Batch Release Overview"> 
+        <div class="tableDiv">
+          <app-data-table  
+            (childEdit)="emitEdit($event)" 
+            (childDelete)="emitDelete($event)" 
+            [tableData]="tableData" 
+            [headers]="headers" 
+            [cols]="cols">
+          </app-data-table>
+        </div>
       </mat-tab>
     </mat-tab-group>
   </main>
 
-  <dialog #abbreviationDialog class="dialog">
-    <h4>{{dialogTitle}}</h4>
-    <form >
-      <label for="abbreviation">Abbreviation:</label><br>
-      <input 
-        [ngModelOptions]="{standalone: true}" 
-        [(ngModel)]='name' 
-        class="formControl" 
-        type="text" 
-        id="abbreviation" 
-        name="abbreviation"/><br><br>
-        <label for="content">Content:</label><br>
-        <input 
-          [ngModelOptions]="{standalone: true}" 
-          [(ngModel)]='description' 
-          class="formControl" 
-          type="text" 
-          id="content" 
-          name="content"/><br><br>
-      <br><br>
-      <button class="formButton" (click)="saveAbbreviation()">Speichern</button>
-      <button class="formButton" (click)="abbreviationDialog.close()">Abbrechen</button>
-    </form>
+  <dialog #abbreviationDialog class="dialog abbr">
+    <abbreviation-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </abbreviation-dialog>
   </dialog>
 
-  <dialog #cmoMasterDialog class="dialog">
-    <h4>{{dialogTitle}}</h4>
-    <form >
-      <label for="apimanufacturer">API Manufacturer:</label><br>
-      <input 
-        [ngModelOptions]="{standalone: true}" 
-        [(ngModel)]='categoryId' 
-        class="formControl" 
-        type="text" 
-        id="apimanufacturer" 
-        name="apimanufacturer"/><br>
-        <label for="manufacturer">Manufacturer:</label><br>
-        <input 
-          [ngModelOptions]="{standalone: true}" 
-          [(ngModel)]='name' 
-          class="formControl" 
-          type="text" 
-          id="manufacturer" 
-          name="manufacturer"/>
-          <label for="releasesite">Release site:</label><br>
-          <input 
-            [ngModelOptions]="{standalone: true}" 
-            [(ngModel)]='description' 
-            class="formControl" 
-            type="text" 
-            id="releasesite" 
-            name="releasesite"/>
-            <label for="category">Category:</label><br>
-            <input 
-              [ngModelOptions]="{standalone: true}" 
-              [(ngModel)]='sku' 
-              class="formControl" 
-              type="text" 
-              id="category" 
-              name="category"/><br><br>
-      <br><br>
-      <button class="formButton" (click)="saveAbbreviation()">Speichern</button>
-      <button class="formButton" (click)="cmoMasterDialog.close()">Abbrechen</button>
-    </form>
+  <dialog #cmomasterDialog class="dialog cmomasterDialog">
+    <cmomaster-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </cmomaster-dialog>
   </dialog>
-  
+
+  <dialog #scmDialog class="dialog scmDialog">
+    <scm-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </scm-dialog>    
+  </dialog>
+
+  <dialog #contactsKontakteDialog class="dialog contactsKontakteDialog">
+    <contactsKontakte-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </contactsKontakte-dialog>    
+  </dialog>
+
+  <dialog #contactsVendorsDialog class="dialog abbr">
+    <contactsVendors-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </contactsVendors-dialog>    
+  </dialog>
+
+  <dialog #contactsSkusDialog class="dialog abbr">
+    <contactsSkus-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </contactsSkus-dialog>    
+  </dialog>
+
+  <dialog #SAPMaterialDialog class="dialog abbr">
+    <sapmaterial-dialog 
+      (childSave)="emitSave(index)" 
+      (childCancel)="emitCancel(index)" 
+      [currentItem]="currentItem"
+      [dialogTitle]="dialogTitle">
+    </sapmaterial-dialog>    
+  </dialog>

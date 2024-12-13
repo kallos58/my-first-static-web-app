@@ -50,7 +50,7 @@ table {
     font-size: 24px;
   }
   
-  dialog {
+  .dialog {
     background-color: rgb(232,232,232);
     color: black;
     border-color: gray;
@@ -58,15 +58,33 @@ table {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 0 20px 8px #d0d0d0;
-    height: 32em;
-    width: 32em;
  }
 
- .filterBar {
+.abbrDialog {
+    height: 32em;
+    width: 32em;
+}
+
+.scmDialog {
+  height: 32em;
+  width: 48em;
+}
+
+.contactsKontakteDialog {
+  height: 36em;
+  width: 28em;
+}
+
+.cmomasterDialog {
+  height: 32em;
+  width: 24em;
+}
+
+.filterBar {
     font-family: arial, sans-serif;
     font-size: 14px;
     padding-left: 1em;
-    background-color: rgb(232,232,232);
+    background-color: rgba(232, 232, 232, 0.538);
     color: black;
     border-color: gray;
     border-radius: 5px;
@@ -75,3 +93,98 @@ table {
     padding-top: 0.5em; 
     height: 2em; width: 100%;
  }
+
+ .flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 0.5em;
+}
+
+
+
+.flex-container > div {
+  width: 50%;
+  height: 1em;
+  font-size: 14px;
+}
+
+.flex-container-1 {
+  display: flex;
+  align-items: stretch;
+  height: 1.5em;
+}
+
+.flex-container-2 {
+  display: flex;
+  align-items: stretch;
+  height: 1.5em;
+}
+
+.flex-container-3 {
+  display: flex;
+  align-items: stretch;
+  height: 1.5em;
+}
+
+.flex-container-1 > div {
+  width: 50%;
+  text-align: left;
+  line-height:90%;
+  font-size: 14px;
+}
+
+.flex-container-2 > div {
+  width: 33%;
+  text-align: left;
+  line-height:90%;
+  font-size: 14px;
+}
+
+.flex-container-3 > div {
+  
+  width: 50%;
+  text-align: left;
+  line-height:90%;
+  font-size: 14px;
+}
+
+.flex-container-4 > .div1 {
+  
+  width: 100%;
+  text-align: left;
+  line-height:90%;
+  font-size: 14px;
+}
+
+.flex-container-4 > .div2 {
+  
+  width: 25%;
+  text-align: left;
+  line-height:90%;
+  font-size: 14px;
+}
+
+.iflex1 {
+  margin-top: -5px; 
+  width: 95%;
+}
+
+.iflex2 {
+  margin-top: -5px; 
+  width: 85%;
+}
+
+.iflex3 {
+  margin-top: -5px; 
+  width: 90%;
+}
+
+.iflex4 {
+  margin-top: -5px; 
+  width: 190%;
+}
+
+.heumannapp {
+  margin-top: 5em;
+  margin-left: 5em;
+}

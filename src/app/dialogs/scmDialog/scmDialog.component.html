@@ -1,0 +1,99 @@
+<h4>{{dialogTitle}}</h4>
+    <div class="flex-container-1">
+      <div><label>Material code</label></div>
+      <div><label>Material description</label></div>
+    </div>
+    <div class="flex-container-1">
+      <div><input [(ngModel)]="currentItem['Heumann_material_code_1']" class="iflex1"/></div>
+      <div><input [(ngModel)]="currentItem['Material_Description']" class="iflex1"/></div> 
+    </div>
+    <div class="flex-container-1">
+      <div><label>Molecule</label></div>
+      <div><label>Molecule strength</label></div> 
+    </div>
+    <div class="flex-container-1">
+      <div><input [(ngModel)]="currentItem['Molecule']" class="iflex1"/></div>
+      <div><input [(ngModel)]="currentItem['molecule_strength']" class="iflex1"/></div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+        <div><label>ABC cat.</label></div>
+        <div><label>Lab</label></div>
+        <div><label>SCM</label></div>
+      </div>
+      <div  class="flex-container-2">
+        <div><label>RA</label></div>
+        <div><label>QP</label></div>
+        <div><label>QA</label></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+      <div><input [(ngModel)]="currentItem['ABC_category']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['lab']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['SCM']" class="iflex2"/></div>
+      </div>
+      <div  class="flex-container-2">
+      <div><input [(ngModel)]="currentItem['RA']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['QP']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['QA']" class="iflex2"/></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-3">
+        <div><label>Exp. release date</label></div>
+        <div><label>Priority</label></div>
+      </div>
+      <div  class="flex-container-1">
+        <div><label>Comment</label></div>  
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-3">
+      <div><input [(ngModel)]="currentItem['expected_release_date']" class="iflex3"/></div>
+      <div><input [(ngModel)]="currentItem['priority']" class="iflex3"/></div>
+      </div>
+      <div  class="flex-container">
+        <div><input [(ngModel)]="currentItem['comment_release_prio_meeting']" class="iflex4"/></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+        <div><label>Ma No.</label></div>
+        <div><label>Region</label></div>
+        <div><label>Source</label></div>
+      </div>
+      <div  class="flex-container">
+        <div><label>Vendor</label></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+        <div><input [(ngModel)]="currentItem['MA_no']" class="iflex2"/></div>
+        <div><input [(ngModel)]="currentItem['region']" class="iflex2"/></div>
+        <div><input [(ngModel)]="currentItem['source']" class="iflex2"/></div>
+      </div>
+      <div  class="flex-container">
+        <div><input [(ngModel)]="currentItem['vendor']" class="iflex4"/></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+        <div><label>OTC</label></div>
+        <div><label>TPM/TPL</label></div>
+      </div>
+     
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+        <div><input [(ngModel)]="currentItem['OTC']" class="iflex2"/></div>
+        <div><input [(ngModel)]="currentItem['TPM_TPL']" class="iflex2"/></div>
+      </div>
+      
+    </div>   
+    <br><br>
+    <button class="formButton" (click)="save()">Speichern</button>
+    <button class="formButton" (click)="close()">Abbrechen</button>
+
+
+ 

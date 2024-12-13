@@ -1,0 +1,51 @@
+<h4>{{dialogTitle}}</h4>
+    <form >
+      <label for="matdescr">SAP Mat. Description:</label><br>
+      <input 
+        style="width: 20em;"
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]="currentItem['SAP_Mat_Description']" 
+        class="formControl" 
+        type="text" 
+        id="matdescr" 
+        name="matdescr"/><br><br>
+      <label for="api">API:</label><br>
+      <input 
+        style="width: 20em;"
+        [ngModelOptions]="{standalone: true}" 
+        [(ngModel)]="currentItem['API']"
+        class="formControl" 
+        type="text" 
+        id="api" 
+        name="api"/><br><br>
+        <label for="pzn">PZN:</label><br>
+        <input  
+          style="width: 20em;"
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="currentItem['PZN']" 
+          class="formControl" 
+          type="text" 
+          id="pzn" 
+          name="Category"/><br><br>
+        <label for="sapmatno">SAP Mat. No.:</label><br>
+        <input 
+          style="width: 20em;"
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="currentItem['SAP_Mat_Nr']"
+          class="formControl" 
+          type="text" 
+          id="sapmatno" 
+          name="sapmatno"/><br><br>
+        <label for="vendor">Vendor:</label><br>
+        <input 
+          style="width: 20em;"
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="currentItem['Vendor']"
+          class="formControl" 
+          type="text" 
+          id="vendor" 
+          name="vendor"/><br><br>
+      <br><br>
+      <button class="formButton" (click)="save()">Speichern</button>
+      <button class="formButton" (click)="close()">Abbrechen</button>
+    </form>

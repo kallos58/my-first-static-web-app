@@ -1,0 +1,44 @@
+<table>
+    <tbody>
+      <tr>
+        <th *ngIf="getCol(0)">{{getColHeader(0)}}
+          <span class="pointer fs24" [style]="setColor(1)" (click)="sortTableData(1)">  &#x25b4;</span>
+          <span class="pointer fs24" [style]="setColor(2)" (click)="sortTableData(2)">  &#x25be;</span>
+        </th>
+        <th *ngIf="getCol(1)">{{getColHeader(1)}}
+            <span class="pointer fs24" [style]="setColor(3)" (click)="sortTableData(1)">  &#x25b4;</span>
+            <span class="pointer fs24" [style]="setColor(4)" (click)="sortTableData(2)">  &#x25be;</span>
+        </th>
+        <th *ngIf="getCol(2)">{{getColHeader(2)}}
+            <span class="pointer fs24" [style]="setColor(5)" (click)="sortTableData(1)">  &#x25b4;</span>
+            <span class="pointer fs24" [style]="setColor(6)" (click)="sortTableData(2)">  &#x25be;</span>
+        </th>
+        <th *ngIf="getCol(3)">{{getColHeader(3)}}
+            <span class="pointer fs24" [style]="setColor(7)" (click)="sortTableData(1)">  &#x25b4;</span>
+            <span class="pointer fs24" [style]="setColor(8)" (click)="sortTableData(2)">  &#x25be;</span>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor='let item of tableData'>
+        <td *ngIf="getCol(0)">{{item.field1}}</td>
+        <td *ngIf="getCol(1)">{{item.field2}}</td>
+        <td *ngIf="getCol(2)">{{item.field3}}</td>
+        <td *ngIf="getCol(3)">{{item.field4}}</td>
+        <td>
+          <img 
+            (click)="editItem(item)"
+            title="Eintrag bearbeiten" 
+            class="iconDel" 
+            src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>
+        </td>
+        <td>
+          <img 
+            (click)="deleteItem(item)"
+            title="Eintrag löschen"  
+            class="iconDel" 
+            src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
+      </tr>
+
+    </tbody>
+  </table>

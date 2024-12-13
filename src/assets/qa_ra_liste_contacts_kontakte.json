@@ -1,0 +1,511 @@
+{
+	"data": {
+		"columns": {
+			"Lieferant": {
+				"_index": "1",
+				"__text": "Lieferant"
+			},
+			"Position_1": {
+				"_index": "3",
+				"__text": "Position_1"
+			},
+			"Position_2": {
+				"_index": "5",
+				"__text": "Position_2"
+			},
+			"QA_Kontakt_Mail": {
+				"_index": "4",
+				"__text": "QA Kontakt-Mail"
+			},
+			"SCM_Kontakt": {
+				"_index": "2",
+				"__text": "SCM Kontakt"
+			},
+			"weitere_QA_Kontakte": {
+				"_index": "6",
+				"__text": "weitere QA Kontakte"
+			}
+		},
+		"records": {
+			"record": [
+				{
+					"Lieferant": "Abanta Pharma",
+					"Position_1": "Managing Director",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "doris.hilbig@law-gmbh.com",
+					"SCM_Kontakt": "holger.frey@law-gmbh.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "1"
+				},
+				{
+					"Lieferant": "Abdi Ibrahim",
+					"Position_1": "Manager Licensing",
+					"Position_2": "Quality Assurance GMP Compliance Specialist",
+					"QA_Kontakt_Mail": "merve.goktas@abdiibrahim.com.tr",
+					"SCM_Kontakt": "ece.akbiyik@abdiibrahim.com.tr",
+					"weitere_QA_Kontakte": "gizem.tasgin@abdiibrahim.com.tr",
+					"_index": "2"
+				},
+				{
+					"Lieferant": "Acino",
+					"Position_1": "Head of Licensing",
+					"Position_2": "QA-Manager",
+					"QA_Kontakt_Mail": "Rolando.Ramanzina@acino.swiss",
+					"SCM_Kontakt": "Sibylle.Graf@acino.swiss",
+					"weitere_QA_Kontakte": "",
+					"_index": "3"
+				},
+				{
+					"Lieferant": "Adamed",
+					"Position_1": "Director Licensing",
+					"Position_2": "Customer Specialist",
+					"QA_Kontakt_Mail": "Joanna.Szczecinska@adamed.com",
+					"SCM_Kontakt": "sebastian.gromek@adamed.com",
+					"weitere_QA_Kontakte": "agnieszka.oszczypko@adamed.com.pl",
+					"_index": "4"
+				},
+				{
+					"Lieferant": "ADL Pharma",
+					"Position_1": "Managing Director",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "z.spoljar@adlgmbh.com",
+					"SCM_Kontakt": "leitung@adlgmbh.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "5"
+				},
+				{
+					"Lieferant": "Advance (Aristo)",
+					"Position_1": "Manager SCM",
+					"Position_2": "Leitung Qualitätssicherung",
+					"QA_Kontakt_Mail": "V.Olivier@advance-pharma-berlin.de",
+					"SCM_Kontakt": "I.BarrientosRojas@advance-pharma-berlin.de",
+					"weitere_QA_Kontakte": "",
+					"_index": "6"
+				},
+				{
+					"Lieferant": "Alembic",
+					"Position_1": "Head of SCM",
+					"Position_2": "Head - Site Quality Assurance",
+					"QA_Kontakt_Mail": "kishor.pachpor@alembic.co.in",
+					"SCM_Kontakt": "s.muthiah@alembic.co.in",
+					"weitere_QA_Kontakte": "",
+					"_index": "7"
+				},
+				{
+					"Lieferant": "Alkem",
+					"Position_1": "Head of SCM",
+					"Position_2": "QA",
+					"QA_Kontakt_Mail": "mdragib.ehsan@alkem.com",
+					"SCM_Kontakt": "sujit.sakpal@alkem.com",
+					"weitere_QA_Kontakte": "mahipal.tomar@alkem.com; rakesh.desai@alkem.com; veerasekaran@alkem.com",
+					"_index": "8"
+				},
+				{
+					"Lieferant": "Alvogen",
+					"Position_1": "Director BD",
+					"Position_2": "Lotus site quality manager/ auditor",
+					"QA_Kontakt_Mail": "radick.wang@lotuspharm.com; Martin.Paunov@alvogen.com",
+					"SCM_Kontakt": "arni.baldursson@alvogen.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "9"
+				},
+				{
+					"Lieferant": "Chanelle",
+					"Position_1": "Manager Customer Service",
+					"Position_2": "Senior QA Compliance Manager/QP",
+					"QA_Kontakt_Mail": "Sainath Reddy sreddy@chanellegroup.ie",
+					"SCM_Kontakt": "kdolan@chanellegroup.ie",
+					"weitere_QA_Kontakte": "asweeney@chanellegroup.ie",
+					"_index": "10"
+				},
+				{
+					"Lieferant": "CHEMO/Liconsa",
+					"Position_1": "Head of FDF Europe",
+					"Position_2": "Deputy Qualified Person",
+					"QA_Kontakt_Mail": "Maria.Arribas@chemogroup.com",
+					"SCM_Kontakt": "Ignacio.Ortega@chemogroup.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "11"
+				},
+				{
+					"Lieferant": "Cinfa",
+					"Position_1": "Head of Manufacturing",
+					"Position_2": "Leitung Qualitätssicherung",
+					"QA_Kontakt_Mail": "pgarisoain@cinfa.com",
+					"SCM_Kontakt": "ignacio.marco@cinfa.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "12"
+				},
+				{
+					"Lieferant": "CPM (AENOVA)",
+					"Position_1": "Head of SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "Christine.Schmid@aenova-group.com",
+					"SCM_Kontakt": "helge.werner@aenova-group.com",
+					"weitere_QA_Kontakte": "Bernhard.Adamitsch@aenova-group.com; Zentrale.CPM@aenova-group.com",
+					"_index": "13"
+				},
+				{
+					"Lieferant": "Desitin",
+					"Position_1": "Manager Purchasing",
+					"Position_2": "Head of Quality Management",
+					"QA_Kontakt_Mail": "kruggel@desitin.de",
+					"SCM_Kontakt": "bornmueller@desitin.de",
+					"weitere_QA_Kontakte": "",
+					"_index": "14"
+				},
+				{
+					"Lieferant": "Douglas",
+					"Position_1": "Head of Europe",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "lorrainee@douglas.co.nz",
+					"SCM_Kontakt": "lisac@douglas.co.nz",
+					"weitere_QA_Kontakte": "PhilomenaF@douglas.co.nz",
+					"_index": "15"
+				},
+				{
+					"Lieferant": "Dragenopharm (AENOVA)",
+					"Position_1": "Director Sales",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "Stefan.Kallinger@aenova-group.com",
+					"SCM_Kontakt": "Dietmar.Exner@aenova-group.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "16"
+				},
+				{
+					"Lieferant": "DSM (Centrient)",
+					"Position_1": "CCO FDF",
+					"Position_2": "Director Drug Management and Projects",
+					"QA_Kontakt_Mail": "driaan.botha@centrient.com",
+					"SCM_Kontakt": "maarten.pouw@centrien.com",
+					"weitere_QA_Kontakte": "benedicte.hubrecht@centrient.com; jaroslaw.mazgalski@centrient.com; nina.sommer@centrient.com",
+					"_index": "17"
+				},
+				{
+					"Lieferant": "EVA Pharma",
+					"Position_1": "Manager Licensing",
+					"Position_2": "Toll Manufacturing Manager",
+					"QA_Kontakt_Mail": "nermine.eyssa@evapharma.com",
+					"SCM_Kontakt": "nicolas.boege@Evapharma.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "18"
+				},
+				{
+					"Lieferant": "Excella",
+					"Position_1": "Manager CRM",
+					"Position_2": "Specialist Quality Assurance Pharma/ CMC",
+					"QA_Kontakt_Mail": "CHambach.excella@fareva.com",
+					"SCM_Kontakt": "KGasteiger.excella@fareva.com",
+					"weitere_QA_Kontakte": "bhoffmann.excella@fareva.com",
+					"_index": "19"
+				},
+				{
+					"Lieferant": "Fairmed",
+					"Position_1": "Manager SCM",
+					"Position_2": "Head Quality Assurance",
+					"QA_Kontakt_Mail": "t.rumke@fair-med.com.",
+					"SCM_Kontakt": "j.versely@fair-med.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "20"
+				},
+				{
+					"Lieferant": "Fresenius Kabi Austria",
+					"Position_1": "Manager Customer Service",
+					"Position_2": "Director of Quality Assurance",
+					"QA_Kontakt_Mail": "doris.enickl@fresenius-kabi.com",
+					"SCM_Kontakt": "Evelyn.Aigner@fresenius-kabi.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "21"
+				},
+				{
+					"Lieferant": "Gedeon Richter",
+					"Position_1": "Manger Export",
+					"Position_2": "Qualified Person",
+					"QA_Kontakt_Mail": "An.Magyar@richter.hu",
+					"SCM_Kontakt": "Stefan.Jung@gedeonrichter.de",
+					"weitere_QA_Kontakte": "i.peter@richter.hu",
+					"_index": "22"
+				},
+				{
+					"Lieferant": "GeneriNobel",
+					"Position_1": "Managing Director",
+					"Position_2": "Quality Assurance Chief",
+					"QA_Kontakt_Mail": "filiz.koc@nobel.com.tr",
+					"SCM_Kontakt": "w.baeurle@generinobel.com",
+					"weitere_QA_Kontakte": "ugur.dilmen@nobel.com; nuray.korkmaz@nobel.com.tr",
+					"_index": "23"
+				},
+				{
+					"Lieferant": "Haupt MÃ¼nster (AENOVA)",
+					"Position_1": "Manager Customer Service",
+					"Position_2": "Ass. HoM",
+					"QA_Kontakt_Mail": "Annkathrin.Boedeker@aenova-group.com",
+					"SCM_Kontakt": "Nadja.Rachner@aenova-group.com",
+					"weitere_QA_Kontakte": "Bernhard.Adamitsch@aenova-group.com",
+					"_index": "24"
+				},
+				{
+					"Lieferant": "Haupt Pharma Berlin (AENOVA)",
+					"Position_1": "Director Sales",
+					"Position_2": "Head of Quality Assurance",
+					"QA_Kontakt_Mail": "Susanne.Loge@aenova-group.com",
+					"SCM_Kontakt": "Dietmar.Exner@aenova-group.com",
+					"weitere_QA_Kontakte": "Bernhard.Adamitsch@aenova-group.com; Petra.Blankenhorn@aenova-group.com",
+					"_index": "25"
+				},
+				{
+					"Lieferant": "Helm AG (LTS/Idipharm)",
+					"Position_1": "Manager Order Handling",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "katrin.stahlke@helmag.com",
+					"SCM_Kontakt": "t.beecken@helmag.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "26"
+				},
+				{
+					"Lieferant": "Hermes",
+					"Position_1": "Manager Customer Service",
+					"Position_2": "Mitarbeiterin Qualitätssicherung",
+					"QA_Kontakt_Mail": "Mika.Scheler@hermes-arzneimittel.com",
+					"SCM_Kontakt": "Carola.Ziegler@hermes-pharma.com",
+					"weitere_QA_Kontakte": "Daniela.Wagner@hermes-pharma.com",
+					"_index": "27"
+				},
+				{
+					"Lieferant": "Hetero Labs Limited",
+					"Position_1": "Head of SCM",
+					"Position_2": "Regulatory Affairs Director/QPPV",
+					"QA_Kontakt_Mail": "frederik.koopmans@heteroeurope.com",
+					"SCM_Kontakt": "npsarma.g@heterodrugs.com",
+					"weitere_QA_Kontakte": "Swarupa.P@heterodrugs.com",
+					"_index": "28"
+				},
+				{
+					"Lieferant": "Indoco",
+					"Position_1": "Jt. Managing Director",
+					"Position_2": "QA-Manager",
+					"QA_Kontakt_Mail": "Anant Sawant <anant.sawant@indoco.com>",
+					"SCM_Kontakt": "svb@indoco.com",
+					"weitere_QA_Kontakte": "Jaydeep Vidhate <jaydeep.vidhate@indoco.com>\nkiran.rumde@indoco.com\ndk.patil@indoco.com",
+					"_index": "29"
+				},
+				{
+					"Lieferant": "Intas",
+					"Position_1": "Head of SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "sandip trivedi@intaspharma.com",
+					"SCM_Kontakt": "jgarcia@intaspharma.com",
+					"weitere_QA_Kontakte": "CQA_Vendor@intaspharma.com",
+					"_index": "30"
+				},
+				{
+					"Lieferant": "IPCA",
+					"Position_1": "Head of SCM",
+					"Position_2": "General Manager - Q.A.",
+					"QA_Kontakt_Mail": "jyothi.vishwanath@ipca.com",
+					"SCM_Kontakt": "pranay.godha@ipca.com",
+					"weitere_QA_Kontakte": "dilip.kasundra@ipca.com; swati.naik@ipca.com\ntejaswini.nayak@ipca.com",
+					"_index": "31"
+				},
+				{
+					"Lieferant": "Lacer (Efarmes)",
+					"Position_1": "Managing Director",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "",
+					"SCM_Kontakt": "javier.lerin@efarmes.es",
+					"weitere_QA_Kontakte": "Fors Camp, Jordi <jordi.fors@lacer.es>",
+					"_index": "32"
+				},
+				{
+					"Lieferant": "Lichtenheldt GmbH",
+					"Position_1": "Managing Director",
+					"Position_2": "Qualitätssicherung",
+					"QA_Kontakt_Mail": "mebel@lichtenheldt.de",
+					"SCM_Kontakt": "tziegler@lichtenheldt.de",
+					"weitere_QA_Kontakte": "Teuteberg, Carsten <cteuteberg@lichtenheldt.de>",
+					"_index": "33"
+				},
+				{
+					"Lieferant": "Macleods",
+					"Position_1": "Manager SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "nishata@macleodspharma.com",
+					"SCM_Kontakt": "AnkurJ@macleodspharma.com",
+					"weitere_QA_Kontakte": "rnd@macleodspharma.com",
+					"_index": "34"
+				},
+				{
+					"Lieferant": "Medis (Actavis/Balkanpharma/Pliva)",
+					"Position_1": "Manger BD",
+					"Position_2": "Office Coordinator",
+					"QA_Kontakt_Mail": "ingibjorgk@medis.is",
+					"SCM_Kontakt": "Sigurdurd@medis.is",
+					"weitere_QA_Kontakte": "silvija.rimaj@pliva.com; elton.gatt@actavis.com; ana.dimitrova@actavis.com",
+					"_index": "35"
+				},
+				{
+					"Lieferant": "mibe",
+					"Position_1": "Manager Customer Service",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "heike.schenk@mibegmbh.de",
+					"SCM_Kontakt": "Martin.Renner@dermapharm.com",
+					"weitere_QA_Kontakte": "Ruch, Daniela <Daniela.Ruch@dermapharm.com>",
+					"_index": "36"
+				},
+				{
+					"Lieferant": "Midas (CPM/Osmopharm/Sofarimex)",
+					"Position_1": "Head of SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "hendrik.habermann@midas.pharma.com",
+					"SCM_Kontakt": "Jens.Holzkamp@midas-pharma.com",
+					"weitere_QA_Kontakte": "Nicole.Haufe@midas-pharma.com",
+					"_index": "37"
+				},
+				{
+					"Lieferant": "Nordmark",
+					"Position_1": "Managing Director",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "",
+					"SCM_Kontakt": "jan.luedemann@nordmark-pharma.de",
+					"weitere_QA_Kontakte": "Kretzschmar, Susanne <Susanne.Kretzschmar@nordmark-pharma.de>",
+					"_index": "38"
+				},
+				{
+					"Lieferant": "Oman Pharma",
+					"Position_1": "Head of SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "qamgr@omanpharma.com (T V Rudramurthy)",
+					"SCM_Kontakt": "omprakash@omanpharma.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "39"
+				},
+				{
+					"Lieferant": "Pharmanel",
+					"Position_1": "Managing Director",
+					"Position_2": "Product Development Manager",
+					"QA_Kontakt_Mail": "mchrysanthakopoulos@pharmanel.gr",
+					"SCM_Kontakt": "cbabalis@vianex.gr",
+					"weitere_QA_Kontakte": "ekalampalikis@onepharma.gr (Elias Kalampalikis)",
+					"_index": "40"
+				},
+				{
+					"Lieferant": "Pharmathen (Balkanpharma/JGL)",
+					"Position_1": "Director BD",
+					"Position_2": "Director of Corporate Quality Management",
+					"QA_Kontakt_Mail": "xathanasiou@pharmathen.com",
+					"SCM_Kontakt": "andrew.broderick@pharmathen.com",
+					"weitere_QA_Kontakte": "epetropoulou@pharmathen.com",
+					"_index": "41"
+				},
+				{
+					"Lieferant": "Polpharma",
+					"Position_1": "Manager Business Relations",
+					"Position_2": "Quality Assurance Specialist",
+					"QA_Kontakt_Mail": "joanna.skok@polpharma.com",
+					"SCM_Kontakt": "rafaelramon@farmaprojects.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "42"
+				},
+				{
+					"Lieferant": "Prestige Promotion",
+					"Position_1": "Managing Director",
+					"Position_2": "Quality manager + Head of Sales",
+					"QA_Kontakt_Mail": "Joerg.Lucas@prestige-promotion-web.de",
+					"SCM_Kontakt": "Hans-Peter.Supik@prestige-promotion-web.de",
+					"weitere_QA_Kontakte": "",
+					"_index": "43"
+				},
+				{
+					"Lieferant": "PS Pharma Service (Dewelco)",
+					"Position_1": "Managing Director",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "sven.gallinat@pspharmaservice.de",
+					"SCM_Kontakt": "Jan.van.Ee@pspharmaservice.de",
+					"weitere_QA_Kontakte": "",
+					"_index": "44"
+				},
+				{
+					"Lieferant": "Rottendorf",
+					"Position_1": "Manager Business Relations",
+					"Position_2": "Manager Supplier Qualification\nQA Standards & Compliance",
+					"QA_Kontakt_Mail": "Stephanie.Schraeer@rottendorf.com",
+					"SCM_Kontakt": "Marc.Schmedtkord@rottendorf.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "45"
+				},
+				{
+					"Lieferant": "SK Pharma",
+					"Position_1": "Managing Director",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "n.lysek@sk-pharma-logistics.de",
+					"SCM_Kontakt": "s.Krone@sk-pharma-logistics.de",
+					"weitere_QA_Kontakte": "qs@sk-pharma-logistics.de",
+					"_index": "46"
+				},
+				{
+					"Lieferant": "Steiner",
+					"Position_1": "Head of Sales & Marketing",
+					"Position_2": "Deputy Head of Quality Assurance",
+					"QA_Kontakt_Mail": "Dirk.Franke@steinerarznei-berlin.de",
+					"SCM_Kontakt": "benjamin.breitfeld@aristo-pharma.de",
+					"weitere_QA_Kontakte": "",
+					"_index": "47"
+				},
+				{
+					"Lieferant": "Synthon",
+					"Position_1": "Manager Business Relations",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "silvia.matias@synthon.com",
+					"SCM_Kontakt": "Barry.Remmerts@synthon.com",
+					"weitere_QA_Kontakte": "OrderHandling.Synthon.es@synthon.com",
+					"_index": "48"
+				},
+				{
+					"Lieferant": "Terix Labs (Verisfield)",
+					"Position_1": "Manager Business Relations",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "",
+					"SCM_Kontakt": "xenaki@verisfield.gr",
+					"weitere_QA_Kontakte": "Olga Polyzou <polyzou@verisfield.gr>",
+					"_index": "49"
+				},
+				{
+					"Lieferant": "Tiefenbacher (Cipla/Iberfar/Rompharm)",
+					"Position_1": "Manager Business Relations",
+					"Position_2": "Quality Assurance",
+					"QA_Kontakt_Mail": "F.Schmidt-Petersen@aet.eu",
+					"SCM_Kontakt": "M.Pralow@aet.eu",
+					"weitere_QA_Kontakte": "S.Nielsen@aet.eu\nHinderfeld, Sylvia S.Hinderfeld@aet.eu",
+					"_index": "50"
+				},
+				{
+					"Lieferant": "TPL Indrad/Baddi/Dahej",
+					"Position_1": "Managing Director SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "VivekKumar@TorrentPharma.com bzw. JayatibhaChakrabarti@TorrentPharma.com",
+					"SCM_Kontakt": "MaheshTalegaonkar@TorrentPharma.com",
+					"weitere_QA_Kontakte": "",
+					"_index": "51"
+				},
+				{
+					"Lieferant": "Welding (Abdi/Bluepharma/SK/Natco)",
+					"Position_1": "Head of SCM",
+					"Position_2": "",
+					"QA_Kontakt_Mail": "Swantje.Hoeltken@welding.eu",
+					"SCM_Kontakt": "thomas.rothe@welding.eu",
+					"weitere_QA_Kontakte": "kirankumar.k@natcopharma.co.in; luisa.rueckert@welding.eu\nMichaela.Seeger@welding.eu\njens.kemken@welding.eu;mmesquita@bluepharmagroup.com\nSwantje.Hoeltken@welding.eu; kirankumar.k@natcopharma.co.in",
+					"_index": "52"
+				},
+				{
+					"Lieferant": "Wiewelhove",
+					"Position_1": "Head of Sales",
+					"Position_2": "Leiter Qualitätssicherung",
+					"QA_Kontakt_Mail": "C.Schwarting@wiewelhove.de",
+					"SCM_Kontakt": "h.wientke@wiewelhove.de",
+					"weitere_QA_Kontakte": "",
+					"_index": "53"
+				}
+			]
+		}
+	}
+}

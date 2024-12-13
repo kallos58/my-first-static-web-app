@@ -1,0 +1,58 @@
+<h4>{{dialogTitle}}</h4>
+    <div class="flex-container-1">
+      <div><label>Company</label></div>
+      <div><label>Material description</label></div>
+    </div>
+    <div class="flex-container-1">
+      <div><input [(ngModel)]="currentItem['Company']" class="iflex1"/></div>
+      <div><input [(ngModel)]="currentItem['Material_description']" class="iflex1"/></div> 
+    </div>
+    <div class="flex-container-1">
+      <div><label>Molecule</label></div>
+    </div>
+    <div class="flex-container-1">
+      <div><input [(ngModel)]="currentItem['Molecule']" class="iflex1"/></div>
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+        <div><label>Mat. No.</label></div>
+        <div><label>PZN</label></div>
+        <div><label>NTIN</label></div>
+      </div>
+      <div  class="flex-container-2">
+        <div><label>Size</label></div>
+        <div><label>Ma no</label></div>
+        <div><label>N_size</label></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-2">
+      <div><input [(ngModel)]="currentItem['Mat_No_']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['PZN']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['NTIN']" class="iflex2"/></div>
+      </div>
+      <div  class="flex-container-2">
+      <div><input [(ngModel)]="currentItem['Size']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['MA_no']" class="iflex2"/></div>
+      <div><input [(ngModel)]="currentItem['N_size']" class="iflex2"/></div>
+      </div> 
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-3">
+        <div><label>Temp. cond.</label></div>
+        <div><label>Primary pack</label></div>
+      </div>
+      
+    </div>
+    <div class="flex-container-1">
+      <div  class="flex-container-3">
+      <div><input [(ngModel)]="currentItem['Temp_conditions_trucking']" class="iflex3"/></div>
+      <div><input [(ngModel)]="currentItem['Primary_pack']" class="iflex3"/></div>
+      </div>
+    </div>   
+    <br><br>
+    <button class="formButton" (click)="save()">Speichern</button>
+    <button class="formButton" (click)="close()">Abbrechen</button>
+
+
+ 

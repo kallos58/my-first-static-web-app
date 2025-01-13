@@ -1,0 +1,1053 @@
+{
+	"Workbook": {
+		"ExcelWorkbook": {
+			"ActiveSheet": {
+				"__prefix": "x",
+				"__text": "0"
+			},
+			"__prefix": "x"
+		},
+		"DocumentProperties": {
+			"Created": {
+				"__prefix": "o",
+				"__text": "2025-01-06T13:56:37Z"
+			},
+			"LastSaved": {
+				"__prefix": "o",
+				"__text": "2025-01-06T13:57:17Z"
+			},
+			"__prefix": "o"
+		},
+		"OfficeDocumentSettings": {
+			"Colors": {
+				"Color": [
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "0"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#800000"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "1"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#008000"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "2"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#000080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "3"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#808000"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "4"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#800080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "5"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#008080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "6"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#C0C0C0"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "7"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#808080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "8"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#9999FF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "9"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#993366"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "10"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FFFFCC"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "11"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#CCFFFF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "12"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#660066"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "13"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FF8080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "14"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#0066CC"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "15"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#D9D9D9"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "16"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#000080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "17"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FF00FF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "18"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FFFF00"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "19"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#00FFFF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "20"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#800080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "21"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#800000"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "22"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#008080"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "23"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#0000FF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "24"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#00CCFF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "25"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#CCFFFF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "26"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#CCFFCC"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "27"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FFFF99"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "28"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#99CCFF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "29"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FF99CC"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "30"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#CC99FF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "31"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FFCC99"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "32"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#3366FF"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "33"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#33CCCC"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "34"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#99CC00"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "35"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FFCC00"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "36"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FF9900"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "37"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#FF6600"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "38"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#666699"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "39"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#969696"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "40"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#003366"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "41"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#339966"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "42"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#003300"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "43"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#333300"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "44"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#993300"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "45"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#993366"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "46"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#333399"
+						},
+						"__prefix": "o"
+					},
+					{
+						"Index": {
+							"__prefix": "o",
+							"__text": "47"
+						},
+						"RGB": {
+							"__prefix": "o",
+							"__text": "#333333"
+						},
+						"__prefix": "o"
+					}
+				],
+				"__prefix": "o"
+			},
+			"__prefix": "o"
+		},
+		"Styles": {
+			"Style": [
+				{
+					"Alignment": {
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:FontName": "Arial",
+						"_ss:Size": "10",
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "Default",
+					"_ss:Name": "Normal"
+				},
+				{
+					"Alignment": {
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:FontName": "Arial",
+						"_ss:Size": "10",
+						"__prefix": "ss"
+					},
+					"Interior": {
+						"__prefix": "ss"
+					},
+					"NumberFormat": {
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S21",
+					"_ss:Name": "Standard 10 2"
+				},
+				{
+					"Alignment": {
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:Color": "#000000",
+						"_ss:FontName": "Calibri",
+						"_ss:Size": "11",
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S22"
+				},
+				{
+					"Alignment": {
+						"_ss:Horizontal": "Left",
+						"_ss:Vertical": "Center",
+						"_ss:WrapText": "1",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"Border": [
+							{
+								"_ss:Position": "Left",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Top",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Right",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Bottom",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							}
+						],
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:FontName": "Tahoma",
+						"_ss:Size": "8",
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S23",
+					"_ss:Parent": "S21"
+				},
+				{
+					"Alignment": {
+						"_ss:Vertical": "Bottom",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"Border": [
+							{
+								"_ss:Position": "Left",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Top",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Right",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Bottom",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							}
+						],
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:Color": "#000000",
+						"_ss:FontName": "Tahoma",
+						"_ss:Size": "8",
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S24"
+				},
+				{
+					"Alignment": {
+						"_ss:Horizontal": "Left",
+						"_ss:Vertical": "Center",
+						"_ss:WrapText": "1",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"Border": [
+							{
+								"_ss:Position": "Left",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Top",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Right",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							}
+						],
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:FontName": "Tahoma",
+						"_ss:Size": "8",
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S25",
+					"_ss:Parent": "S21"
+				},
+				{
+					"Alignment": {
+						"_ss:Horizontal": "Left",
+						"_ss:Vertical": "Center",
+						"_ss:WrapText": "1",
+						"__prefix": "ss"
+					},
+					"Borders": {
+						"Border": [
+							{
+								"_ss:Position": "Left",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Top",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							},
+							{
+								"_ss:Position": "Right",
+								"_ss:Color": "#000000",
+								"_ss:LineStyle": "Continuous",
+								"_ss:Weight": "1",
+								"__prefix": "ss"
+							}
+						],
+						"__prefix": "ss"
+					},
+					"Font": {
+						"_ss:FontName": "Tahoma",
+						"_ss:Size": "8",
+						"__prefix": "ss"
+					},
+					"Interior": {
+						"_ss:Color": "#D9D9D9",
+						"_ss:Pattern": "Solid",
+						"__prefix": "ss"
+					},
+					"Protection": {
+						"_ss:Protected": "1",
+						"_x:HideFormula": "0",
+						"__prefix": "ss"
+					},
+					"_ss:ID": "S26",
+					"_ss:Parent": "S21"
+				}
+			]
+		},
+		"Worksheet": {
+			"Names": {
+				"__prefix": "ss"
+			},
+			"Table": {
+				"Row": [
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Category"
+							},
+							"_ss:StyleID": "S22"
+						},
+						"_ss:Index": "1",
+						"_ss:Height": "13.8"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "CMO"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "2"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "CoC Pending"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "3"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Elemental Impurities"
+							},
+							"_ss:StyleID": "S24"
+						},
+						"_ss:Index": "4"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "IO assessment"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "5"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "OOX"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "6"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Others"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "7"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Qualification"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "8"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "On hold"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "9"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Reanalysis"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "10"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Repacking"
+							},
+							"_ss:StyleID": "S25"
+						},
+						"_ss:Index": "11"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Deviation"
+							},
+							"_ss:StyleID": "S26"
+						},
+						"_ss:Index": "12"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Expired Materials"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "13"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Tracelink"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "14"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Validation"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "15"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Variation"
+							},
+							"_ss:StyleID": "S25"
+						},
+						"_ss:Index": "16"
+					},
+					{
+						"Cell": {
+							"Data": {
+								"_ss:Type": "String",
+								"__text": "Artworks"
+							},
+							"_ss:StyleID": "S23"
+						},
+						"_ss:Index": "17"
+					}
+				],
+				"_ss:DefaultRowHeight": "12.8",
+				"_ss:DefaultColumnWidth": "60.75",
+				"_ss:ExpandedRowCount": "17",
+				"_ss:ExpandedColumnCount": "1",
+				"__prefix": "ss"
+			},
+			"WorksheetOptions": {
+				"PageSetup": {
+					"Layout": {
+						"_x:StartPageNumber": "1"
+					},
+					"Header": {
+						"_x:Margin": "0.7875",
+						"_x:Data": "&C&\"Times New Roman,Standard\"&12&A"
+					},
+					"Footer": {
+						"_x:Margin": "0.7875",
+						"_x:Data": "&C&\"Times New Roman,Standard\"&12Seite &P"
+					},
+					"PageMargins": {
+						"_x:Top": "1.05277777777778",
+						"_x:Bottom": "1.05277777777778",
+						"_x:Left": "0.7875",
+						"_x:Right": "0.7875"
+					}
+				},
+				"Print": {
+					"ValidPrinterInfo": "",
+					"PaperSizeIndex": "9"
+				},
+				"Panes": {
+					"Pane": {
+						"Number": "3",
+						"ActiveRow": "16",
+						"ActiveCol": "2",
+						"RangeSelection": "R17C3"
+					}
+				},
+				"_xmlns": "urn:schemas-microsoft-com:office:excel"
+			},
+			"_ss:Name": "Tabelle1"
+		},
+		"_xmlns:o": "urn:schemas-microsoft-com:office:office",
+		"_xmlns:x": "urn:schemas-microsoft-com:office:excel",
+		"_xmlns:ss": "urn:schemas-microsoft-com:office:spreadsheet",
+		"_xmlns": "urn:schemas-microsoft-com:office:spreadsheet",
+		"_xmlns:x2": "urn:schemas-microsoft-com:office:excel2",
+		"_xmlns:html": "http://www.w3.org/TR/REC-html40",
+		"_xmlns:dt": "uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+	}
+}

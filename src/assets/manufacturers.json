@@ -1,0 +1,442 @@
+{
+	"data": {
+		"columns": {
+			"Manufacturer": {
+				"_index": "1",
+				"__text": "Manufacturer"
+			}
+		},
+		"records": {
+			"record": [
+				{
+					"Manufacturer": "Abdi Ibrahim Ilac San Ve Tic. A.S.",
+					"_index": "1"
+				},
+				{
+					"Manufacturer": "Acino Pharma AG",
+					"_index": "2"
+				},
+				{
+					"Manufacturer": "Adamed Pharma S.A.",
+					"_index": "3"
+				},
+				{
+					"Manufacturer": "ADL Pharma GmbH",
+					"_index": "4"
+				},
+				{
+					"Manufacturer": "Advance Pharma GmbH",
+					"_index": "5"
+				},
+				{
+					"Manufacturer": "Aizant Drug Research Solutions Pvt Ltd",
+					"_index": "6"
+				},
+				{
+					"Manufacturer": "Alembic Pharmaceuticals Limited",
+					"_index": "7"
+				},
+				{
+					"Manufacturer": "Alfred E. Tiefenbacher GmbH & Co. KG",
+					"_index": "8"
+				},
+				{
+					"Manufacturer": "Balkanpharma - Site Dupnitsa",
+					"_index": "9"
+				},
+				{
+					"Manufacturer": "Balkanpharma - Site Dupnitsa /\nWatson Pharma Private Limited",
+					"_index": "10"
+				},
+				{
+					"Manufacturer": "Balkanpharma - Site Razgrad",
+					"_index": "11"
+				},
+				{
+					"Manufacturer": "Balkanpharma - Razgrad AD /\nSterigenics Germany GmbH",
+					"_index": "12"
+				},
+				{
+					"Manufacturer": "Balkanpharma - Site Razgrad /\nPharmathen S.A.",
+					"_index": "13"
+				},
+				{
+					"Manufacturer": "Bluepharma Industria Farmaceutica, S.A.",
+					"_index": "14"
+				},
+				{
+					"Manufacturer": "C.P.M. Contractpharma GmbH",
+					"_index": "15"
+				},
+				{
+					"Manufacturer": "Chanelle Medical",
+					"_index": "16"
+				},
+				{
+					"Manufacturer": "Chanelle Medical Unlimited Company",
+					"_index": "17"
+				},
+				{
+					"Manufacturer": "Cipla Ltd.",
+					"_index": "18"
+				},
+				{
+					"Manufacturer": "Conforma NV",
+					"_index": "19"
+				},
+				{
+					"Manufacturer": "Desitin Arzneimittel GmbH",
+					"_index": "20"
+				},
+				{
+					"Manufacturer": "Develco Pharma GmbH",
+					"_index": "21"
+				},
+				{
+					"Manufacturer": "Douglas Manufacturing Limited",
+					"_index": "22"
+				},
+				{
+					"Manufacturer": "Dragenopharm Apotheker PÃ¼schl GmbH",
+					"_index": "23"
+				},
+				{
+					"Manufacturer": "Dragenopharm Apotheker PÃ¼schl GmbH / \nKlocke Verpackungs-Service GmbH",
+					"_index": "24"
+				},
+				{
+					"Manufacturer": "Dragenopharm Apotheker PÃ¼schl GmbH / \nSwiss Caps",
+					"_index": "25"
+				},
+				{
+					"Manufacturer": "ELPEN PHARMACEUTICAL CO INC",
+					"_index": "26"
+				},
+				{
+					"Manufacturer": "Eurofins PHAST GmbH",
+					"_index": "27"
+				},
+				{
+					"Manufacturer": "EVA PHARMA for Pharmaceuticals and Medical Appliances",
+					"_index": "28"
+				},
+				{
+					"Manufacturer": "Fair-Med / Strides",
+					"_index": "29"
+				},
+				{
+					"Manufacturer": "Famar S.A.",
+					"_index": "30"
+				},
+				{
+					"Manufacturer": "Fresenius Kabi Austria GmbH",
+					"_index": "31"
+				},
+				{
+					"Manufacturer": "GE Pharmaceuticals Ltd.",
+					"_index": "32"
+				},
+				{
+					"Manufacturer": "Gedeon Richter Ltd - Site Romania",
+					"_index": "33"
+				},
+				{
+					"Manufacturer": "Gedeon Richter Ltd. - Site Budapest",
+					"_index": "34"
+				},
+				{
+					"Manufacturer": "GP Pharm, S.A. / Recipharm",
+					"_index": "35"
+				},
+				{
+					"Manufacturer": "GP Pharm, S.A. / Rechon Life Science AB",
+					"_index": "36"
+				},
+				{
+					"Manufacturer": "HÃ„LSA Pharma GmbH",
+					"_index": "37"
+				},
+				{
+					"Manufacturer": "Haupt Pharma Latina S.r.L.",
+					"_index": "38"
+				},
+				{
+					"Manufacturer": "Haupt Pharma MÃ¼nster GmbH",
+					"_index": "39"
+				},
+				{
+					"Manufacturer": "Hermes Pharma GmbH",
+					"_index": "40"
+				},
+				{
+					"Manufacturer": "Hetero Labs Limited - Unit III",
+					"_index": "41"
+				},
+				{
+					"Manufacturer": "Hetero Labs Limited - Unit V",
+					"_index": "42"
+				},
+				{
+					"Manufacturer": "Hetero Labs Limited - Unit VI",
+					"_index": "43"
+				},
+				{
+					"Manufacturer": "Iberfar - IndÃºstria FarmacÃªutica S.A.",
+					"_index": "44"
+				},
+				{
+					"Manufacturer": "Ind-Swift Limited",
+					"_index": "45"
+				},
+				{
+					"Manufacturer": "Intas Pharmaceuticals Ltd.",
+					"_index": "46"
+				},
+				{
+					"Manufacturer": "IPCA Laboratories Limited - Athal",
+					"_index": "47"
+				},
+				{
+					"Manufacturer": "Jadran - Galenski Laboratorij d.d. (JGL)",
+					"_index": "48"
+				},
+				{
+					"Manufacturer": "Jadran - Galenski Laboratorij d.d. /\nSterigenics Germany GmbH",
+					"_index": "49"
+				},
+				{
+					"Manufacturer": "Klocke Verpackungs-Service GmbH",
+					"_index": "50"
+				},
+				{
+					"Manufacturer": "Laboratorios Cinfa, S.A.",
+					"_index": "51"
+				},
+				{
+					"Manufacturer": "Laboratorios Farmalan, S.A.",
+					"_index": "52"
+				},
+				{
+					"Manufacturer": "Laboratorios LeÃ³n Farma, S.A.",
+					"_index": "53"
+				},
+				{
+					"Manufacturer": "Laboratorios Liconsa, S.A.",
+					"_index": "54"
+				},
+				{
+					"Manufacturer": "Lichtenheldt GmbH",
+					"_index": "55"
+				},
+				{
+					"Manufacturer": "Lotus Pharmaceutical Co., Ltd.",
+					"_index": "56"
+				},
+				{
+					"Manufacturer": "LTS Lohmann Therapie-Systeme AG",
+					"_index": "57"
+				},
+				{
+					"Manufacturer": "M/s. Granules India Limited",
+					"_index": "58"
+				},
+				{
+					"Manufacturer": "Macleods Pharmaceuticals Limited -Site Baddi",
+					"_index": "59"
+				},
+				{
+					"Manufacturer": "Macleods Pharmaceuticals Limited -Site Daman",
+					"_index": "60"
+				},
+				{
+					"Manufacturer": "Medana",
+					"_index": "61"
+				},
+				{
+					"Manufacturer": "Mibe GmbH Arzneimittel",
+					"_index": "62"
+				},
+				{
+					"Manufacturer": "Midas Pharma GmbH",
+					"_index": "63"
+				},
+				{
+					"Manufacturer": "Natco Pharma Limited Kothur",
+					"_index": "64"
+				},
+				{
+					"Manufacturer": "Nectar Lifescience Limited Unit VI",
+					"_index": "65"
+				},
+				{
+					"Manufacturer": "Nectar Lifescience Limited Unit VI",
+					"_index": "66"
+				},
+				{
+					"Manufacturer": "Nobel Ä°laÃ§ San. Ve Tic.",
+					"_index": "67"
+				},
+				{
+					"Manufacturer": "Nordmark Pharma GmbH",
+					"_index": "68"
+				},
+				{
+					"Manufacturer": "Nosch Labs PVT. Limited Unit-III",
+					"_index": "69"
+				},
+				{
+					"Manufacturer": "Nosch Labs PVT. Limited Unit-III / \nTPL Baddi",
+					"_index": "70"
+				},
+				{
+					"Manufacturer": "Oman Pharmaceutical Products Co. LLC",
+					"_index": "71"
+				},
+				{
+					"Manufacturer": "Osmopharm SA",
+					"_index": "72"
+				},
+				{
+					"Manufacturer": "PenCef Pharma GmbH",
+					"_index": "73"
+				},
+				{
+					"Manufacturer": "Pharmathen International S.A.",
+					"_index": "74"
+				},
+				{
+					"Manufacturer": "Pharmathen S.A.",
+					"_index": "75"
+				},
+				{
+					"Manufacturer": "Pharmathen S.A. /\nPharmathen International S.A.",
+					"_index": "76"
+				},
+				{
+					"Manufacturer": "Pharmazet Group s.r.o.,",
+					"_index": "77"
+				},
+				{
+					"Manufacturer": "Pliva Hrvatska d.o.o.",
+					"_index": "78"
+				},
+				{
+					"Manufacturer": "Prestige Promotion VerkaufsfÃ¶rderung & Werbeservice GmbH - Alzenau",
+					"_index": "79"
+				},
+				{
+					"Manufacturer": "Prestige Promotion VerkaufsfÃ¶rderung & Werbeservice GmbH - Kleinostheim",
+					"_index": "80"
+				},
+				{
+					"Manufacturer": "Prestige Promotion VerkaufsfÃ¶rderung & Werbeservice GmbH - LindigstraÃŸe 6, Kleinostheim",
+					"_index": "81"
+				},
+				{
+					"Manufacturer": "PS Pharma Service",
+					"_index": "82"
+				},
+				{
+					"Manufacturer": "Rafarm S.A.",
+					"_index": "83"
+				},
+				{
+					"Manufacturer": "Recipharm",
+					"_index": "84"
+				},
+				{
+					"Manufacturer": "Recipharm /\nChanelle Medical Unlimited Company",
+					"_index": "85"
+				},
+				{
+					"Manufacturer": "Rompharm Company SRL",
+					"_index": "86"
+				},
+				{
+					"Manufacturer": "Sanovel Ilac San.ve Tic A.S.",
+					"_index": "87"
+				},
+				{
+					"Manufacturer": "SK Chemicals Co., Ltd., Cheongju plant",
+					"_index": "88"
+				},
+				{
+					"Manufacturer": "SK Pharma Logistics GmbH",
+					"_index": "89"
+				},
+				{
+					"Manufacturer": "Sofarimex Industria QuÃ­mica e FarmacÃªutica, S.A.",
+					"_index": "90"
+				},
+				{
+					"Manufacturer": "Strides Pharma Sciences Ltd",
+					"_index": "91"
+				},
+				{
+					"Manufacturer": "Swiss Caps GmbH",
+					"_index": "92"
+				},
+				{
+					"Manufacturer": "Synoptis Industrial Sp. z o.o.",
+					"_index": "93"
+				},
+				{
+					"Manufacturer": "Synthon BV",
+					"_index": "94"
+				},
+				{
+					"Manufacturer": "Synthon Hispania S.L.",
+					"_index": "95"
+				},
+				{
+					"Manufacturer": "Temmler Pharma GmbH & Co. KG",
+					"_index": "96"
+				},
+				{
+					"Manufacturer": "Torrent Pharma (Malta) Itd",
+					"_index": "97"
+				},
+				{
+					"Manufacturer": "Torrent Pharmaceuticals Ltd. -Site Baddi",
+					"_index": "98"
+				},
+				{
+					"Manufacturer": "Torrent Pharmaceuticals Ltd. -Site Dahej",
+					"_index": "99"
+				},
+				{
+					"Manufacturer": "Torrent Pharmaceuticals Ltd. -Site Indrad",
+					"_index": "100"
+				},
+				{
+					"Manufacturer": "Torrent Pharmaceuticals\nLtd. - Site Bileshwarpura",
+					"_index": "101"
+				},
+				{
+					"Manufacturer": "UNISON PHARMACEUTICALS PVT. LTD., UNIT-3,",
+					"_index": "102"
+				},
+				{
+					"Manufacturer": "Watson Pharma Private Limited",
+					"_index": "103"
+				},
+				{
+					"Manufacturer": "Wiewelhove GmbH",
+					"_index": "104"
+				},
+				{
+					"Manufacturer": "Zentiva RomÃ¢nia",
+					"_index": "105"
+				},
+				{
+					"Manufacturer": "Famar S.A. / Pharmathen S.A. /\nIFET S.A.",
+					"_index": "106"
+				},
+				{
+					"Manufacturer": "",
+					"_index": "107"
+				}
+			]
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import * as Cosmos from "@azure/cosmos";
+import { debug } from "console";
 import { Observable } from "rxjs";
 
 
@@ -70,6 +71,25 @@ export class ServiceService {
       }
     }
 
+    public async createCategories(data: any) {  
+      const endpoint = "https://schruefer.documents.azure.com:443/";
+      const key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
+      const client = new Cosmos.CosmosClient({endpoint: endpoint, key: key});
+      const database = "Heumann";
+      const collection = "Items";
+      const db = client.database(database);
+      const container = db.container("Categories");
+      //data.default.Workbook.Worksheet.Table.Row[0].Cell.Data.__text
+      alert(data.default.Workbook.Worksheet.Table.Row.length);
+      for (let i = 1; i < data.default.Workbook.Worksheet.Table.Row.length; i++) {
+        let entry = { 
+          id: this.createId(),
+          category: data.default.Workbook.Worksheet.Table.Row[i].Cell.Data.__text
+        }
+        await container.items.create(entry);
+      }
+    }
+
     public async createBatch(data: any) {  
       const endpoint = "https://schruefer.documents.azure.com:443/";
       const key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
@@ -78,52 +98,54 @@ export class ServiceService {
       const collection = "Items";
       const db = client.database(database);
       const container = db.container("Batch_Release");
+      
+      alert(data.default.data.records.record.length);
       debugger;
-      for (let i = 1; i < data.root.row.length; i++) {
+      for (let i = 0; i < data.default.data.records.record.length; i++) {
         let entry = { 
           id: this.createId(),
-          API_Manufacturer: data.root.row[i].API_Manufacturer,
-          BRRor_QAPM: data.root.row[i].BRRor_QAPM,
-          BRRor_calculation: data.root.row[i].BRRor_calculation,
-          BRRor_resp_: data.root.row[i].BRRor_resp_,
-          Bulk_Batch_no_: data.root.row[i].Bulk_Batch_no_,
-          CoA_add_received: data.root.row[i].CoA_add_received,
-          CoA_chem_expected: data.root.row[i].CoA_chem_expected,
-          CoA_chem_received: data.root.row[i].CoA_chem_received,
-          CoC_received: data.root.row[i].CoC_received,
-          Company: data.root.row[i].Company,
-          Docu_comment: data.root.row[i].Docu_comment,
-          EU_Non_EU: data.root.row[i].EU_Non_EU,
-          Expiry_date: data.root.row[i].Expiry_date,
-          FP_Batch_no_: data.root.row[i].FP_Batch_no_,
-          Fortlaufende_Nummer: data.root.row[i].Fortlaufende_Nummer,
-          Lab_add_: data.root.row[i].Lab_add_,
-          Lab_chem_: data.root.row[i].Lab_chem_,
-          MA_No_: data.root.row[i].MA_No_,
-          MA_name_: data.root.row[i].MA_name_,
-          Manufacturer: data.root.row[i].Manufacturer,
-          Manufacturing_date: data.root.row[i].Manufacturing_date,
-          NTIN: data.root.row[i].NTIN,
-          OGS_checked: data.root.row[i].OGS_checked,
-          Pack_size: data.root.row[i].Pack_size,
-          Prio: data.root.row[i].Prio,
-          Prio_meeting_release_date: data.root.row[i].Prio_meeting_release_date,
-          QAPM_calculation: data.root.row[i].QAPM_calculation,
-          QAPM_resp_: data.root.row[i].QAPM_resp_,
-          QA_comment_: data.root.row[i].QA_comment_,
-          QP_resp_: data.root.row[i].QP_resp_,
-          Reanalysis_comment: data.root.row[i].Reanalysis_comment,
-          Release_Block_for_Marketing_date_dd_mm_yy: data.root.row[i].Release_Block_for_Marketing_date_dd_mm_yy,
-          Release_Block_for_Sale_date_dd_mm_yy: data.root.row[i].Release_Block_for_Sale_date_dd_mm_yy,
-          Release_Blocking_Site: data.root.row[i].Release_Blocking_Site,
-          SAP_Material_Number: data.root.row[i].SAP_Material_Number,
-          Sample_Receipt_date: data.root.row[i].Sample_Receipt_date,
-          Status: data.root.row[i].Status,
-          Status_Batch_docs: data.root.row[i].Status_Batch_docs,
-          Temperaturauswertung_abgeschlossen: data.root.row[i].Temperaturauswertung_abgeschlossen,
-          category: data.root.row[i].category,
-          date_batch_docs: data.root.row[i].date_batch_docs,
-          release_site: data.root.row[i].release_site
+          API_Manufacturer: data.default.data.records.record[i].API_Manufacturer,
+          BRRor_QAPM: data.default.data.records.record[i].BRRor_QAPM,
+          BRRor_calculation: data.default.data.records.record[i].BRRor_calculation,
+          BRRor_resp_: data.default.data.records.record[i].BRRor_resp_,
+          Bulk_Batch_no_: data.default.data.records.record[i].Bulk_Batch_no_,
+          CoA_add_received: data.default.data.records.record[i].CoA_add_received,
+          CoA_chem_expected: data.default.data.records.record[i].CoA_chem_expected,
+          CoA_chem_received: data.default.data.records.record[i].CoA_chem_received,
+          CoC_received: data.default.data.records.record[i].CoC_received,
+          Company: data.default.data.records.record[i].Company,
+          Docu_comment: data.default.data.records.record[i].Docu_comment,
+          EU__Non_EU: data.default.data.records.record[i].EU__Non_EU,
+          Expiry_date: data.default.data.records.record[i].Expiry_date,
+          FP_Batch_no__: data.default.data.records.record[i].FP_Batch_no__,
+          Fortlaufende_Nummer: data.default.data.records.record[i].Fortlaufende_Nummer,
+          Lab_add: data.default.data.records.record[i].Lab_add,
+          Lab_chem: data.default.data.records.record[i].Lab_chem,
+          MA_No_: data.default.data.records.record[i].MA_No_,
+          MA_name_: data.default.data.records.record[i].MA_name_,
+          Manufacturer: data.default.data.records.record[i].Manufacturer,
+          Manufacturing_date: data.default.data.records.record[i].Manufacturing_date,
+          NTIN: data.default.data.records.record[i].NTIN,
+          OGS_checked: data.default.data.records.record[i].OGS_checked,
+          Pack_size: data.default.data.records.record[i].Pack_size,
+          Prio: data.default.data.records.record[i].Prio,
+          Prio_meeting_release_date: data.default.data.records.record[i].Prio_meeting_release_date,
+          QAPM_calculation: data.default.data.records.record[i].QAPM_calculation,
+          QAPM_resp_: data.default.data.records.record[i].QAPM_resp_,
+          QA_comment_: data.default.data.records.record[i].QA_comment_,
+          QP_resp_: data.default.data.records.record[i].QP_resp_,
+          Reanalysis_comment: data.default.data.records.record[i].Reanalysis_comment,
+          Release__Block_for_Marketing_date: data.default.data.records.record[i].Release__Block_for_Marketing_date,
+          Release__Block_for_Sale_date: data.default.data.records.record[i].Release__Block_for_Sale_date,
+          Release__Blocking_Site: data.default.data.records.record[i].Release__Blocking_Site,
+          SAP_Material_Number: data.default.data.records.record[i].SAP_Material_Number,
+          Sample_Receipt_date: data.default.data.records.record[i].Sample_Receipt_date,
+          Status: data.default.data.records.record[i].Status,
+          Status_Batch_docs: data.default.data.records.record[i].Status_Batch_docs,
+          Temperaturauswertung_abgeschlossen: data.default.data.records.record[i].Temperaturauswertung_abgeschlossen,
+          category: data.default.data.records.record[i].category,
+          date_batch_docs: data.default.data.records.record[i].date_batch_docs,
+          release_site: data.default.data.records.record[i].release_site
         }
         await container.items.create(entry);
       }
@@ -146,6 +168,42 @@ export class ServiceService {
           SAP_Mat_Description: data.default.data.records.record[i].SAP_Mat_Description,
           SAP_Mat_Nr: data.default.data.records.record[i].SAP_Mat_Nr,
           Vendor: data.default.data.records.record[i].Vendor
+        }
+        await container.items.create(entry);
+      }
+    }
+
+    public async createAPIManufacturers(data: any) {  
+      const endpoint = "https://schruefer.documents.azure.com:443/";
+      const key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
+      const client = new Cosmos.CosmosClient({endpoint: endpoint, key: key});
+      const database = "Heumann";
+      const collection = "Items";
+      const db = client.database(database);
+      const container = db.container("API_Manufacturers");
+      alert(data.default.data.records.record.length);
+      for (let i = 0; i < data.default.data.records.record.length; i++) {
+        let entry = { 
+          id: this.createId(),
+          API_Manufacturer: data.default.data.records.record[i].API_Manufacturer,
+        }
+        await container.items.create(entry);
+      }
+    }
+
+    public async createManufacturers(data: any) {  
+      const endpoint = "https://schruefer.documents.azure.com:443/";
+      const key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
+      const client = new Cosmos.CosmosClient({endpoint: endpoint, key: key});
+      const database = "Heumann";
+      const collection = "Items";
+      const db = client.database(database);
+      const container = db.container("Manufacturers");
+      
+      for (let i = 0; i < data.default.data.records.record.length; i++) {
+        let entry = { 
+          id: this.createId(),
+          Manufacturer: data.default.data.records.record[i].Manufacturer,
         }
         await container.items.create(entry);
       }

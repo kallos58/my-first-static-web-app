@@ -12,6 +12,9 @@ import * as Cosmos from "@azure/cosmos";
 //import * as contacts_skus from "../assets/qa_ra_liste_contacts_skus.json"
 //import * as batch_jan_mar_2024 from "../assets/batch_jan_mar_2024.json"
 //import * as sap_fg_material from '../assets/sap_fg_material.json'
+//import * as api_manufacturers from '../assets/api_manufacturers.json'
+//import * as manufacturers from '../assets/manufacturers.json'
+import * as categories from '../assets/categories.json'
 
 import { ScmPriority, ContactsKontakte, ContactsVendor, ContactsSkus, SAPMaterial} from "./model/modelClasses"
 import { Observable } from 'rxjs';
@@ -23,6 +26,12 @@ import { ContactsKontakteDialog } from './dialogs/contactsKontakteDialog/contact
 import { ContactsVendorsDialog } from './dialogs/contactsVendorsDialog/contactsVendorsDialog.component'
 import { ContactsSkusDialog } from './dialogs/contactsSkusDialog/contactsSkusDialog.component'
 import { SAPMaterialDialog } from './dialogs/SAPMaterialDialog/SAPMaterialDialog.component'
+import { WarehouseDialog } from './dialogs/warehouseDialog/warehouseDialog.component'
+import { BrrprocessDialog } from './dialogs/brrprocessDialog/brrprocessDialog.component'
+import { BrrstatusDialog } from './dialogs/brrstatusDialog/brrstatusDialog.component'
+import { QcprocessDialog } from './dialogs/qcprocessDialog/qcprocessDialog.component'
+import { MessageboxDialog } from './dialogs/messageboxDialog/messageboxDialog.component'
+import { FormDialog } from './dialogs/formDialog/formDialog.component'
 
 @Component({
   selector: 'app-root',
@@ -40,7 +49,13 @@ import { SAPMaterialDialog } from './dialogs/SAPMaterialDialog/SAPMaterialDialog
     ContactsKontakteDialog,
     ContactsVendorsDialog,
     ContactsSkusDialog,
-    SAPMaterialDialog
+    SAPMaterialDialog,
+    WarehouseDialog,
+    BrrprocessDialog,
+    BrrstatusDialog,
+    QcprocessDialog,
+    MessageboxDialog,
+    FormDialog
   ]
 })
 
@@ -52,10 +67,21 @@ export class AppComponent {
   @ViewChild('contactsVendorsDialog', { static: true }) contactsVendorsDialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('contactsSkusDialog', { static: true }) contactsSkusDialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('SAPMaterialDialog', { static: true }) SAPMaterialDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('warehouseDialog', { static: true }) warehouseDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('brrprocessDialog', { static: true }) brrprocessDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('brrstatusDialog', { static: true }) brrstatusDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('qcprocessDialog', { static: true }) qcprocessDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('messageboxDialog', { static: true }) messageboxDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('formDialog', { static: true }) formDialog!: ElementRef<HTMLDialogElement>;
+
   dataSource = [];  
   originalSource = [];  
   currentItem: any = [];  
+  diParam: any = [];  
   scmpriorities: any = []; 
+  apimanufacturers: any = []; 
+  manufacturers: any = []; 
+  categories: any = []; 
   cmomasters = []; 
   data: Observable<any>;
   index = 0;
@@ -82,20 +108,71 @@ export class AppComponent {
   container;
   cols: any;
   headers: any;
-
   constructor() {
     this.service = new ServiceService();
-     this.endpoint = "https://schruefer.documents.azure.com:443/";
-     this.key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
-     this.client = new Cosmos.CosmosClient({endpoint: this.endpoint, key: this.key});
-     this.database = "Heumann";
-     this.collection = "Items";
-     this.db = this.client.database(this.database);
-     this.container = this.db.container("S");
-     //this.service.createBatch(batch_jan_mar_2024);
-     //this.service.createSAPMaterial(sap_fg_material);
+    this.endpoint = "https://schruefer.documents.azure.com:443/";
+    this.key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
+    this.client = new Cosmos.CosmosClient({endpoint: this.endpoint, key: this.key});
+    this.database = "Heumann";
+    this.collection = "Items";
+    this.db = this.client.database(this.database);
+    this.container = this.db.container("S");
+    this.getAPIManufacturers();
+    this.getManufacturers();
+    this.getCategories();
+    //this.service.createCategories(categories);
+    //this.service.createBatch(batch_jan_mar_2024);
+    //this.service.createManufacturers(manufacturers);
   }
  
+  public async getCategories() {  
+    this.container = this.db.container("Categories");
+    try {
+      await this.container.items
+      .query({
+          query: "SELECT * from c"
+      })
+      .fetchAll()
+      .then((response: any) => {
+        this.categories = response.resources;
+      }) 
+    } catch(error) {
+      console.log(error);
+    }    
+  } 
+
+  public async getAPIManufacturers() {  
+    this.container = this.db.container("API_Manufacturers");
+    try {
+      await this.container.items
+      .query({
+          query: "SELECT * from c"
+      })
+      .fetchAll()
+      .then((response: any) => {
+        this.apimanufacturers = response.resources;
+      }) 
+    } catch(error) {
+      console.log(error);
+    }    
+  } 
+
+  public async getManufacturers() {  
+    this.container = this.db.container("Manufacturers");
+    try {
+      await this.container.items
+      .query({
+          query: "SELECT * from c"
+      })
+      .fetchAll()
+      .then((response: any) => {
+        this.manufacturers = response.resources;
+      }) 
+    } catch(error) {
+      console.log(error);
+    }    
+  } 
+
   public async getSCMPriorities() {  
     this.container = this.db.container("Scmpriorities");
     try {
@@ -117,6 +194,7 @@ export class AppComponent {
     }    
   } 
   
+
   public async getAbbreviations() {  
     this.container = this.db.container("Abbreviations");
     try {
@@ -145,7 +223,6 @@ export class AppComponent {
       })
       .fetchAll()
       .then((response: any) => {
-        debugger;
         this.createTableData(response.resources, index);
         this.originalSource = this.tableData;
         this.entriesStr = this.tableData.length.toString() + " Einträge"; 
@@ -280,10 +357,10 @@ export class AppComponent {
   public getBatchReleaseEntry(e: any) {
     let BatchReleaseEntry = {
       id: e.id,
-      field1: e.MA_name_,
-      field2: e.Company,
-      field3: e.Manufacturer,
-      field4: e.API_Manufacturer,
+      field1: e.SAP_Material_Number,
+      field2: e.FP_Batch_no__,
+      field3: e.Bulk_Batch_no_,
+      field4: e.MA_name_,
       isInList: true
     };
     return BatchReleaseEntry;
@@ -347,7 +424,7 @@ export class AppComponent {
       this.getData("SAP_FG_Material",7);  
     }
     if (e.index === 8) { 
-      this.headers = ["MA Name","Company","API Manufacturer","Manufacturer"];
+      this.headers = ["SAP Mat. No.","FP Batch No.","Bulk Batch No.","MA Name"];
       this.cols = [true, true, true, true];
       this.getData("Batch_Release",8);  
     }
@@ -378,10 +455,12 @@ export class AppComponent {
     this.currentId = item.id;
     let { resource: cItem } = await this.container.item(this.currentId, this.currentId).read();
     this.currentItem = cItem;
-    this.abbreviationDialog.nativeElement.showModal(); 
+    this.formDialog.nativeElement.showModal();
+    //this.abbreviationDialog.nativeElement.showModal(); 
   }
 
   emitEdit(item) {
+    
     if (this.index === 1) this.editAbbreviation(item);
     if (this.index === 2) this.editCmomaster(item);
     if (this.index === 3) this.editScm(item);
@@ -389,6 +468,12 @@ export class AppComponent {
     if (this.index === 5) this.editContactsVendors(item);
     if (this.index === 6) this.editContactsSkus(item);
     if (this.index === 7) this.editSAPMaterial(item);
+    if (this.index === 8) {
+      if (item.brindex === 1) this.editWarehouse(item);
+      if (item.brindex === 2) this.editBrrprocess(item);
+      if (item.brindex === 3) this.editBrrstatus(item);
+      if (item.brindex === 4) this.editQcprocess(item);
+    }
   }
 
   public async editContactsKontakte(item: any) {
@@ -417,6 +502,7 @@ export class AppComponent {
     this.currentItem = cItem;
     this.contactsSkusDialog.nativeElement.showModal(); 
   }
+
   public async editSAPMaterial(item: any) {
     this.dialogTitle = "SAP Material bearbeiten";
     this.container = this.db.container("SAP_FG_Material");
@@ -426,6 +512,96 @@ export class AppComponent {
     this.SAPMaterialDialog.nativeElement.showModal(); 
   }
 
+  public async editWarehouse(item: any) {
+    this.dialogTitle = "Warehouse";
+    this.container = this.db.container("Batch_Release");
+    this.currentId = item.id;
+    let { resource: cItem } = await this.container.item(this.currentId, this.currentId).read();
+    this.currentItem = cItem;
+    let manudate: string = cItem["Manufacturing_date"];
+    let expirydate: string = cItem["Expiry_date"];
+    let srdate: string = cItem["Sample_Receipt_date"];
+    srdate = srdate.substr(6,4) + "-" + srdate.substr(3,2) + "-" + srdate.substr(0,2);
+    let mdate: string = cItem["Release__Block_for_Marketing_date"];
+    mdate = mdate.substr(6,4) + "-" + mdate.substr(3,2) + "-" + mdate.substr(0,2);
+    let sdate: string = cItem["Release__Block_for_Sale_date"];
+    sdate = sdate.substr(6,4) + "-" + sdate.substr(3,2) + "-" + sdate.substr(0,2);
+    this.diParam = [
+      manudate.substr(0,2), 
+      manudate.substr(3,4),
+      expirydate.substr(0,2), 
+      expirydate.substr(3,4),
+      cItem["Company"],
+      cItem["EU_Non_EU"],
+      srdate,
+      mdate,
+      sdate,
+      cItem["API_Manufacturer"],
+      cItem["Manufacturer"]
+    ];
+    this.warehouseDialog.nativeElement.showModal(); 
+  }
+
+  public async editBrrprocess(item: any) {
+    this.dialogTitle = "BRR Process";
+    this.container = this.db.container("Batch_Release");
+    this.currentId = item.id;
+    let { resource: cItem } = await this.container.item(this.currentId, this.currentId).read();
+    this.currentItem = cItem;
+    let priodate: string = cItem["Prio_meeting_release_date"];
+    priodate = priodate.substr(6,4) + "-" + priodate.substr(3,2) + "-" + priodate.substr(0,2);
+    let OGS_checked = cItem["OGS_checked"] == "x" ? true : false;
+    let qapmdate: string = cItem["BRRor_QAPM"];
+    qapmdate = qapmdate.substr(6,4) + "-" + qapmdate.substr(3,2) + "-" + qapmdate.substr(0,2);
+    let bcalcdate: string = cItem["BRRor_calculation"];
+    bcalcdate = bcalcdate.substr(6,4) + "-" + bcalcdate.substr(3,2) + "-" + bcalcdate.substr(0,2);
+    let qcalcdate: string = cItem["QAPM_calculation"];
+    qcalcdate = qcalcdate.substr(6,4) + "-" + qcalcdate.substr(3,2) + "-" + qcalcdate.substr(0,2);
+    this.diParam = [
+      priodate,
+      OGS_checked,
+      qapmdate,
+      bcalcdate,
+      qcalcdate,
+      cItem["category"]
+    ];
+    this.brrprocessDialog.nativeElement.showModal(); 
+  }
+
+  public async editBrrstatus(item: any) {
+    this.dialogTitle = "BRR Status";
+    this.container = this.db.container("Batch_Release");
+    this.currentId = item.id;
+    let { resource: cItem } = await this.container.item(this.currentId, this.currentId).read();
+    this.currentItem = cItem;
+    let bddate: string = cItem["date_batch_docs"];
+    bddate = bddate.substr(6,4) + "-" + bddate.substr(3,2) + "-" + bddate.substr(0,2);
+    let temp_checked = cItem["Temperaturauswertung_abgeschlossen"] == "x" ? true : false;
+    let batchdoc = cItem["Status_Batch_docs"];
+    this.diParam = [
+      bddate, temp_checked, batchdoc
+    ];
+    this.brrstatusDialog.nativeElement.showModal(); 
+  }
+
+  public async editQcprocess(item: any) {
+    this.dialogTitle = "QC Process";
+    this.container = this.db.container("Batch_Release");
+    this.currentId = item.id;
+    let { resource: cItem } = await this.container.item(this.currentId, this.currentId).read();
+    this.currentItem = cItem;
+    let coarec: string = cItem["CoA_chem_received"];
+    coarec = coarec.substr(6,4) + "-" + coarec.substr(3,2) + "-" + coarec.substr(0,2);
+    let coaadd: string = cItem["CoA_add_received"];
+    coaadd = coaadd.substr(6,4) + "-" + coaadd.substr(3,2) + "-" + coaadd.substr(0,2);
+    debugger;
+    let cocrec: string = cItem["CoC_received"];
+    cocrec = cocrec.substr(6,4) + "-" + cocrec.substr(3,2) + "-" + cocrec.substr(0,2);
+    this.diParam = [
+      coarec, coaadd, cocrec
+    ];
+    this.qcprocessDialog.nativeElement.showModal(); 
+  }
 
   public async editCmomaster(item: any) {
     this.dialogTitle = "Eintrag bearbeiten";
@@ -446,6 +622,7 @@ export class AppComponent {
   }
 
   public emitCancel(index) {
+    debugger;
     if (index === 1) this.abbreviationDialog.nativeElement.close();
     if (index === 2) this.cmomasterDialog.nativeElement.close();
     if (index === 3) this.scmDialog.nativeElement.close();
@@ -453,9 +630,15 @@ export class AppComponent {
     if (index === 5) this.contactsVendorsDialog.nativeElement.close();
     if (index === 6) this.contactsSkusDialog.nativeElement.close();
     if (index === 7) this.SAPMaterialDialog.nativeElement.close();
+    if (index === 8) this.warehouseDialog.nativeElement.close();
+    if (index === 9) this.brrprocessDialog.nativeElement.close();
+    if (index === 10) this.brrstatusDialog.nativeElement.close();
+    if (index === 11) this.qcprocessDialog.nativeElement.close();
+    if (index === 12) this.formDialog.nativeElement.close();
   }
 
   public emitSave(index) {
+    debugger;
     if (index === 1) this.saveAbbreviation();
     if (index === 2) this.saveCmomaster();
     if (index === 3) this.saveScm();
@@ -463,6 +646,10 @@ export class AppComponent {
     if (index === 5) this.saveContactsVendor();
     if (index === 6) this.saveContactsSkus();
     if (index === 7) this.saveSAPMaterial();
+    if (index === 8) this.saveWarehouse();
+    if (index === 9) this.saveBrrprocess();
+    if (index === 10) this.saveBrrstatus();
+    if (index === 11) this.saveQcprocess();
   }
 
   public emitDelete(item) {
@@ -585,6 +772,92 @@ export class AppComponent {
     this.SAPMaterialDialog.nativeElement.close(); 
   }
 
+  public async saveWarehouse() {
+    if (this.currentId !== undefined) {
+      this.currentItem.Manufacturing_date = this.diParam[0] + "/" + this.diParam[1];
+      this.currentItem.Expiry_date = this.diParam[2] + "/" + this.diParam[3];
+      this.currentItem.API_Manufacturer = this.diParam[9];
+      this.currentItem.Manufacturer = this.diParam[10];
+      let srdate = this.diParam[6].substr(8,2) + "/" + this.diParam[6].substr(5,2) + "/" + this.diParam[6].substr(0,4);
+      this.currentItem.Sample_Receipt_date = srdate;
+      let rbmdate = this.diParam[7].substr(8,2) + "/" + this.diParam[7].substr(5,2) + "/" + this.diParam[7].substr(0,4);
+      this.currentItem.Release__Block_for_Marketing_date = rbmdate;
+      let rbsdate = this.diParam[8].substr(8,2) + "/" + this.diParam[8].substr(5,2) + "/" + this.diParam[8].substr(0,4);
+      this.currentItem.Release__Block_for_Sale_date = rbsdate;
+      this.replaceTableData(
+        this.currentItem.SAP_Material_Number, this.currentItem.FP_Batch_no__,
+        this.currentItem.Bulk_Batch_no_,this.currentItem.MA_name_);
+      this.updateData("Batch_Release");
+    } else {
+      let id = this.createId();
+      this.addTableData(id, this.currentItem.Company, this.currentItem.Mat_No_,
+        this.currentItem.Material_description,this.currentItem.Molecule);
+      this.currentItem.id = id;
+      this.container = this.db.container("SAP_FG_Material");
+      await this.container.items.create(this.currentItem);
+    }
+    this.warehouseDialog.nativeElement.close(); 
+  }
+
+  public async saveBrrprocess() {
+    if (this.currentId !== undefined) {
+      this.currentItem.Prio_meeting_release_date = this.formatDate(this.diParam[0]);
+      this.currentItem.category = this.diParam[5];
+      this.currentItem.OGS_checked = this.diParam[1] ? "x" : "";
+      this.currentItem.BRRor_QAPM = this.formatDate(this.diParam[2]);
+      debugger;
+      this.currentItem.BRRor_calculation = this.formatDate(this.diParam[3]);
+      this.currentItem.QAPM_calculation = this.formatDate(this.diParam[4]);;
+      this.updateData("Batch_Release");
+    } else {
+      let id = this.createId();
+      this.addTableData(id, this.currentItem.Company, this.currentItem.Mat_No_,
+        this.currentItem.Material_description,this.currentItem.Molecule);
+      this.currentItem.id = id;
+      this.container = this.db.container("SAP_FG_Material");
+      await this.container.items.create(this.currentItem);
+    }
+    this.brrprocessDialog.nativeElement.close(); 
+  }
+
+  public async saveBrrstatus() {
+    if (this.currentId !== undefined) {
+      this.currentItem.Status_Batch_docs = this.diParam[2];
+      this.currentItem.date_batch_docs = this.formatDate(this.diParam[0]);
+      this.currentItem.Temperaturauswertung_abgeschlossen = this.diParam[1] ? "x" : "";
+      this.updateData("Batch_Release");
+    } else {
+      let id = this.createId();
+      this.addTableData(id, this.currentItem.Company, this.currentItem.Mat_No_,
+        this.currentItem.Material_description,this.currentItem.Molecule);
+      this.currentItem.id = id;
+      this.container = this.db.container("SAP_FG_Material");
+      await this.container.items.create(this.currentItem);
+    }
+    this.brrstatusDialog.nativeElement.close(); 
+  }
+
+  public async saveQcprocess() {
+    if (this.currentId !== undefined) {
+      this.currentItem.CoA_chem_received = this.formatDate(this.diParam[0]);
+      this.currentItem.CoA_add_received = this.formatDate(this.diParam[1]);
+      this.currentItem.CoC_received = this.formatDate(this.diParam[2]);
+      this.updateData("Batch_Release");
+    } else {
+      let id = this.createId();
+      this.addTableData(id, this.currentItem.Company, this.currentItem.Mat_No_,
+        this.currentItem.Material_description,this.currentItem.Molecule);
+      this.currentItem.id = id;
+      this.container = this.db.container("SAP_FG_Material");
+      await this.container.items.create(this.currentItem);
+    }
+    this.qcprocessDialog.nativeElement.close(); 
+  }
+
+  formatDate(date: string) {
+    return date.substr(8,2) + "/" + date.substr(5,2) + "/" + date.substr(0,4);
+  }
+
   public async saveCmomaster() {
     if (this.currentId !== undefined) {
       this.replaceTableData(
@@ -687,7 +960,7 @@ export class AppComponent {
     if (this.index === 5) this.getData("Contacts_Vendors", 5);
     if (this.index === 6) this.getData("Contacts_Skus", 6);
     if (this.index === 7) this.getData("SAP_FG_Material", 7);
-    if (this.index === 7) this.getData("Batch_Release", 8);
+    if (this.index === 8) this.getData("Batch_Release", 8);
     this.entriesStr = this.tableData.length.toString() + " Einträge"; 
   }
 
@@ -751,7 +1024,7 @@ export class AppComponent {
   }
 
   public async updateData(container: string) {
-    debugger;
+    this.showMessage();
     this.container = this.db.container(container);
     await this.container
       .item(this.currentId, this.currentId)
@@ -766,5 +1039,12 @@ export class AppComponent {
       newItem.field3 = f3;
       newItem.field4 = f4;
       this.tableData.push(newItem)
+  }
+
+  public showMessage() {
+    this.messageboxDialog.nativeElement.showModal(); 
+    setTimeout(() => {
+      this.messageboxDialog.nativeElement.close(); ;
+    }, 2000);
   }
 }

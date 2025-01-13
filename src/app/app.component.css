@@ -65,8 +65,18 @@ table {
     width: 32em;
 }
 
-.scmDialog {
+.warehouseDialog {
+  height: 36em;
+  width: 36em;
+}
+
+.brrprocessDialog {
   height: 32em;
+  width: 36em;
+}
+
+.scmDialog {
+  height: 36em;
   width: 48em;
 }
 
@@ -126,11 +136,15 @@ table {
   height: 1.5em;
 }
 
-.flex-container-1 > div {
-  width: 50%;
+.flex-container-1-1 > div {
+  width: 100%;
   text-align: left;
   line-height:90%;
   font-size: 14px;
+}
+
+.mt1 {
+  margin-top: 1em;
 }
 
 .flex-container-2 > div {
@@ -174,6 +188,11 @@ table {
   width: 85%;
 }
 
+.iflex2-100 {
+  margin-top: -5px; 
+  width: 94%;
+}
+
 .iflex3 {
   margin-top: -5px; 
   width: 90%;
@@ -188,3 +207,4 @@ table {
   margin-top: 5em;
   margin-left: 5em;
 }
+

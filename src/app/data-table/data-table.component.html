@@ -1,33 +1,71 @@
 <table>
     <tbody>
-      <tr>
+      <tr >
         <th *ngIf="getCol(0)">{{getColHeader(0)}}
           <span class="pointer fs24" [style]="setColor(1)" (click)="sortTableData(1)">  &#x25b4;</span>
           <span class="pointer fs24" [style]="setColor(2)" (click)="sortTableData(2)">  &#x25be;</span>
         </th>
         <th *ngIf="getCol(1)">{{getColHeader(1)}}
-            <span class="pointer fs24" [style]="setColor(3)" (click)="sortTableData(1)">  &#x25b4;</span>
-            <span class="pointer fs24" [style]="setColor(4)" (click)="sortTableData(2)">  &#x25be;</span>
+            <span class="pointer fs24" [style]="setColor(3)" (click)="sortTableData(3)">  &#x25b4;</span>
+            <span class="pointer fs24" [style]="setColor(4)" (click)="sortTableData(4)">  &#x25be;</span>
         </th>
         <th *ngIf="getCol(2)">{{getColHeader(2)}}
-            <span class="pointer fs24" [style]="setColor(5)" (click)="sortTableData(1)">  &#x25b4;</span>
-            <span class="pointer fs24" [style]="setColor(6)" (click)="sortTableData(2)">  &#x25be;</span>
+            <span class="pointer fs24" [style]="setColor(5)" (click)="sortTableData(5)">  &#x25b4;</span>
+            <span class="pointer fs24" [style]="setColor(6)" (click)="sortTableData(6)">  &#x25be;</span>
         </th>
         <th *ngIf="getCol(3)">{{getColHeader(3)}}
-            <span class="pointer fs24" [style]="setColor(7)" (click)="sortTableData(1)">  &#x25b4;</span>
-            <span class="pointer fs24" [style]="setColor(8)" (click)="sortTableData(2)">  &#x25be;</span>
+            <span class="pointer fs24" [style]="setColor(7)" (click)="sortTableData(7)">  &#x25b4;</span>
+            <span class="pointer fs24" [style]="setColor(8)" (click)="sortTableData(8)">  &#x25be;</span>
         </th>
+        <th></th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
-      <tr *ngFor='let item of tableData'>
-        <td *ngIf="getCol(0)">{{item.field1}}</td>
-        <td *ngIf="getCol(1)">{{item.field2}}</td>
-        <td *ngIf="getCol(2)">{{item.field3}}</td>
-        <td *ngIf="getCol(3)">{{item.field4}}</td>
-        <td>
+      <tr [ngStyle]="{'border': item.id===selectedId ? '2px solid' : 'none'}" *ngFor='let item of tableData'>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '10em' : ''}" 
+          *ngIf="getCol(0)">{{item.field1}}
+        </td>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '10em' : ''}"
+          *ngIf="getCol(1)">{{item.field2}}
+        </td>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '11em' : ''}" 
+          *ngIf="getCol(2)">{{item.field3}}
+        </td>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '30em' : ''}" 
+          *ngIf="getCol(3)">{{item.field4}}
+        </td>
+        <td *ngIf="index===8">
+            <Label (click)="editItem(item,1)" 
+              class="link">Warehouse
+            </Label>
+        </td>
+        <td *ngIf="index===8">
+          <Label (click)="editItem(item,2)" 
+            class="link">BRR Process
+          </Label>
+        </td>
+        <td *ngIf="index===8">
+          <Label (click)="editItem(item,3)" 
+            class="link">BRR Status
+          </Label>
+        </td>
+        <td *ngIf="index===8">
+          <Label (click)="editItem(item,4)" 
+            class="link">QC Process
+          </Label>
+        </td>
+        <td *ngIf="index!=8">
           <img 
-            (click)="editItem(item)"
+            (click)="editItem(item,0)"
             title="Eintrag bearbeiten" 
             class="iconDel" 
             src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>

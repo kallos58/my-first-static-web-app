@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common'
 })
 export class DataTableComponent {
     colorIndex = 0; 
+    selectedId: string = ""; 
     @Input() tableData: any = [];
     @Input() cols: any = [];
     @Input() headers: any = [];
+    @Input() index: any = 0;
     @Output() childEdit = new EventEmitter<any>();
     @Output() childDelete = new EventEmitter<any>();
 
@@ -22,12 +24,18 @@ export class DataTableComponent {
         
     ) {
     }  
-    editItem(item) {
+    editItem(item,index) {
+        this.selectedId = item.id;
+        item.brindex = index;
         this.childEdit.emit(item);
     }
-    
+
+    selectItem(item) {
+        this.selectedId = item.id;
+    }
 
     public deleteItem(item) {
+        this.selectItem(item);
         this.childDelete.emit(item);
     }
 

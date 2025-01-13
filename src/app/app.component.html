@@ -22,7 +22,7 @@
       src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_add-64.png" />
   </div>
   <main class="main" >
-    
+
     <mat-tab-group (selectedTabChange)="changeTab($event)">
       <mat-tab label="Home"> 
         <h3 class="heumannapp">Heumann App</h3>
@@ -113,7 +113,8 @@
             (childDelete)="emitDelete($event)" 
             [tableData]="tableData" 
             [headers]="headers" 
-            [cols]="cols">
+            [cols]="cols"
+            [index]="index">
           </app-data-table>
         </div>
       </mat-tab>
@@ -182,3 +183,60 @@
       [dialogTitle]="dialogTitle">
     </sapmaterial-dialog>    
   </dialog>
+  
+  <dialog #warehouseDialog class="dialog warehouseseDialog">
+    <warehouse-dialog 
+      (childSave)="emitSave(8)" 
+      (childCancel)="emitCancel(8)" 
+      [currentItem]="currentItem"
+      [diParam]="diParam"
+      [apimanufacturers]="apimanufacturers"
+      [manufacturers]="manufacturers"
+      [dialogTitle]="dialogTitle">
+    </warehouse-dialog>    
+  </dialog>
+
+  <dialog #brrprocessDialog class="dialog brrProcessDialog">
+    <brrprocess-dialog 
+      (childSave)="emitSave(9)" 
+      (childCancel)="emitCancel(9)" 
+      [currentItem]="currentItem"
+      [diParam]="diParam"
+      [categories]="categories"
+      [dialogTitle]="dialogTitle">
+    </brrprocess-dialog>    
+  </dialog>
+
+  <dialog #brrstatusDialog class="dialog brrProcessDialog">
+    <brrstatus-dialog 
+      (childSave)="emitSave(10)" 
+      (childCancel)="emitCancel(10)" 
+      [currentItem]="currentItem"
+      [diParam]="diParam"
+      [dialogTitle]="dialogTitle">
+    </brrstatus-dialog>    
+  </dialog>
+
+  <dialog #qcprocessDialog class="dialog brrProcessDialog">
+    <qcprocess-dialog 
+      (childSave)="emitSave(11)" 
+      (childCancel)="emitCancel(11)" 
+      [currentItem]="currentItem"
+      [diParam]="diParam"
+      [dialogTitle]="dialogTitle">
+    </qcprocess-dialog>    
+  </dialog>
+
+  <dialog #messageboxDialog class="dialog brrProcessDialog">
+    <messagebox-dialog></messagebox-dialog>
+  </dialog>
+
+  <dialog #formDialog class="dialog warehouseDialog">
+    <form-dialog
+      (childCancel)="emitCancel(12)" 
+      [dialogTitle]="dialogTitle">
+    </form-dialog>
+  </dialog>
+  
+  
+  

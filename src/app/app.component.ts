@@ -59,7 +59,7 @@ import { FormDialog } from './dialogs/formDialog/formDialog.component'
   ]
 })
 
-export class AppComponent {
+export class AppComponent  {
   @ViewChild('abbreviationDialog', { static: true }) abbreviationDialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('cmomasterDialog', { static: true }) cmomasterDialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('scmDialog', { static: true }) scmDialog!: ElementRef<HTMLDialogElement>;
@@ -109,6 +109,7 @@ export class AppComponent {
   cols: any;
   headers: any;
   constructor() {
+    return;
     this.service = new ServiceService();
     this.endpoint = "https://schruefer.documents.azure.com:443/";
     this.key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
@@ -124,7 +125,7 @@ export class AppComponent {
     //this.service.createBatch(batch_jan_mar_2024);
     //this.service.createManufacturers(manufacturers);
   }
- 
+
   public async getCategories() {  
     this.container = this.db.container("Categories");
     try {

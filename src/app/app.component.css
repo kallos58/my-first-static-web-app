@@ -45,6 +45,11 @@ table {
   .pointer {
     cursor: pointer;
   }
+
+  .underline {
+    text-decoration: underline;
+    margin-top: -5px;
+  }
  
   .fs24 {
     font-size: 24px;
@@ -208,3 +213,13 @@ table {
   margin-left: 5em;
 }
 
+.dialogHeader {
+  width: 105%;
+  margin-top: -18px;
+  margin-left: -18px;
+  padding-left: 10px;
+}
+
+.bg-warehouse {
+  background: linear-gradient(90deg, #ff8e00,#ffc700,#ff1e00);
+}

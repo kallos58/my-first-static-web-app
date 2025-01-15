@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^18.2.12",
     "@angular/router": "^18.2.12",
     "@azure/cosmos": "^4.2.0",
+    "angular-basic": "file:",
     "angular-material-styles": "^1.1.21",
     "rxjs": "~6.6.6",
     "tslib": "^2.0.0",

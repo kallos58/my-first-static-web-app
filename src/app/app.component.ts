@@ -109,7 +109,6 @@ export class AppComponent  {
   cols: any;
   headers: any;
   constructor() {
-    return;
     this.service = new ServiceService();
     this.endpoint = "https://schruefer.documents.azure.com:443/";
     this.key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
@@ -187,7 +186,7 @@ export class AppComponent  {
         this.createTableData(response.resources, 3);
         
         this.originalSource = this.tableData;
-        this.entriesStr = this.tableData.length.toString() + " Einträge"; 
+        this.entriesStr = this.tableData.length.toString() + " entries"; 
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -207,7 +206,7 @@ export class AppComponent  {
       .then((response: any) => {
         this.createTableData(response.resources, 1);
         this.originalSource = this.tableData;
-        this.entriesStr = this.tableData.length.toString() + " Einträge"; 
+        this.entriesStr = this.tableData.length.toString() + " entries"; 
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -226,7 +225,7 @@ export class AppComponent  {
       .then((response: any) => {
         this.createTableData(response.resources, index);
         this.originalSource = this.tableData;
-        this.entriesStr = this.tableData.length.toString() + " Einträge"; 
+        this.entriesStr = this.tableData.length.toString() + " entries"; 
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -245,7 +244,7 @@ export class AppComponent  {
       .then((response: any) => {
         this.createTableData(response.resources, 2);
         this.originalSource = this.tableData;
-        this.entriesStr = this.tableData.length.toString() + " Einträge"; 
+        this.entriesStr = this.tableData.length.toString() + " entries"; 
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -514,6 +513,7 @@ export class AppComponent  {
   }
 
   public async editWarehouse(item: any) {
+    debugger;
     this.dialogTitle = "Warehouse";
     this.container = this.db.container("Batch_Release");
     this.currentId = item.id;
@@ -668,7 +668,7 @@ export class AppComponent  {
     index = this.originalSource.findIndex((e: { id: any; }) => e.id === e.id); 
     this.originalSource.splice(index, 1);
     await this.container.item(item.id, item.id).delete();
-    this.entriesStr = String(this.tableData.length) + " Einträge";
+    this.entriesStr = String(this.tableData.length) + " entries";
   }
 
   public async saveAbbreviation() {
@@ -962,7 +962,7 @@ export class AppComponent  {
     if (this.index === 6) this.getData("Contacts_Skus", 6);
     if (this.index === 7) this.getData("SAP_FG_Material", 7);
     if (this.index === 8) this.getData("Batch_Release", 8);
-    this.entriesStr = this.tableData.length.toString() + " Einträge"; 
+    this.entriesStr = this.tableData.length.toString() + " entries"; 
   }
 
   filterData() {
@@ -980,7 +980,7 @@ export class AppComponent  {
         this.tableData[key].isInList = inFilter;
       })
       this.tableData = this.tableData.filter((e: { isInList: boolean; }) => e.isInList === true);
-      this.entriesStr = String(this.tableData.length) + " Einträge";
+      this.entriesStr = String(this.tableData.length) + " entries";
   }
 
   filterCMOMasters() {
@@ -996,7 +996,7 @@ export class AppComponent  {
       this.cmomasters[key].isInList = inFilter;
     })
     this.cmomasters = this.cmomasters.filter((e: { isInList: boolean; }) => e.isInList === true);
-    this.entriesStr = String(this.cmomasters.length) + " Einträge";
+    this.entriesStr = String(this.cmomasters.length) + " entries";
   }
 
   public createId(): string {

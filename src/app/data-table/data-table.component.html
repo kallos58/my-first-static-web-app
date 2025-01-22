@@ -1,82 +1,297 @@
+
 <table>
     <tbody>
       <tr >
-        <th *ngIf="getCol(0)">{{getColHeader(0)}}
-          <span class="pointer fs24" [style]="setColor(1)" (click)="sortTableData(1)">  &#x25b4;</span>
-          <span class="pointer fs24" [style]="setColor(2)" (click)="sortTableData(2)">  &#x25be;</span>
+        <th class="brheader" *ngIf="getCol(0)">
+          <div>
+            <label class="pointer" (click)="showSAPMat=true">{{getColHeader(0)}}</label>
+            <span #anchor class="pointer fs24" (click)="showSAPMat=true">
+              <img 
+                *ngIf="index!=0" 
+                class="iconHeader" 
+                (click)="showSAPMat=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+              <kendo-popup class="contentCoA" [anchor]="anchor" *ngIf="showSAPMat">
+                <div class="popupHeader">Filter by {{getColHeader(0)}}</div>
+                <div class="mt1 pl8"><Label>Enter filter value</Label></div>
+                <div class="pl8">
+                  <input [(ngModel)]="batchVal" style="width: 16em;"/>
+                </div>
+                <div>
+                  <input type="radio" [checked]="batchoption==0" (click)="clickBatchOption(0)">no sorting
+                  <input type="radio" [checked]="batchoption==1" (click)="clickBatchOption(1)">ascending
+                  <input type="radio" [checked]="batchoption==2" (click)="clickBatchOption(2)">descending
+                </div>
+                <div class="mt1 pl8 pb8 tp">
+                  <button (click)="onFilterBatch(1)">Filter</button>
+                  <button (click)="onHideBatch(1)">Cancel</button>
+                </div>
+              </kendo-popup>
+            </span>
+          </div>
         </th>
-        <th *ngIf="getCol(1)">{{getColHeader(1)}}
-            <span class="pointer fs24" [style]="setColor(3)" (click)="sortTableData(3)">  &#x25b4;</span>
-            <span class="pointer fs24" [style]="setColor(4)" (click)="sortTableData(4)">  &#x25be;</span>
+        <th class="brheader" *ngIf="getCol(1)">
+          <div>
+            <label class="pointer" (click)="showFPBatch=true">{{getColHeader(1)}}</label>
+            <span #anchor class="pointer fs24" (click)="showFPBatch=true">
+              <img 
+                *ngIf="index!=0" 
+                class="iconHeader" 
+                (click)="showFPBatch=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+              <kendo-popup class="contentCoA" [anchor]="anchor" *ngIf="showFPBatch">
+                <div class="popupHeader">Filter by {{getColHeader(1)}}</div>
+                <div class="mt1 pl8"><Label>Enter filter value</Label></div>
+                <div class="pl8">
+                  <input [(ngModel)]="batchVal" style="width: 16em;"/>
+                </div>
+                <div>
+                  <input type="radio" [checked]="batchoption==0" (click)="clickBatchOption(0)">no sorting
+                  <input type="radio" [checked]="batchoption==1" (click)="clickBatchOption(1)">ascending
+                  <input type="radio" [checked]="batchoption==2" (click)="clickBatchOption(2)">descending
+              </div>
+                <div class="mt1 pl8 pb8 tp">
+                  <button (click)="onFilterBatch(2)">Filter</button>
+                  <button (click)="onHideBatch(2)">Cancel</button>
+                </div>
+              </kendo-popup>
+            </span>
+          </div>
         </th>
-        <th *ngIf="getCol(2)">{{getColHeader(2)}}
-            <span class="pointer fs24" [style]="setColor(5)" (click)="sortTableData(5)">  &#x25b4;</span>
-            <span class="pointer fs24" [style]="setColor(6)" (click)="sortTableData(6)">  &#x25be;</span>
+        <th class="brheader" *ngIf="getCol(2)">
+          <div>
+            <label class="pointer" (click)="showBulkBatch=true">{{getColHeader(2)}}</label>
+            <span #anchor class="pointer fs24" (click)="showBulkBatch=true">
+              <img 
+                *ngIf="index!=0" 
+                class="iconHeader" 
+                (click)="showBulkBatch=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+              <kendo-popup class="contentCoA" [anchor]="anchor" *ngIf="showBulkBatch">
+                <div class="popupHeader">Filter by {{getColHeader(2)}}</div>
+                <div class="mt1 pl8"><Label>Enter filter value</Label></div>
+                <div class="pl8">
+                  <input [(ngModel)]="batchVal" style="width: 16em;"/>
+                </div>
+                <div>
+                  <input type="radio" [checked]="batchoption==0" (click)="clickBatchOption(0)">no sorting
+                  <input type="radio" [checked]="batchoption==1" (click)="clickBatchOption(1)">ascending
+                  <input type="radio" [checked]="batchoption==2" (click)="clickBatchOption(2)">descending
+              </div>
+                <div class="mt1 pl8 pb8 tp">
+                  <button (click)="onFilterBatch(3)">Filter</button>
+                  <button (click)="onHideBatch(3)">Cancel</button>
+                </div>
+              </kendo-popup>
+            </span>
+          </div>
         </th>
-        <th *ngIf="getCol(3)">{{getColHeader(3)}}
-            <span class="pointer fs24" [style]="setColor(7)" (click)="sortTableData(7)">  &#x25b4;</span>
-            <span class="pointer fs24" [style]="setColor(8)" (click)="sortTableData(8)">  &#x25be;</span>
+        <th class="brheader" *ngIf="getCol(3)">
+          <div>
+            <label class="pointer" (click)="showMAName=true">{{getColHeader(3)}}</label>
+            <span #anchor class="pointer fs24" (click)="showMAName=true">
+              <img 
+                *ngIf="index!=0" 
+                class="iconHeader" 
+                (click)="showMAName=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+              <kendo-popup class="contentCoA" [anchor]="anchor" *ngIf="showMAName">
+                <div class="popupHeader">Filter by {{getColHeader(3)}}</div>
+                <div class="mt1 pl8"><Label>Enter filter value</Label></div>
+                <div class="pl8">
+                  <input [(ngModel)]="batchVal" style="width: 16em;"/>
+                </div>
+                <div>
+                  <input type="radio" [checked]="batchoption==0" (click)="clickBatchOption(0)">no sorting
+                  <input type="radio" [checked]="batchoption==1" (click)="clickBatchOption(1)">ascending
+                  <input type="radio" [checked]="batchoption==2" (click)="clickBatchOption(2)">descending
+              </div>
+                <div class="mt1 pl8 pb8 tp">
+                  <button (click)="onFilterBatch(4)">Filter</button>
+                  <button (click)="onHideBatch(4)">Cancel</button>
+                </div>
+              </kendo-popup>
+            </span>
+          </div>
         </th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th class="brheader pointer" (click)="showStatus=true" *ngIf="getCol(4)">
+          <div>
+            <label class="pointer" (click)="showStatus=true">S</label>
+            <span #anchor class="pointer fs24" (click)="showStatus=true">
+              <img 
+                *ngIf="index!=0" 
+                class="iconHeader" 
+                (click)="showStatus=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+            </span>
+          </div>
+        </th>
+        <th class="brheader pointer" (click)="showStatus=true" *ngIf="getCol(5)">
+          <div>
+            <label class="pointer" (click)="showStatus=true">Sample receipt date</label>
+            <span #anchor class="pointer fs24" (click)="showStatus=true">
+              <img 
+                *ngIf="index!=0" 
+                class="iconHeader" 
+                (click)="showStatus=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+              <kendo-popup class="contentCoA" [anchor]="anchor" *ngIf="showStatus">
+                <div class="popupHeader">Filter by status and sample receipt date</div>
+                <div class="mt1 pl8"><Label>Select a status</Label></div>
+                <div class="pl8">
+                  <select [(ngModel)]="filterStatus" style="width: 16em;">
+                    <option 
+                      *ngFor="let s of status">{{s}}
+                    </option>
+                  </select>
+                </div>
+                <div class="pl8 mt1"><Label>From sample receipt date</Label></div>
+                <div class="pl8"><input [(ngModel)]="fromSrd" type="date"/></div>
+                <div>
+                  <input type="radio" [checked]="option==0" (click)="clickOption(0)">from to
+                  <input type="radio" [checked]="option==1" (click)="clickOption(1)">is equal
+                  <input type="radio" [checked]="option==2" (click)="clickOption(2)">greater eq.
+                  <input type="radio" [checked]="option==3" (click)="clickOption(3)">lower eq.
+                </div>
+                <div class="pl8 mt1"><Label>To sample receipt date</Label></div>
+                <div class="pl8"><input [(ngModel)]="toSrd" type="date"/></div>
+                <div class="mt1">
+                  <input type="radio" [checked]="batchoption==0" (click)="clickBatchOption(0)">no sorting
+                  <input type="radio" [checked]="batchoption==1" (click)="clickBatchOption(1)">ascending
+                  <input type="radio" [checked]="batchoption==2" (click)="clickBatchOption(2)">descending
+                </div>
+                <div class="mt1 pl8 pb8 tp">
+                  <button (click)="onFilterStatus()">Filter</button>
+                  <button (click)="onHideStatus()">Cancel</button>
+                </div>
+              </kendo-popup>
+            </span>
+          </div>
+        </th>
+        <th class="brheader pointer" (click)="showEU=true" *ngIf="getCol(6)">
+          <div>
+            <label class="pointer" (click)="showEU=true">EU</label>
+            <span #anchor class="pointer fs24" (click)="showEU=true">
+              <img 
+              *ngIf="index!=0" 
+              class="iconHeader" 
+              title="Daten filtern"
+              (click)="showEU=true"
+              src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+            <kendo-popup class="content" [anchor]="anchor" *ngIf="showEU">
+              <div class="popupHeader">Select EU / Non-EU</div>
+              <div class="mt1 pl8">
+                <select [(ngModel)]="euVal" style="width: 100%;">
+                    <option *ngFor="let eu of eus">{{eu}}</option>
+                </select>
+              </div>
+              <div class="mt1 pl8 pb8 tp">
+                <button (click)="onFilterEU()">Filter</button>
+                <button (click)="onHideEU()">Cancel</button>
+              </div>
+            </kendo-popup>
+          </span></div>
+        </th>
+        <th class="brheader pointer" (click)="showCoA=true" *ngIf="getCol(7)">
+          <div>
+            <label class="pointer" (click)="showCoA=true">CoA chem. exp.</label>
+            <span #anchor class="pointer fs24" (click)="showCoA=true">
+              <img 
+                *ngIf="index===8" 
+                class="iconHeader" 
+                (click)="showCoA=true"
+                title="Daten filtern"
+                src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" /> 
+              <kendo-popup class="contentCoA" [anchor]="anchor" *ngIf="showCoA">
+                <div class="popupHeader">Select CoA chem. period</div>
+                <div class="mt1 pl8"><Label>From</Label></div>
+                <div class="pl8"><input [(ngModel)]="fromCoA" type="date"/></div>
+                <div class="pl8"><Label>To</Label></div>
+                <div class="pl8"><input [(ngModel)]="toCoA" type="date"/></div>
+                <div class="mt1">
+                  <input type="radio" [checked]="batchoption==0" (click)="clickBatchOption(0)">no sorting
+                  <input type="radio" [checked]="batchoption==1" (click)="clickBatchOption(1)">ascending
+                  <input type="radio" [checked]="batchoption==2" (click)="clickBatchOption(2)">descending
+                </div>
+                <div class="mt1 pl8 pb8 tp">
+                  <button (click)="onFilterCoA()">Filter</button>
+                  <button (click)="onHideCoA()">Cancel</button>
+                </div>
+              </kendo-popup>
+            </span>
+          </div>
+        </th>
         <th></th>
       </tr>
       <tr [ngStyle]="{'border': item.id===selectedId ? '2px solid' : 'none'}" *ngFor='let item of tableData'>
         <td 
           (click)="selectItem(item)"
-          [ngStyle]="{'width': index===8 ? '10em' : ''}" 
+          [ngStyle]="{'width': index===8 ? '6em' : ''}" 
           *ngIf="getCol(0)">{{item.field1}}
         </td>
         <td 
           (click)="selectItem(item)"
-          [ngStyle]="{'width': index===8 ? '10em' : ''}"
+          [ngStyle]="{'width': index===8 ? '6em' : ''}"
           *ngIf="getCol(1)">{{item.field2}}
         </td>
         <td 
           (click)="selectItem(item)"
-          [ngStyle]="{'width': index===8 ? '11em' : ''}" 
+          [ngStyle]="{'width': index===8 ? '7em' : ''}" 
           *ngIf="getCol(2)">{{item.field3}}
         </td>
         <td 
           (click)="selectItem(item)"
-          [ngStyle]="{'width': index===8 ? '30em' : ''}" 
+          [ngStyle]="{'width': index===8 ? '32em' : ''}" 
           *ngIf="getCol(3)">{{item.field4}}
         </td>
-        <td *ngIf="index===8">
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '2em' : ''}" 
+          *ngIf="getCol(4)">{{item.field5}}
+        </td>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '9em' : ''}" 
+          *ngIf="getCol(5)">{{item.field6}}
+        </td>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '7em' : ''}" 
+          *ngIf="getCol(6)">{{item.field7}}
+        </td>
+        <td 
+          (click)="selectItem(item)"
+          [ngStyle]="{'width': index===8 ? '7em' : ''}" 
+          *ngIf="getCol(7)">{{item.field8}}
+        </td>
+        <td >
             <Label (click)="editItem(item,1)" 
-              class="link">Warehouse
+              class="link">Details
             </Label>
         </td>
-        <td *ngIf="index===8">
+        <td *ngIf="index===999">
           <Label (click)="editItem(item,2)" 
             class="link">BRR Process
           </Label>
         </td>
-        <td *ngIf="index===8">
+        <td *ngIf="index===999">
           <Label (click)="editItem(item,3)" 
             class="link">BRR Status
           </Label>
         </td>
-        <td *ngIf="index===8">
+        <td *ngIf="index===999">
           <Label (click)="editItem(item,4)" 
             class="link">QC Process
           </Label>
         </td>
-        <td *ngIf="index!=8">
-          <img 
-            (click)="editItem(item,0)"
-            title="Eintrag bearbeiten" 
-            class="iconDel" 
-            src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/edit-change-pencil-64.png"/>
-        </td>
-        <td>
-          <img 
-            (click)="deleteItem(item)"
-            title="Eintrag löschen"  
-            class="iconDel" 
-            src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trash-64.png"/></td>
       </tr>
 
     </tbody>
   </table>
+  

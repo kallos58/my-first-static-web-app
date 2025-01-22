@@ -37,9 +37,12 @@ table {
   }
 
   .tableDiv {
-    width: 85em; 
-    height: 36em; 
+    width: 95%; 
+    height: 34em; 
+    margin-top: 1em;
     margin-left: 2em;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .pointer {
@@ -52,7 +55,7 @@ table {
   }
  
   .fs24 {
-    font-size: 24px;
+    font-size: 12px;
   }
   
   .dialog {
@@ -71,8 +74,11 @@ table {
 }
 
 .warehouseDialog {
-  height: 36em;
+  height: 38em;
   width: 36em;
+  border: 2px solid darkblue;
+  border-radius: 12px;
+  box-shadow: 10px 5px 5px gray;
 }
 
 .brrprocessDialog {
@@ -99,20 +105,30 @@ table {
     font-family: arial, sans-serif;
     font-size: 14px;
     padding-left: 1em;
+    padding-top: 0.5em;
     background-color: rgba(232, 232, 232, 0.538);
     color: black;
     border-color: gray;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 0 20px 8px #d0d0d0;
-    padding-top: 0.5em; 
-    height: 2em; width: 100%;
+    height: 3em; width: 100%;
  }
 
  .flex-container {
   display: flex;
   flex-wrap: nowrap;
   padding-bottom: 0.5em;
+}
+
+.xlsButton {
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+}
+
+.ml1 {
+  margin-left: 1em;
 }
 
 
@@ -150,6 +166,10 @@ table {
 
 .mt1 {
   margin-top: 1em;
+}
+
+.mt2 {
+  margin-top: 2em;
 }
 
 .flex-container-2 > div {
@@ -195,7 +215,7 @@ table {
 
 .iflex2-100 {
   margin-top: -5px; 
-  width: 94%;
+  width: 96%;
 }
 
 .iflex3 {
@@ -223,3 +243,38 @@ table {
 .bg-warehouse {
   background: linear-gradient(90deg, #ff8e00,#ffc700,#ff1e00);
 }
+
+.dialogDiv {
+  border: 3px darkblue solid;
+  padding-left: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-shadow: 10px 5px 5px lightgray;
+  border-radius: 12px;
+}
+
+.filterHeader {
+  background: blue;
+  color: white;
+  margin-top: -0.75em;
+  margin-left: -0.75em;
+  padding-left: 12px;
+  width: 125%;
+}
+
+.card {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  padding-left: 1em;
+  background-color: rgba(232, 232, 232, 0.538);
+  color: black;
+  border-color: gray;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+  margin-top: 2em;
+  margin-left: 2em;
+  height: 12em;
+  width: 12em;
+}
+

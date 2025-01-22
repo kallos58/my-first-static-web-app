@@ -1,119 +1,309 @@
-<h4 class="bg-warehouse dialogHeader">{{dialogTitle}}</h4>
-    <div class="flex-container-1-1">
-      <div  class="flex-container-2">
-        <div><label>SAP Mat. No.</label></div>
-        <div><label>FP Batch No.</label></div>
-        <div><label>Bulk Batch No.</label></div>
-      </div>
-    </div>
-    <div class="flex-container-1-1">
-      <div  class="flex-container-2">
-        <div><input [(ngModel)]="currentItem['SAP_Material_Number']" class="iflex2" disabled/></div>
-        <div><input [(ngModel)]="currentItem['FP_Batch_no__']" class="iflex2"/></div>
-        <div><input [(ngModel)]="currentItem['Bulk_Batch_no_']" class="iflex2"/></div>
-      </div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div><label>MA Name</label></div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div><input [(ngModel)]="currentItem['MA_name_']" class="iflex2-100" disabled/></div>
-    </div>
-    <div class="flex-container-1-1 mt1">
+
+    <div style="margin-top: -1em; color: blue;"><label>Current Batch Release Entry</label></div>
+    <div class="dialogDiv">
+        <div class="flex-container-1-1">
         <div  class="flex-container-2">
+            <div><label>SAP Mat. No.</label></div>
             <div><label>MA No.</label></div>
-            <div><label>Company</label></div>
-            <div><label>Pack Size</label></div>
+            <div><label>FP Batch No.</label></div>
+            <div><label>Bulk Batch No.</label></div>
         </div>
-    </div>
-    <div class="flex-container-1-1">
+        </div>
+        <div class="flex-container-1-1">
         <div  class="flex-container-2">
+            <div><input [(ngModel)]="currentItem['SAP_Material_Number']" class="iflex2" disabled/></div>
             <div><input [(ngModel)]="currentItem['MA_No_']" class="iflex2" disabled/></div>
-            <div><input [(ngModel)]="currentItem['Company']" class="iflex2" disabled/></div>
-            <div><input [(ngModel)]="currentItem['Pack_size']" class="iflex2" disabled/></div>
+            <div><input [(ngModel)]="currentItem['FP_Batch_no__']" class="iflex2"/></div>
+            <div><input [(ngModel)]="currentItem['Bulk_Batch_no_']" class="iflex2"/></div>
+        </div>
+        </div>
+        <div class="flex-container-1-1 mt1">
+            <div><label>MA Name</label></div>
+        </div>
+        <div class="flex-container-1-1 mt1">
+            <div><input [(ngModel)]="currentItem['MA_name_']" class="iflex2-100" disabled/></div>
         </div>
     </div>
-    <div class="flex-container-1-1 mt1">
-        <div  class="flex-container-2">
-            <div><label>NTIN</label></div>
-            <div><label>Manufacturing date</label></div>
-            <div><label>Expiry date</label></div>
-        </div>
-    </div>
-    <div class="flex-container-1-1">
-        <div  class="flex-container-2">
-            <div><input [(ngModel)]="currentItem['NTIN']" class="iflex2" disabled/></div>
-            <div>
-                <select [(ngModel)]="diParam[0]">
-                    <option *ngFor="let month of months">{{month}}</option>
-                </select>
-                <select [(ngModel)]="diParam[1]">
-                    <option *ngFor="let year of years">{{year}}</option>
-                </select>
+    <mat-tab-group>
+        <mat-tab class="mt1" label="Warehouse"> 
+            <div class="dialogDiv mt1">
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Company</label></div>
+                        <div><label>Pack Size</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Company']" class="iflex2" disabled/></div>
+                        <div><input [(ngModel)]="currentItem['Pack_size']" class="iflex2" disabled/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>NTIN</label></div>
+                        <div><label>Manufacturing date</label></div>
+                        <div><label>Expiry date</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['NTIN']" class="iflex2" disabled/></div>
+                        <div>
+                            <select [(ngModel)]="diParam[0]">
+                                <option *ngFor="let month of months">{{month}}</option>
+                            </select>
+                            <select [(ngModel)]="diParam[1]">
+                                <option *ngFor="let year of years">{{year}}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select [(ngModel)]="diParam[2]">
+                                <option *ngFor="let month of months">{{month}}</option>
+                            </select>
+                            <select [(ngModel)]="diParam[3]">
+                                <option *ngFor="let year of years">{{year}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div><label>API Manufacturer</label></div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div>
+                        <select [(ngModel)]="diParam[9]" class="iflex2-100">
+                            <option 
+                                *ngFor="let api of apimanufacturers">{{api.API_Manufacturer}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div><label>Manufacturer</label></div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div>
+                        <select [(ngModel)]="diParam[10]" class="iflex2-100">
+                            <option 
+                                *ngFor="let manu of manufacturers">{{manu.Manufacturer}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>EU / Non EU</label></div>
+                        <div><label>Release / blocking site</label></div>
+                        <div><label>Sample receipt date</label></div>
+                    </div>
+                </div>
+                <!--<div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <select [(ngModel)]="currentItem['EU__Non_EU']" class="iflex2-100">
+                            <option *ngFor="let eu of eus">{{eu}}</option>
+                        </select>
+                        <div><input [(ngModel)]="currentItem['Release__Blocking_Site']" class="iflex2"/></div>
+                        <div><input type="date" [(ngModel)]="diParam[6]" class="iflex2"/></div>
+                    </div>
+                </div>-->
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div>
+                            <select [(ngModel)]="currentItem['EU__Non_EU']" class="iflex2-100">
+                                <option *ngFor="let eu of eus">{{eu}}</option>
+                            </select>
+                        </div>
+                        <div><input type="date" [(ngModel)]="diParam[7]" class="iflex2"/></div>
+                        <div><input type="date" [(ngModel)]="diParam[8]" class="iflex2"/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Status</label></div>
+                        <div><label>Rel./Block marketing date</label></div>
+                        <div><label>Rel./Block sale date</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div>
+                            <select [(ngModel)]="currentItem['Status']" class="iflex2-100">
+                                <option 
+                                    *ngFor="let s of status">{{s}}
+                                </option>
+                            </select>
+                        </div>
+                        <div><div><input type="date" [(ngModel)]="diParam[7]" class="iflex2"/></div></div>
+                        <div><div><input type="date" [(ngModel)]="diParam[8]" class="iflex2"/></div></div>
+                </div>
             </div>
-            <div>
-                <select [(ngModel)]="diParam[2]">
-                    <option *ngFor="let month of months">{{month}}</option>
-                </select>
-                <select [(ngModel)]="diParam[3]">
-                    <option *ngFor="let year of years">{{year}}</option>
-                </select>
+        </div>
+        </mat-tab>
+        <mat-tab label="BRR Process"> 
+            <div class="dialogDiv mt1">
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>BRR resp.</label></div>
+                        <div><label>QAPM resp.</label></div>
+                        <div><label>QP resp.</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['BRRor_resp_']" class="iflex2"/></div>
+                        <div><input [(ngModel)]="currentItem['QAPM_resp_']" class="iflex2"/></div>
+                        <div><input [(ngModel)]="currentItem['QP_resp_']" class="iflex2"/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Prio</label></div>
+                        <div><label>Prio Meeting</label></div>
+                        <div><label>Category</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Prio']" class="iflex2"/></div>
+                        <div><div><input type="date" [(ngModel)]="diParam[10]" class="iflex2"/></div></div>
+                        <div>
+                            <select [(ngModel)]="diParam[12]" class="iflex2-100">
+                                <option 
+                                    *ngFor="let cat of categories">{{cat.category}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>OGS checked</label></div>
+                        <div><label>QA comment</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input value="diParam[1]" type="checkbox" checked="diParam[1]"></div>
+                        <div><input [(ngModel)]="currentItem['QA_comment_']" style="width: 23em;"/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>BRRor -> QAPM</label></div>
+                        <div><label>BRRor calculation</label></div>
+                        <div><label>QAPM calculation</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><div><input type="date" [(ngModel)]="diParam[13]" class="iflex2"/></div></div>
+                        <div><div><input type="date" [(ngModel)]="diParam[14]" class="iflex2"/></div></div>
+                        <div><div><input type="date" [(ngModel)]="diParam[15]" class="iflex2"/></div></div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </mat-tab>
+        <mat-tab label="BRR Status"> 
+            <div class="dialogDiv mt1">
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Status Batch Docs</label></div>
+                        <div><label>Date Batch Docs</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div>
+                            <select [(ngModel)]="diParam[17]" class="iflex2-100">
+                                <option 
+                                    *ngFor="let batchdoc of batchdocs">{{batchdoc}}
+                                </option>
+                            </select>
+                        </div>
+                        <div><div><input type="date" [(ngModel)]="diParam[16]" class="iflex2"/></div></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Docu comment</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Docu_comment']" style="width: 40.5em;"/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Fortlaufende Nummer</label></div>
+                        <div><label>Temp. abgeschl.</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Fortlaufende_Nummer']" class="iflex2"/></div>
+                        <div><input [(ngModel)]="diParam[18]" type="checkbox" checked="diParam[18]"></div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="QC Process"> 
+            <div class="dialogDiv mt1">
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Lab Chem.</label></div>
+                        <div><label>CoA (Chem.) exp.</label></div>
+                        <div><label>CoA (Chem.) rec.</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Lab_chem']" class="iflex2"/></div>
+                        <div><input [(ngModel)]="currentItem['CoA_chem_expected']" class="iflex2"/></div>
+                        <div><div><input type="date" [(ngModel)]="diParam[19]" class="iflex2"/></div></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Lab Add.</label></div>
+                        <div><label>CoA (add) rec.</label></div>
+                        <div><label>Release site</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Lab_add']" class="iflex2"/></div>
+                        <div><input type="date" [(ngModel)]="diParam[20]" class="iflex2"/></div>
+                        <div><input [(ngModel)]="currentItem['release_site']" class="iflex2"/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>CoC received</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input type="date" [(ngModel)]="diParam[21]" class="iflex2"/></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1 mt1">
+                    <div  class="flex-container-2">
+                        <div><label>Reanalysis comment</label></div>
+                    </div>
+                </div>
+                <div class="flex-container-1-1">
+                    <div  class="flex-container-2">
+                        <div><input [(ngModel)]="currentItem['Reanalysis_comment']" style="width: 40.5em;"/></div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <div class="mt1">
+        <button class="formButton" (click)="save()">Save</button>
+        <button class="formButton" (click)="close()">Cancel</button>
     </div>
-    <div class="flex-container-1-1 mt1">
-        <div><label>API Manufacturer</label></div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div>
-            <select [(ngModel)]="diParam[9]" class="iflex2-100">
-                <option 
-                    *ngFor="let api of apimanufacturers">{{api.API_Manufacturer}}
-                </option>
-            </select>
-        </div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div><label>Manufacturer</label></div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div>
-            <select [(ngModel)]="diParam[10]" class="iflex2-100">
-                <option 
-                    *ngFor="let manu of manufacturers">{{manu.Manufacturer}}
-                </option>
-            </select>
-        </div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div  class="flex-container-2">
-            <div><label>EU / Non EU</label></div>
-            <div><label>Release / blocking site</label></div>
-            <div><label>Sample receipt date</label></div>
-        </div>
-    </div>
-    <div class="flex-container-1-1">
-        <div  class="flex-container-2">
-            <div><input [(ngModel)]="currentItem['EU__Non_EU']" class="iflex2" disabled/></div>
-            <div><input [(ngModel)]="currentItem['Release__Blocking_Site']" class="iflex2"/></div>
-            <div><input type="date" [(ngModel)]="diParam[6]" class="iflex2"/></div>
-        </div>
-    </div>
-    <div class="flex-container-1-1 mt1">
-        <div  class="flex-container-2">
-            <div><label>Status</label></div>
-            <div><label>Rel./Block marketing date</label></div>
-            <div><label>Rel./Block sale date</label></div>
-        </div>
-    </div>
-    <div class="flex-container-1-1">
-        <div  class="flex-container-2">
-            <div><input [(ngModel)]="currentItem['Status']" class="iflex2" disabled/></div>
-            <div><div><input type="date" [(ngModel)]="diParam[7]" class="iflex2"/></div></div>
-            <div><div><input type="date" [(ngModel)]="diParam[8]" class="iflex2"/></div></div>
-        </div>
-    </div>
-    <br>
-    <button class="formButton" (click)="save()">Save</button>
-    <button class="formButton" (click)="close()">Cancel</button>
+
 

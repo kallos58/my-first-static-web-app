@@ -29,7 +29,6 @@ export class BrrstatusDialog {
   ) {}
   
   close() {
-    debugger;
     this.childCancel.emit(10);
   }
 

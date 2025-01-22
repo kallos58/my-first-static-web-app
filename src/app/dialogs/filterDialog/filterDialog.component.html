@@ -1,0 +1,24 @@
+<h6 class="filterHeader">Filter by status</h6>
+
+<div><label>Please select a status</label></div>
+<div>
+    <select [(ngModel)]="filterVal" style="width: 16em;">
+        <option 
+            *ngFor="let s of status">{{s}}
+        </option>
+    </select>
+</div>
+<div><label>From sample receipt date</label></div>
+<div>
+    <input type="date" [(ngModel)]="fromDate" style="width: 16em;"/>
+    <input type="radio" [checked]="option==0" (click)="clickOption(0)">==
+    <input type="radio" [checked]="option==1" (click)="clickOption(1)"><=
+    <input type="radio" [checked]="option==2" (click)="clickOption(2)">>=
+</div>
+<div><label>To sample receipt date</label></div>
+<div><input type="date" [(ngModel)]="toDate" style="width: 16em;"/></div>
+
+<div class="mt1">
+    <button class="formButton" (click)="filter()">Filter</button>
+    <button class="formButton" (click)="close()">Cancel</button>
+</div>

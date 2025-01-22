@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
@@ -13,12 +13,17 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class MessageboxDialog {
- 
+  @Input() message: string;
+  @Output() childCancel = new EventEmitter<any>();
+
   constructor(
       
   ) {}
   
- 
+  close() {
+    this.childCancel.emit(14);
+  }
+
 
 
 }

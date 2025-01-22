@@ -3,6 +3,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 import { ServiceService } from './service.service';
+
 import * as Cosmos from "@azure/cosmos";
 //import * as abbrData from "../assets/abbreviations.json";
 //import * as smoData from "../assets/SCMPriorityReleaseReport.json";
@@ -32,6 +33,7 @@ import { BrrstatusDialog } from './dialogs/brrstatusDialog/brrstatusDialog.compo
 import { QcprocessDialog } from './dialogs/qcprocessDialog/qcprocessDialog.component'
 import { MessageboxDialog } from './dialogs/messageboxDialog/messageboxDialog.component'
 import { FormDialog } from './dialogs/formDialog/formDialog.component'
+import { FilterDialog } from './dialogs/filterDialog/filterDialog.component'
 
 @Component({
   selector: 'app-root',
@@ -55,7 +57,8 @@ import { FormDialog } from './dialogs/formDialog/formDialog.component'
     BrrstatusDialog,
     QcprocessDialog,
     MessageboxDialog,
-    FormDialog
+    FormDialog,
+    FilterDialog
   ]
 })
 
@@ -73,7 +76,11 @@ export class AppComponent  {
   @ViewChild('qcprocessDialog', { static: true }) qcprocessDialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('messageboxDialog', { static: true }) messageboxDialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('formDialog', { static: true }) formDialog!: ElementRef<HTMLDialogElement>;
+  @ViewChild('filterDialog', { static: true }) filterDialog!: ElementRef<HTMLDialogElement>;
 
+  message: string = "";
+  entries = "";
+  currentTable = "";
   dataSource = [];  
   originalSource = [];  
   currentItem: any = [];  
@@ -85,6 +92,7 @@ export class AppComponent  {
   cmomasters = []; 
   data: Observable<any>;
   index = 0;
+  tableindex=8;
   colorIndex = 0;
   dialogTitle = "Eintrag bearbeiten";
   name = "";
@@ -108,8 +116,8 @@ export class AppComponent  {
   container;
   cols: any;
   headers: any;
+  mainIndex: number = 0;
   constructor() {
-    return;
     this.service = new ServiceService();
     this.endpoint = "https://schruefer.documents.azure.com:443/";
     this.key = "ZE8r1ZNlJuL7o1F10F5NuPlJgJiC2TElldQycH2QCxIaZzkGcnxA5Za3URdElQM8ef66ctGmLNz1ACDbc9JuIA";
@@ -187,7 +195,9 @@ export class AppComponent  {
         this.createTableData(response.resources, 3);
         
         this.originalSource = this.tableData;
+        this.entries = "SCM Priorities (" + this.tableData.length.toString() + " entries)";
         this.entriesStr = this.tableData.length.toString() + " entries"; 
+        this.entriesStr="Das Nies";
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -207,8 +217,7 @@ export class AppComponent  {
       .then((response: any) => {
         this.createTableData(response.resources, 1);
         this.originalSource = this.tableData;
-        this.entriesStr = this.tableData.length.toString() + " entries"; 
-        this.filterStr = "Filter:   ";    
+        this.entries = this.currentTable + " (" + this.tableData.length.toString() + " entries)";
       }) 
     } catch(error) {
       console.log(error);
@@ -226,7 +235,9 @@ export class AppComponent  {
       .then((response: any) => {
         this.createTableData(response.resources, index);
         this.originalSource = this.tableData;
+        this.entries = container + " (" + this.tableData.length.toString() + " entries)";
         this.entriesStr = this.tableData.length.toString() + " entries"; 
+        this.entriesStr="Das Nies";
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -245,7 +256,9 @@ export class AppComponent  {
       .then((response: any) => {
         this.createTableData(response.resources, 2);
         this.originalSource = this.tableData;
+        this.entries = "CMO Masters (" + this.tableData.length.toString() + " entries)";
         this.entriesStr = this.tableData.length.toString() + " entries"; 
+        this.entriesStr="Das Nies";
         this.filterStr = "Filter:   ";    
       }) 
     } catch(error) {
@@ -268,7 +281,6 @@ export class AppComponent  {
       items.push(entry);
     });
     this.tableData = items; 
-    debugger;
   }
 
   public getAbbreviationEntry(e: any) {
@@ -362,6 +374,10 @@ export class AppComponent  {
       field2: e.FP_Batch_no__,
       field3: e.Bulk_Batch_no_,
       field4: e.MA_name_,
+      field5: e.Status,
+      field6: e.Sample_Receipt_date,
+      field7: e.EU__Non_EU,
+      field8: e.CoA_chem_received,
       isInList: true
     };
     return BatchReleaseEntry;
@@ -383,7 +399,60 @@ export class AppComponent  {
     return items;
   }
 
+  public cardClick(index) {
+    this.index = index;
+    if (index === 1) { 
+      this.currentTable = "Abbreviations";
+      this.headers = ["Abbreviation", "Content", "", ""];
+      this.cols = [true, true, false, false];
+      this.getAbbreviations();  
+    }
+    if (index === 2) {
+      this.currentTable = "CMO Masters";
+      this.headers = ["API Manufacturer", "Manufacturer", "Category", "Release site"];
+      this.cols = [true, true, true, true];
+      this.getCmomasters();  
+    }
+    if (index === 3) { 
+      this.currentTable = "SCM Priorities";
+      this.headers = ["Molecule","Mat. Code","Material description","Molecule strength"];
+      this.cols = [true, true, true, true];
+      this.getSCMPriorities();  
+    }
+    if (index === 4) { 
+      this.currentTable = "Contacts - Contacts";
+      this.headers = ["Supplier","Position 1","Position 2","SCM Contact"];
+      this.cols = [true, true, true, true];
+      this.getData("Contacts_Kontakte",4);  
+    }
+    if (index === 5) { 
+      this.currentTable = "Contacts - Vendors";
+      this.headers = ["Vendor","","",""];
+      this.cols = [true, false, false, false];
+      this.getData("Contacts_Vendors",5);  
+    }
+    if (index === 6) { 
+      this.currentTable = "Contacts - Skus";
+      this.headers = ["SAP Mat Description","API","PZN","Vendor"];
+      this.cols = [true, true, true, true];
+      this.getData("Contacts_Skus",6);  
+    }
+    if (index === 7) { 
+      this.currentTable = "SAP FG Material";
+      this.headers = ["Company","Mat. No","Description","Molecule"];
+      this.cols = [true, true, true, true];
+      this.getData("SAP_FG_Material",7);  
+    }
+    if (index === 8) { 
+      this.currentTable = "Batch Release";
+      this.headers = ["SAP Mat.","FP Batch","Bulk Batch","MA Name","S","EU","CoA chem."];
+      this.cols = [true, true, true, true, true, true, true, true];
+      this.getData("Batch_Release",8);  
+    }
+  }
+
   public async changeTab(e: any) {
+    return;
     this.index = e.index;
     if (e.index === 0) {
       this.entriesStr = "";
@@ -425,8 +494,8 @@ export class AppComponent  {
       this.getData("SAP_FG_Material",7);  
     }
     if (e.index === 8) { 
-      this.headers = ["SAP Mat. No.","FP Batch No.","Bulk Batch No.","MA Name"];
-      this.cols = [true, true, true, true];
+      this.headers = ["SAP Mat.","FP Batch","Bulk Batch","MA Name","S","EU","CoA chem."];
+      this.cols = [true, true, true, true, true, true, true, true];
       this.getData("Batch_Release",8);  
     }
   }
@@ -456,8 +525,8 @@ export class AppComponent  {
     this.currentId = item.id;
     let { resource: cItem } = await this.container.item(this.currentId, this.currentId).read();
     this.currentItem = cItem;
-    this.formDialog.nativeElement.showModal();
-    //this.abbreviationDialog.nativeElement.showModal(); 
+    //this.formDialog.nativeElement.showModal();
+    this.abbreviationDialog.nativeElement.showModal(); 
   }
 
   emitEdit(item) {
@@ -475,6 +544,123 @@ export class AppComponent  {
       if (item.brindex === 3) this.editBrrstatus(item);
       if (item.brindex === 4) this.editQcprocess(item);
     }
+  }
+
+  emitFilter(item) {
+    this.filterDialog.nativeElement.showModal();
+  }
+
+  emitFilterEU(e) {
+    this.tableData = this.originalSource;
+    Object.keys(this.tableData).forEach((key) => {
+      this.tableData[key].isInList = true;
+      if (this.tableData[key].field7 !== e) this.tableData[key].isInList = false;
+    })
+    this.tableData = this.tableData.filter((e: { isInList: boolean; }) => e.isInList === true);
+    this.entries = this.currentTable + " (" + this.tableData.length.toString() + " filtered entries)";
+  }
+
+  emitFilterCoA(e) {
+    this.tableData = this.originalSource;
+    Object.keys(this.tableData).forEach((key) => {
+      this.tableData[key].isInList = true;
+      let coaDate = this.tableData[key].field8;
+      coaDate = coaDate.substr(6,4) + "-" + coaDate.substr(3,2) + "-" + coaDate.substr(0,2);
+      this.tableData[key].coaDate = coaDate;
+      if (e.toCoA === "") {
+        if (coaDate !== e.fromCoA) this.tableData[key].isInList = false;
+      } else {
+        if (!(coaDate >= e.fromCoA && coaDate <= e.toCoA)) this.tableData[key].isInList = false;
+      }
+    })
+    this.tableData = this.tableData.filter((e: { isInList: boolean; }) => e.isInList === true);
+    if (e.batchoption === 1) this.tableData.sort((a: { coaDate: string; }, b: { coaDate: string; }) => a.coaDate.localeCompare(b.coaDate));
+    if (e.batchoption === 2) this.tableData.sort((a: { coaDate: string; }, b: { coaDate: string; }) => b.coaDate.localeCompare(a.coaDate));
+    this.entries = this.currentTable + " (" + this.tableData.length.toString() + " filtered entries)";
+  }
+
+  emitFilterStatus(e) {
+    this.filterDialog.nativeElement.close();
+    if (e.value === "") {
+      this.message = "You have not selected a status.";
+      this.showMessage();
+      return;
+    }
+    if (e.fromDate !== "" && e.toDate !== "") {
+      if (new Date(e.toDate) < new Date(e.fromDate)) {
+        this.message = "The 'from date' must be before the 'to date'.";
+        this.showMessage();
+        return;
+      }
+    }
+    this.tableData = this.originalSource;
+    Object.keys(this.tableData).forEach((key) => {
+      let inFilter = true;
+      let srDate = this.tableData[key].field6;
+      srDate = srDate.substr(6,4) + "-" + srDate.substr(3,2) + "-" + srDate.substr(0,2);
+      this.tableData[key].srdate = srDate;
+      if (this.tableData[key].field5 === e.value) {
+        if (e.fromDate !== "") { 
+          if (e.toDate === "") {
+            if (e.option === 1) {
+              if (srDate !== e.fromDate) inFilter = false;
+            }
+            if (e.option === 2) {
+              if (srDate > e.fromDate) inFilter = false;
+            }
+            if (e.option === 3) {
+              if (srDate < e.fromDate) inFilter = false;
+            }
+          } else {
+            if (!(srDate >= e.fromDate && srDate <= e.toDate)) inFilter = false;
+          }
+        } else {
+          inFilter = true;
+        }
+      } else {
+        inFilter = false;
+      }
+      this.tableData[key].isInList = inFilter;
+    })
+    this.tableData = this.tableData.filter((e: { isInList: boolean; }) => e.isInList === true);
+    if (e.batchoption === 1) this.tableData.sort((a: { srdate: string; }, b: { srdate: string; }) => a.srdate.localeCompare(b.srdate));
+    if (e.batchoption === 2) this.tableData.sort((a: { srdate: string; }, b: { srdate: string; }) => b.srdate.localeCompare(a.srdate));
+    this.entries = this.currentTable + " (" + this.tableData.length.toString() + " filtered entries)";
+  }
+
+  emitFilterBatch(e) {
+    debugger;
+    if (e.value === "" && e.batchoption === 0) return;
+    this.tableData = this.originalSource;
+    Object.keys(this.tableData).forEach((key) => {
+      if (e.field === "field1") {
+        if (!this.tableData[key].field1.toUpperCase().includes(e.value.toUpperCase())) this.tableData[key].isInList = false;
+      }
+      if (e.field === "field2") {
+        if (!this.tableData[key].field2.toUpperCase().includes(e.value.toUpperCase())) this.tableData[key].isInList = false;
+      }
+      if (e.field === "field3") {
+        if (!this.tableData[key].field3.toUpperCase().includes(e.value.toUpperCase())) this.tableData[key].isInList = false;
+      }
+      if (e.field === "field4") {
+        if (!this.tableData[key].field4.toUpperCase().includes(e.value.toUpperCase())) this.tableData[key].isInList = false;
+      }
+      
+    })
+    this.tableData = this.tableData.filter((e: { isInList: boolean; }) => e.isInList === true);
+    if (e.batchoption == 1) {
+      if (e.field === "field1") this.tableData.sort((a: { field1: string; }, b: { field1: string; }) => a.field1.localeCompare(b.field1));
+      if (e.field === "field2") this.tableData.sort((a: { field2: string; }, b: { field2: string; }) => a.field2.localeCompare(b.field2));
+      if (e.field === "field3") this.tableData.sort((a: { field3: string; }, b: { field3: string; }) => a.field3.localeCompare(b.field3));
+      if (e.field === "field4") this.tableData.sort((a: { field4: string; }, b: { field4: string; }) => a.field4.localeCompare(b.field4));
+    }
+    if (e.batchoption == 2) {
+      if (e.field === "field1") this.tableData.sort((a: { field1: string; }, b: { field1: string; }) => b.field1.localeCompare(a.field1));
+      if (e.field === "field2") this.tableData.sort((a: { field2: string; }, b: { field2: string; }) => b.field2.localeCompare(a.field2));
+      if (e.field === "field3") this.tableData.sort((a: { field3: string; }, b: { field3: string; }) => b.field3.localeCompare(a.field3));
+      if (e.field === "field4") this.tableData.sort((a: { field4: string; }, b: { field4: string; }) => b.field4.localeCompare(a.field4));
+    }
+    this.entries = this.currentTable + " (" + this.tableData.length.toString() + " entries)";
   }
 
   public async editContactsKontakte(item: any) {
@@ -514,7 +700,6 @@ export class AppComponent  {
   }
 
   public async editWarehouse(item: any) {
-    debugger;
     this.dialogTitle = "Warehouse";
     this.container = this.db.container("Batch_Release");
     this.currentId = item.id;
@@ -528,6 +713,24 @@ export class AppComponent  {
     mdate = mdate.substr(6,4) + "-" + mdate.substr(3,2) + "-" + mdate.substr(0,2);
     let sdate: string = cItem["Release__Block_for_Sale_date"];
     sdate = sdate.substr(6,4) + "-" + sdate.substr(3,2) + "-" + sdate.substr(0,2);
+    let priodate: string = cItem["Prio_meeting_release_date"];
+    priodate = priodate.substr(6,4) + "-" + priodate.substr(3,2) + "-" + priodate.substr(0,2);
+    let qapmdate: string = cItem["BRRor_QAPM"];
+    qapmdate = qapmdate.substr(6,4) + "-" + qapmdate.substr(3,2) + "-" + qapmdate.substr(0,2);
+    let bcalcdate: string = cItem["BRRor_calculation"];
+    bcalcdate = bcalcdate.substr(6,4) + "-" + bcalcdate.substr(3,2) + "-" + bcalcdate.substr(0,2);
+    let qcalcdate: string = cItem["QAPM_calculation"];
+    qcalcdate = qcalcdate.substr(6,4) + "-" + qcalcdate.substr(3,2) + "-" + qcalcdate.substr(0,2);
+    let bddate: string = cItem["date_batch_docs"];
+    bddate = bddate.substr(6,4) + "-" + bddate.substr(3,2) + "-" + bddate.substr(0,2);
+    let batchdoc = cItem["Status_Batch_docs"];
+    let temp_checked = cItem["Temperaturauswertung_abgeschlossen"] == "x" ? true : false;
+    let coarec: string = cItem["CoA_chem_received"];
+    coarec = coarec.substr(6,4) + "-" + coarec.substr(3,2) + "-" + coarec.substr(0,2);
+    let coaadd: string = cItem["CoA_add_received"];
+    coaadd = coaadd.substr(6,4) + "-" + coaadd.substr(3,2) + "-" + coaadd.substr(0,2);
+    let cocrec: string = cItem["CoC_received"];
+    cocrec = cocrec.substr(6,4) + "-" + cocrec.substr(3,2) + "-" + cocrec.substr(0,2);
     this.diParam = [
       manudate.substr(0,2), 
       manudate.substr(3,4),
@@ -539,7 +742,18 @@ export class AppComponent  {
       mdate,
       sdate,
       cItem["API_Manufacturer"],
-      cItem["Manufacturer"]
+      cItem["Manufacturer"],
+      priodate,
+      cItem["category"],
+      qapmdate,
+      bcalcdate,
+      qcalcdate,
+      bddate,
+      batchdoc,
+      temp_checked,
+      coarec,
+      coaadd,
+      cocrec
     ];
     this.warehouseDialog.nativeElement.showModal(); 
   }
@@ -596,7 +810,6 @@ export class AppComponent  {
     coarec = coarec.substr(6,4) + "-" + coarec.substr(3,2) + "-" + coarec.substr(0,2);
     let coaadd: string = cItem["CoA_add_received"];
     coaadd = coaadd.substr(6,4) + "-" + coaadd.substr(3,2) + "-" + coaadd.substr(0,2);
-    debugger;
     let cocrec: string = cItem["CoC_received"];
     cocrec = cocrec.substr(6,4) + "-" + cocrec.substr(3,2) + "-" + cocrec.substr(0,2);
     this.diParam = [
@@ -637,6 +850,8 @@ export class AppComponent  {
     if (index === 10) this.brrstatusDialog.nativeElement.close();
     if (index === 11) this.qcprocessDialog.nativeElement.close();
     if (index === 12) this.formDialog.nativeElement.close();
+    if (index === 13) this.filterDialog.nativeElement.close();
+    if (index === 14) this.messageboxDialog.nativeElement.close();
   }
 
   public emitSave(index) {
@@ -670,6 +885,7 @@ export class AppComponent  {
     this.originalSource.splice(index, 1);
     await this.container.item(item.id, item.id).delete();
     this.entriesStr = String(this.tableData.length) + " entries";
+    this.entriesStr="Das Nies";
   }
 
   public async saveAbbreviation() {
@@ -780,16 +996,28 @@ export class AppComponent  {
       this.currentItem.Expiry_date = this.diParam[2] + "/" + this.diParam[3];
       this.currentItem.API_Manufacturer = this.diParam[9];
       this.currentItem.Manufacturer = this.diParam[10];
+      this.currentItem.category = this.diParam[12];
       let srdate = this.diParam[6].substr(8,2) + "/" + this.diParam[6].substr(5,2) + "/" + this.diParam[6].substr(0,4);
       this.currentItem.Sample_Receipt_date = srdate;
       let rbmdate = this.diParam[7].substr(8,2) + "/" + this.diParam[7].substr(5,2) + "/" + this.diParam[7].substr(0,4);
       this.currentItem.Release__Block_for_Marketing_date = rbmdate;
       let rbsdate = this.diParam[8].substr(8,2) + "/" + this.diParam[8].substr(5,2) + "/" + this.diParam[8].substr(0,4);
       this.currentItem.Release__Block_for_Sale_date = rbsdate;
+      this.currentItem.BRRor_QAPM = this.formatDate(this.diParam[13]);
+      this.currentItem.BRRor_calculation = this.formatDate(this.diParam[14]);
+      this.currentItem.QAPM_calculation = this.formatDate(this.diParam[15]);
+      this.currentItem.date_batch_docs = this.formatDate(this.diParam[16]);
+      this.currentItem.Status_Batch_docs = this.diParam[17];
+      this.currentItem.Temperaturauswertung_abgeschlossen = this.diParam[18] ? "x" : "";
+      this.currentItem.CoA_chem_received = this.formatDate(this.diParam[19]);
+      this.currentItem.CoA_add_received = this.formatDate(this.diParam[20]);
+      this.currentItem.CoC_received = this.formatDate(this.diParam[21]);
       this.replaceTableData(
         this.currentItem.SAP_Material_Number, this.currentItem.FP_Batch_no__,
-        this.currentItem.Bulk_Batch_no_,this.currentItem.MA_name_);
-      this.updateData("Batch_Release");
+        this.currentItem.Bulk_Batch_no_, this.currentItem.MA_name_, 
+        this.currentItem.Status, this.currentItem.Sample_Receipt_date, 
+        this.currentItem.EU__Non_EU, this.currentItem.CoA_chem_received);
+        this.updateData("Batch_Release");
     } else {
       let id = this.createId();
       this.addTableData(id, this.currentItem.Company, this.currentItem.Mat_No_,
@@ -963,41 +1191,7 @@ export class AppComponent  {
     if (this.index === 6) this.getData("Contacts_Skus", 6);
     if (this.index === 7) this.getData("SAP_FG_Material", 7);
     if (this.index === 8) this.getData("Batch_Release", 8);
-    this.entriesStr = this.tableData.length.toString() + " entries"; 
-  }
-
-  filterData() {
-      if (this.filterString === "") return;
-      const arrFilter = this.filterString.split(" ");
-      debugger;
-      this.tableData = this.originalSource;
-      debugger;
-      Object.keys(this.tableData).forEach((key) => {
-        let inFilter = true;
-        const sString = this.tableData[key].field1 + this.tableData[key].field2 + this.tableData[key].field3 + this.tableData[key].field4;
-        for ( let i = 0; i < arrFilter.length; i++ ) {
-          if (!sString.toUpperCase().includes(arrFilter[i].toUpperCase())) inFilter = false;
-        }
-        this.tableData[key].isInList = inFilter;
-      })
-      this.tableData = this.tableData.filter((e: { isInList: boolean; }) => e.isInList === true);
-      this.entriesStr = String(this.tableData.length) + " entries";
-  }
-
-  filterCMOMasters() {
-    if (this.filterString === "") return;
-    const arrFilter = this.filterString.split(" ");
-    this.cmomasters = this.originalSource;
-    Object.keys(this.cmomasters).forEach((key) => {
-      let inFilter = true;
-      const sString = this.cmomasters[key].categoryId + this.cmomasters[key].name + this.cmomasters[key].description + this.cmomasters[key].sku;
-      for ( let i = 0; i < arrFilter.length; i++ ) {
-        if (!sString.toUpperCase().includes(arrFilter[i].toUpperCase())) inFilter = false;
-      }
-      this.cmomasters[key].isInList = inFilter;
-    })
-    this.cmomasters = this.cmomasters.filter((e: { isInList: boolean; }) => e.isInList === true);
-    this.entriesStr = String(this.cmomasters.length) + " entries";
+    this.entries = this.currentTable + " (" + this.tableData.length.toString() + " entries)";
   }
 
   public createId(): string {
@@ -1012,20 +1206,29 @@ export class AppComponent  {
     return result;
   }
 
-  public replaceTableData(f1, f2, f3, f4) {
+  public replaceTableData(f1, f2, f3, f4, f5?, f6?, f7?, f8?) {
     let item = this.tableData.find((element: any) => element.id === this.currentId);
     item.field1 = f1;
     item.field2 = f2;
     item.field3 = f3;
     item.field4 = f4;
+    item.field5 = f5;
+    item.field6 = f6;
+    item.field7 = f7;
+    item.field8 = f8;
     item = this.originalSource.find((element: any) => element.id === this.currentId);
     item.field1 = f1;
     item.field2 = f2;
     item.field3 = f3;
     item.field4 = f4;
+    item.field5 = f5;
+    item.field6 = f6;
+    item.field7 = f7;
+    item.field8 = f8;
   }
 
   public async updateData(container: string) {
+    this.message = "The changes were saved...";
     this.showMessage();
     this.container = this.db.container(container);
     await this.container
@@ -1048,5 +1251,106 @@ export class AppComponent  {
     setTimeout(() => {
       this.messageboxDialog.nativeElement.close(); ;
     }, 2000);
+  }
+
+  exportToXls() {
+    const data = this.createExcelData();
+    this.service.exportAsExcelFile(data);
+  }
+
+  createExcelData(): any {
+    let data = [];
+    let entry: any = [];
+    for (let i = 0; i < this.tableData.length; i++) {
+      if (this.index === 1) entry = this.getAbbreviationForXls(this.tableData[i]);
+      if (this.index === 2) entry = this.getCMOMasterForXls(this.tableData[i]);
+      if (this.index === 3) entry = this.getSCMPriorityForXls(this.tableData[i]);
+      if (this.index === 4) entry = this.getContactForXls(this.tableData[i]);
+      if (this.index === 5) entry = this.getVendorForXls(this.tableData[i]);
+      if (this.index === 6) entry = this.getSkuForXls(this.tableData[i]);
+      if (this.index === 7) entry = this.getSAPFGMat(this.tableData[i]);
+      if (this.index === 8) entry = this.getBatchReleaseForXls(this.tableData[i]);
+      data.push(entry);
+    }
+    return data;
+  }
+
+  getBatchReleaseForXls(data) {
+    let entry = {
+      SAP_Material_Number: data.field1,
+      FP_Batch_No: data.field2,
+      Bulk_Batch_No: data.field3,
+      MA_Name: data.field4,
+      Status: data.field5,
+      Sample_Receipt_Date: data.field6,
+      EU_Non_EU: data.field7,
+      CoA_Date_Chem_Expected: data.field8
+    };
+    return entry;
+  }
+
+  getAbbreviationForXls(data) {
+    let entry = {
+      Abbreviation: data.field1,
+      Content: data.field2
+    };
+    return entry;
+  }
+
+  getCMOMasterForXls(data) {
+    let entry = {
+      API_Manufacturer: data.field1,
+      Manufacturer: data.field2,
+      Category: data.field3,
+      Release_Site: data.field4
+    };
+    return entry;
+  }
+
+  getSCMPriorityForXls(data) {
+    let entry = {
+      Molecule: data.field1,
+      Mat_Code: data.field2,
+      Mat_Description: data.field3,
+      Molecule_Strength: data.field4
+    };
+    return entry;
+  }
+
+  getContactForXls(data) {
+    let entry = {
+      Supplier: data.field1,
+      Position_1: data.field2,
+      Position_2: data.field3,
+      SCM_Contact: data.field4
+    };
+    return entry;
+  }
+
+  getVendorForXls(data) {
+    let entry = {
+      Vendor: data.field1
+    };
+    return entry;
+  }
+ 
+  getSkuForXls(data) {
+    let entry = {
+      SAP_Mat_Description: data.field1,
+      API: data.field2,
+      PZN: data.field3,
+      Vendor: data.field4
+    };
+    return entry;
+  }
+
+  getSAPFGMat(data) {
+    let entry = {
+      Company: data.field1,
+      Mat_No: data.field2,
+      Description: data.field3,
+      Molecule: data.field4
+    };
+    return entry;
   }
 }

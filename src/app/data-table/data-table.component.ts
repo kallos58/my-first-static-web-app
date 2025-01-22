@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { KENDO_POPUP } from '@progress/kendo-angular-popup';
 import { FormsModule } from '@angular/forms';
 import { KENDO_BUTTONS } from '@progress/kendo-angular-buttons';
+
 @Component({
   selector: 'app-data-table',
   standalone: true,

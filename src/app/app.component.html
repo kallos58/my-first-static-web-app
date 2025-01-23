@@ -1,29 +1,106 @@
   <div class="filterBar">
-    <label style="margin-left: 1em;">{{entriesStr}}</label>
-    <label style="margin-left: 10em;">{{filterStr}}</label>
-    <input *ngIf="index!=0" type="text" value="{{filterString}}" [(ngModel)]="filterString" (keyup.enter)="filterData()" name="filter"/>
-    <img 
-      *ngIf="index!=0" 
+    <img     
       class="iconDel" 
-      (click)="filterData()"
-      title="Daten filtern"
-      src="https://www.iconpacks.net/icons/3/free-icon-filter-6556.png" />
+      *ngIf="index!==0"
+      (click)="index=0"
+      style="margin-left: 8px;"
+      src="https://cdn0.iconfinder.com/data/icons/uiux-001-line/32/UI_UX_UIUX_Back-64.png" />
     <img 
-      *ngIf="index!=0" 
+      style="width: 66px; height: 22px; margin-left: 8px;"
+      src="../assets/images/Heumann_Logo_farbig.png" />
+    <img     
       class="iconDel" 
-      (click)="clearFilter()"
-      title="Filter löschen"
-      src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-8/24/018_311_insignia_cross_emblem-64.png" />
-    <img 
-      *ngIf="index!=0" 
-      (click)="newEntry()"
-      class="iconDel" 
-      title="Neuer Eintrag"
-      src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_add-64.png" />
+      style="margin-left: 2em;"
+      src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/database-1024.png" />
+    <label style="margin-top: -8px; margin-left: -8px;"> ExBatch+</label>
   </div>
+  
   <main class="main" >
-
-    <mat-tab-group (selectedTabChange)="changeTab($event)">
+    <div style="display: flex;" *ngIf="index===0">
+      <div class="card" (click)="cardClick(8)">
+        <div style="font-weight: bold;">Batch Release</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">777 entries</label></div>
+      </div>
+      <div class="card"  (click)="cardClick(1)">
+        <div style="font-weight: bold;">Abbreviations</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">27 entries</label></div>
+      </div>
+      <div class="card"  (click)="cardClick(2)">
+        <div style="font-weight: bold;">CMO Masters</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">563 entries</label></div>
+      </div>
+      <div class="card"  (click)="cardClick(3)">
+        <div style="font-weight: bold;">SCM Priorities</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">1537 entries</label></div>
+      </div>
+      <div class="card"  (click)="cardClick(4)">
+        <div style="font-weight: bold;">Contacts Contacts</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">106 entries</label></div>
+      </div>
+      <div class="card"  (click)="cardClick(5)">
+        <div style="font-weight: bold;">Contacts Vendors</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">74 entries</label></div>
+      </div>
+    </div>
+    <div style="display: flex;" *ngIf="index===0">
+      <div class="card" (click)="cardClick(6)">
+        <div style="font-weight: bold;">Contacts SKU</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">1941 entries</label></div>
+      </div>
+      <div class="card"  (click)="cardClick(7)">
+        <div style="font-weight: bold;">SAP FG Material</div>
+        <div style="margin-top: 5em;"><img 
+          style="width:24px; height:24px;"
+          src="https://cdn3.iconfinder.com/data/icons/databases-2/512/tables-64.png" /></div>
+          <div><label style="font-size:11px;">3413 entries</label></div>
+      </div>
+    </div>
+    <div  style="margin-left: 1em; margin-top: 1em; font-weight: bold;">
+      <label *ngIf="index!==0">{{entries}}</label>
+      <button class="xlsButton ml1" type="submit" (click)="clearFilter()" *ngIf="index!==0">Clear filter
+        <img style="border: none" src="https://cdn-icons-png.flaticon.com/128/3126/3126675.png" height="16px" width="16px"/>
+      </button>
+      <button class="xlsButton ml1" type="submit" (click)="exportToXls()" *ngIf="index!==0">Export to Excel
+        <img style="border: none" src="https://cdn3.iconfinder.com/data/icons/document-icons-2/30/647714-excel-64.png" height="16px" width="16px"/>
+      </button>
+    </div>
+    
+    <div class="tableDiv" *ngIf="index!==0">
+      <app-data-table  
+        (childEdit)="emitEdit($event)" 
+        (childDelete)="emitDelete($event)" 
+        (childFilterEU)="emitFilterEU($event)" 
+        (childFilterCoA)="emitFilterCoA($event)" 
+        (childFilterStatus)="emitFilterStatus($event)"
+        (childFilterBatch)="emitFilterBatch($event)"
+        [index]="index"
+        [tableData]="tableData" 
+        [headers]="headers" 
+        [cols]="cols">
+      </app-data-table>
+    </div>
+    <!--<mat-tab-group (selectedTabChange)="changeTab($event)" style="display: none;">
       <mat-tab label="Home"> 
         <h3 class="heumannapp">Heumann App</h3>
       </mat-tab>
@@ -111,6 +188,10 @@
           <app-data-table  
             (childEdit)="emitEdit($event)" 
             (childDelete)="emitDelete($event)" 
+            (childFilter)="emitFilter($event)" 
+            (childFilterEU)="emitFilterEU($event)" 
+            (childFilterCoA)="emitFilterCoA($event)" 
+            (childFilterStatus)="emitFilterStatus($event)" 
             [tableData]="tableData" 
             [headers]="headers" 
             [cols]="cols"
@@ -118,7 +199,7 @@
           </app-data-table>
         </div>
       </mat-tab>
-    </mat-tab-group>
+    </mat-tab-group>-->
   </main>
 
   <dialog #abbreviationDialog class="dialog abbr">
@@ -184,7 +265,7 @@
     </sapmaterial-dialog>    
   </dialog>
   
-  <dialog #warehouseDialog class="dialog warehouseseDialog">
+  <dialog #warehouseDialog class="dialog warehouseDialog">
     <warehouse-dialog 
       (childSave)="emitSave(8)" 
       (childCancel)="emitCancel(8)" 
@@ -192,6 +273,7 @@
       [diParam]="diParam"
       [apimanufacturers]="apimanufacturers"
       [manufacturers]="manufacturers"
+      [categories]="categories"
       [dialogTitle]="dialogTitle">
     </warehouse-dialog>    
   </dialog>
@@ -228,12 +310,23 @@
   </dialog>
 
   <dialog #messageboxDialog class="dialog brrProcessDialog">
-    <messagebox-dialog></messagebox-dialog>
+    <messagebox-dialog
+      [message]="message"
+      (childCancel)="emitCancel(14)" >
+    </messagebox-dialog>
+  </dialog>
+
+  <dialog #filterDialog class="dialog brrProcessDialog">
+    <filter-dialog
+      (childFilterStatus)="emitFilterStatus($event)"
+      (childCancel)="emitCancel(13)"> 
+    </filter-dialog>
   </dialog>
 
   <dialog #formDialog class="dialog warehouseDialog">
     <form-dialog
-      (childCancel)="emitCancel(12)" 
+      (childCancel)="emitCancel(13)" 
+      (childFilter)="emitFilter(13)" 
       [dialogTitle]="dialogTitle">
     </form-dialog>
   </dialog>

@@ -1,7 +1,11 @@
 import * as Cosmos from "@azure/cosmos";
-import { debug } from "console";
+import { saveAs } from 'file-saver';
+import * as XLSX from 'xlsx';
 import { Observable } from "rxjs";
 
+const EXCEL_TYPE =
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+const EXCEL_EXTENSION = '.xlsx';
 
 export class ServiceService {
   constructor() {
@@ -42,7 +46,7 @@ export class ServiceService {
           console.log(error);
   
       }    
-    }     
+    }    
     
     public async createSAPMaterial(data: any) {  
       const endpoint = "https://schruefer.documents.azure.com:443/";
@@ -338,6 +342,29 @@ export class ServiceService {
         return result;
       }
     
+      public exportAsExcelFile(data): void {
+        const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(data);
+        // id	name	username	email
+        const workbook: XLSX.WorkBook = {
+          Sheets: { data: worksheet },
+          SheetNames: ['data'],
+        };
+        const excelBuffer: any = XLSX.write(workbook, {
+          bookType: 'xlsx',
+          type: 'array',
+        });
+        this.saveAsExcelFile(excelBuffer, "data_");
+      }
+    
+      private saveAsExcelFile(buffer: any, fileName: string): void {
+        const data: Blob = new Blob([buffer], {
+          type: EXCEL_TYPE,
+        });
+        saveAs(
+          data,
+          fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION
+        );
+      }
     }
   
   

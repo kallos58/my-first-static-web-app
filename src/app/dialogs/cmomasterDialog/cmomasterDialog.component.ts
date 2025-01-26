@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'cmomaster-dialog',
-  standalone: true,
-  templateUrl: 'cmomasterDialog.component.html',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'cmomaster-dialog',
+    templateUrl: 'cmomasterDialog.component.html',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class CmomasterDialog {
   @Input() currentItem: any = [];

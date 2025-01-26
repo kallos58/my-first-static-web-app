@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'brrstatus-dialog',
-  standalone: true,
-  templateUrl: 'brrstatusDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'brrstatus-dialog',
+    templateUrl: 'brrstatusDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class BrrstatusDialog {
   @Input() currentItem: any = [];

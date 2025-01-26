@@ -2,14 +2,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 @Component({
-  selector: 'filter-dialog',
-  standalone: true,
-  templateUrl: 'filterDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'filter-dialog',
+    templateUrl: 'filterDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 
 export class FilterDialog {

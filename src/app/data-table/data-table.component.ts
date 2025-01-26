@@ -5,16 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { KENDO_BUTTONS } from '@progress/kendo-angular-buttons';
 
 @Component({
-  selector: 'app-data-table',
-  standalone: true,
-  templateUrl: 'data-table.component.html',
-  styleUrl: 'data-table.component.css',
-  imports: [
-    CommonModule,
-    FormsModule,
-    KENDO_POPUP,
-    KENDO_BUTTONS
-  ]
+    selector: 'app-data-table',
+    templateUrl: 'data-table.component.html',
+    styleUrl: 'data-table.component.css',
+    imports: [
+        CommonModule,
+        FormsModule,
+        KENDO_POPUP,
+        KENDO_BUTTONS
+    ]
 })
 export class DataTableComponent {
     colorIndex = 0; 

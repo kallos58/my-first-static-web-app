@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'sapmaterial-dialog',
-  standalone: true,
-  templateUrl: 'SAPMaterialDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'sapmaterial-dialog',
+    templateUrl: 'SAPMaterialDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class SAPMaterialDialog {
   @Input() currentItem: any = [];

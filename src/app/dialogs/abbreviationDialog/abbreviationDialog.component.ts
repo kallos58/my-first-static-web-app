@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'abbreviation-dialog',
-  standalone: true,
-  templateUrl: 'abbreviationDialog.component.html',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'abbreviation-dialog',
+    templateUrl: 'abbreviationDialog.component.html',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class AbbreviationDialog {
   @Input() currentItem: any = [];

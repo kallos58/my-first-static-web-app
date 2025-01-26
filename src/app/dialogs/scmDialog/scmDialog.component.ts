@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'scm-dialog',
-  standalone: true,
-  templateUrl: 'scmDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'scm-dialog',
+    templateUrl: 'scmDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class ScmDialog {
   @Input() currentItem: any = [];

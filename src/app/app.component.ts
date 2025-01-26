@@ -36,30 +36,29 @@ import { FormDialog } from './dialogs/formDialog/formDialog.component'
 import { FilterDialog } from './dialogs/filterDialog/filterDialog.component'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  standalone: true,
-  imports: [
-    MatTabsModule, 
-    CommonModule,
-    FormsModule,
-    DataTableComponent,
-    AbbreviationDialog,
-    CmomasterDialog,
-    ScmDialog,
-    ContactsKontakteDialog,
-    ContactsVendorsDialog,
-    ContactsSkusDialog,
-    SAPMaterialDialog,
-    WarehouseDialog,
-    BrrprocessDialog,
-    BrrstatusDialog,
-    QcprocessDialog,
-    MessageboxDialog,
-    FormDialog,
-    FilterDialog
-  ]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [
+        MatTabsModule,
+        CommonModule,
+        FormsModule,
+        DataTableComponent,
+        AbbreviationDialog,
+        CmomasterDialog,
+        ScmDialog,
+        ContactsKontakteDialog,
+        ContactsVendorsDialog,
+        ContactsSkusDialog,
+        SAPMaterialDialog,
+        WarehouseDialog,
+        BrrprocessDialog,
+        BrrstatusDialog,
+        QcprocessDialog,
+        MessageboxDialog,
+        FormDialog,
+        FilterDialog
+    ]
 })
 
 export class AppComponent  {

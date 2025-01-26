@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'form-dialog',
-  standalone: true,
-  templateUrl: 'formDialog.component.html',
-  styleUrl: 'formDialog.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'form-dialog',
+    templateUrl: 'formDialog.component.html',
+    styleUrl: 'formDialog.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class FormDialog {
     @Input() dialogTitle: string;

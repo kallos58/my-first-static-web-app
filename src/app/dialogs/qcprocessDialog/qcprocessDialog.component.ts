@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'qcprocess-dialog',
-  standalone: true,
-  templateUrl: 'qcprocessDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'qcprocess-dialog',
+    templateUrl: 'qcprocessDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class QcprocessDialog {
   @Input() currentItem: any = [];

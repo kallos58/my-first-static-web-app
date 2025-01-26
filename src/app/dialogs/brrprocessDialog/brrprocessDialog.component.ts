@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'brrprocess-dialog',
-  standalone: true,
-  templateUrl: 'brrprocessDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'brrprocess-dialog',
+    templateUrl: 'brrprocessDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class BrrprocessDialog {
   @Input() currentItem: any = [];

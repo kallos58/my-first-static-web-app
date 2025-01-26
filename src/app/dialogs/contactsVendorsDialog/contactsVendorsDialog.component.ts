@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'contactsVendors-dialog',
-  standalone: true,
-  templateUrl: 'contactsVendorsDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    selector: 'contactsVendors-dialog',
+    templateUrl: 'contactsVendorsDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class ContactsVendorsDialog {
   @Input() currentItem: any = [];

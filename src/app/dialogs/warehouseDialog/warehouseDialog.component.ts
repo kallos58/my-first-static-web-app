@@ -4,15 +4,14 @@ import { FormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({
-  selector: 'warehouse-dialog',
-  standalone: true,
-  templateUrl: 'warehouseDialog.component.html',
-  styleUrl: '../../../app/app.component.css',
-  imports: [
-    CommonModule,
-    FormsModule,
-    MatTabsModule
-  ]
+    selector: 'warehouse-dialog',
+    templateUrl: 'warehouseDialog.component.html',
+    styleUrl: '../../../app/app.component.css',
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatTabsModule
+    ]
 })
 export class WarehouseDialog {
   @Input() currentItem: any = [];
